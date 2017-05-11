@@ -49,6 +49,7 @@ class MvvmSearchActivity : AppCompatActivity() {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({
                     adapter.addCityWeather(it)
+                    binding.rvSearchResults.scrollToPosition(0)
                 }, {
                     Log.e(LOG_TAG, it.toString())
                 })

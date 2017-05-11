@@ -81,6 +81,7 @@ class MvpSearchActivity : AppCompatActivity(), SearchContract.View {
 
     override fun showCityWeather(cityWeather: CityWeatherModel) {
         adapter.addCityWeather(cityWeather)
+        binding.rvSearchResults.scrollToPosition(0)
     }
 
     override fun showLoading(show: Boolean) {
