@@ -34,7 +34,14 @@ class CityWeatherDataStore @Inject constructor(val restApi: RestApi) : WeatherRe
 
     private fun loadFromNetwork(searchTerm: String): Observable<CityWeatherEntity> {
         return restApi.getWeatherByCityName(searchTerm, apiKey)
-                .filter { it.isSuccessful } // filter out not successful responses for the moment
+                .flatMap {
+                    if(!it.isSuccessful){
+                        // TODO: improve error response
+                        Observable.error(Throwable("Error"))
+                    }else{
+                        Observable.just(it)
+                    }
+                }
                 .map { it.body() }
     }
 
