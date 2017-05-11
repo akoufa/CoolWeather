@@ -38,7 +38,7 @@ class MvpSearchActivity : AppCompatActivity(), SearchContract.View {
     lateinit var binding: ActivitySearchBinding
 
     val compositeDisposable = CompositeDisposable()
-    val adapter = CityWeatherAdapter(arrayListOf())
+    val adapter = CityWeatherAdapter(this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
