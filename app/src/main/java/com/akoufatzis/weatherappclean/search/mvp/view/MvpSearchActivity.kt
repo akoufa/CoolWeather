@@ -67,7 +67,6 @@ class MvpSearchActivity : AppCompatActivity(), SearchContract.View {
     }
 
     private fun bind() {
-
         presenter
                 .search(RxTextView.textChanges(binding.etSearch))
     }
@@ -80,12 +79,12 @@ class MvpSearchActivity : AppCompatActivity(), SearchContract.View {
         super.onDestroy()
     }
 
-    override fun showCityWeather(cityWeatherModel: CityWeatherModel) {
-        adapter.addCityWeather(cityWeatherModel)
+    override fun showCityWeather(cityWeather: CityWeatherModel) {
+        adapter.addCityWeather(cityWeather)
     }
 
     override fun showLoading(show: Boolean) {
-        Log.d(LOG_TAG, "loading")
+        binding.srContainer.isRefreshing = show
     }
 
     override fun showError() {

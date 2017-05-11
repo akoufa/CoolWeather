@@ -59,7 +59,7 @@ class MvvmSearchActivity : AppCompatActivity() {
                 .loading()
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({
-
+                    binding.srContainer.isRefreshing = it
                 }, {
                     Log.e(LOG_TAG, it.toString())
                 })

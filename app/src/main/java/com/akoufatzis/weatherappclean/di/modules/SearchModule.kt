@@ -28,7 +28,7 @@ class SearchModule {
      */
     @PerActivity
     @Provides
-    fun providesViewModel(githubReposUseCase: GetCityWeatherUseCase): SearchViewModel {
-        return SearchViewModel(githubReposUseCase)
+    fun providesViewModel(githubReposUseCase: GetCityWeatherUseCase, executionThread: PostExecutionThread): SearchViewModel {
+        return SearchViewModel(githubReposUseCase, executionThread)
     }
 }
