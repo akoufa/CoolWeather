@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="obj"
+            type="com.akoufatzis.weatherappclean.search.model.CityWeatherModel" />
+
+        <variable
+            name="weatherutils"
+            type="com.akoufatzis.weatherappclean.utils.WeatherUtils" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp">
+
+        <TextView
+            android:id="@+id/tvCityName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:ellipsize="end"
+            android:text="@{obj.city.name}"
+            android:textSize="20sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/tvDegrees"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="@+id/tvDegrees"
+            tools:text="Kotlin" />
+
+        <TextView
+            android:id="@+id/tvDegrees"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableEnd="@{weatherutils.artResource(obj)}"
+            android:drawablePadding="8dp"
+            android:gravity="center_vertical"
+            android:text="@{weatherutils.celsiusDegrees(context, obj.temp)}"
+            android:textSize="20sp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="5000" />
+
+    </android.support.constraint.ConstraintLayout>
+</layout>
