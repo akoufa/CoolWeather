@@ -22,6 +22,7 @@ class SearchViewModel @Inject constructor(val useCase: GetCityWeatherUseCase) {
 
     fun search(textChanges: Observable<CharSequence>): Observable<CityWeatherModel> {
         return textChanges
+                .filter { it.length > 2 }
                 .map {
                     Params(it.toString())
                 }
