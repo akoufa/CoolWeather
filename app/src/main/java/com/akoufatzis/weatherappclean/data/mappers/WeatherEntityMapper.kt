@@ -1,9 +1,7 @@
 package com.akoufatzis.weatherappclean.data.mappers
 
 import com.akoufatzis.weatherappclean.data.entities.CityWeatherEntity
-import com.akoufatzis.weatherappclean.domain.models.City
-import com.akoufatzis.weatherappclean.domain.models.CityWeather
-import com.akoufatzis.weatherappclean.domain.models.Result
+import com.akoufatzis.weatherappclean.domain.models.*
 import io.reactivex.ObservableTransformer
 
 /**
@@ -18,11 +16,11 @@ fun mapToCityWeather() = ObservableTransformer <Result<CityWeatherEntity>, Resul
             val mainModel = data.main.toMainModel()
             val city = City(data.id, data.name)
             val cw = CityWeather(weatherModelList, mainModel, city)
-            Result.success(cw)
+            Success(cw)
         } else if (entityResult.loading) {
-            Result.inflight<CityWeather>()
+            InFlight<CityWeather>()
         } else {
-            Result.error<CityWeather>(entityResult.error!!)
+            Failure<CityWeather>(entityResult.error!!)
         }
     }
 }

@@ -5,8 +5,7 @@ import com.akoufatzis.weatherappclean.data.api.RestApi
 import com.akoufatzis.weatherappclean.data.cache.MemoryCache
 import com.akoufatzis.weatherappclean.data.entities.CityWeatherEntity
 import com.akoufatzis.weatherappclean.data.mappers.mapToCityWeather
-import com.akoufatzis.weatherappclean.domain.models.CityWeather
-import com.akoufatzis.weatherappclean.domain.models.Result
+import com.akoufatzis.weatherappclean.domain.models.*
 import com.akoufatzis.weatherappclean.domain.repositories.WeatherRepository
 import io.reactivex.Observable
 import javax.inject.Inject
@@ -32,26 +31,26 @@ class CityWeatherDataStore @Inject constructor(val restApi: RestApi) : WeatherRe
                     }
                 }
                 .compose(mapToCityWeather())
-                .onErrorReturn { Result.error(it) }
+                .onErrorReturn { Failure<CityWeather>(it) }
     }
 
     private fun inflight(): Observable<Result<CityWeatherEntity>> {
-        return Observable.just<Result<CityWeatherEntity>>(Result.inflight())
+        return Observable.just(InFlight())
     }
 
     private fun loadFromNetwork(searchTerm: String): Observable<Result<CityWeatherEntity>> {
         return restApi.getWeatherByCityName(searchTerm, apiKey)
                 .flatMap {
                     if (!it.isSuccessful) {
-                        Observable.just(Result.error(Throwable(it.errorBody().string())))
+                        Observable.just(Failure<CityWeatherEntity>(Throwable(it.errorBody().string())))
                     } else {
-                        Observable.just(Result.success(it.body()))
+                        Observable.just(Success(it.body()))
                     }
                 }
     }
 
     private fun loadFromCache(searchTerm: String): Observable<Result<CityWeatherEntity>> {
-        return memoryCache[searchTerm].map { Result.success(it) }
+        return memoryCache[searchTerm].map { Success(it) }
     }
 
     private fun loadFromDb(searchTerm: String) = Observable.empty<Result<CityWeatherEntity>>()
