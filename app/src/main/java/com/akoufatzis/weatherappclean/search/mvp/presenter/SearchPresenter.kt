@@ -32,15 +32,18 @@ class SearchPresenter @Inject constructor(val useCase: GetCityWeatherUseCase,
                 .map {
                     Params(it.toString())
                 }
-                .doOnNext { view?.showLoading(true) }
                 .compose(useCase.execute())
                 .compose(mapToCityWeatherModel())
                 .observeOn(mainThread.scheduler)
-                .doOnNext { view?.showLoading(false) }
-                .doOnTerminate { view?.showLoading(false) }
                 .subscribe({
-                    cw ->
-                    view?.showCityWeather(cw)
+                    result ->
+                    view?.showLoading(result.loading)
+                    if (result.success) {
+                        view?.showCityWeather(result.data!!)
+                    } else if (result.error != null) {
+                        view?.showError()
+                    }
+
                 }, {
                     view?.showError()
                 })

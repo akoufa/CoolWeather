@@ -5,10 +5,8 @@ import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
-import android.util.Log
 import com.akoufatzis.weatherappclean.MainApplication
 import com.akoufatzis.weatherappclean.R
-import com.akoufatzis.weatherappclean.config.LOG_TAG
 import com.akoufatzis.weatherappclean.databinding.ActivitySearchBinding
 import com.akoufatzis.weatherappclean.di.components.DaggerSearchActivityComponent
 import com.akoufatzis.weatherappclean.di.components.SearchActivityComponent

@@ -1,6 +1,7 @@
 package com.akoufatzis.weatherappclean.domain.repositories
 
 import com.akoufatzis.weatherappclean.domain.models.CityWeather
+import com.akoufatzis.weatherappclean.domain.models.Result
 import io.reactivex.Observable
 
 /**
@@ -8,5 +9,5 @@ import io.reactivex.Observable
  */
 interface WeatherRepository {
 
-    fun loadCityWeatherData(searchTerm: String): Observable<CityWeather>
+    fun loadCityWeatherData(searchTerm: String): Observable<Result<CityWeather>>
 }

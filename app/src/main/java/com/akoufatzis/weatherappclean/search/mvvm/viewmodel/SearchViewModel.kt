@@ -24,15 +24,17 @@ class SearchViewModel @Inject constructor(val useCase: GetCityWeatherUseCase, va
     fun search(textChanges: Observable<CharSequence>): Observable<CityWeatherModel> {
         return textChanges
                 .filter { it.length > 2 }
-                .doOnNext { loadingRelay.accept(true) }
                 .map {
                     Params(it.toString())
                 }
                 .compose(useCase.execute())
                 .compose(mapToCityWeatherModel())
                 .observeOn(mainThread.scheduler)
-                .doOnNext { loadingRelay.accept(false) }
-                .doOnTerminate { loadingRelay.accept(false) }
+                .doOnNext {
+                    loadingRelay.accept(it.loading)
+                }
+                .filter { it.success }
+                .map { it.data!! }
     }
 
     fun loading(): Observable<Boolean> {
