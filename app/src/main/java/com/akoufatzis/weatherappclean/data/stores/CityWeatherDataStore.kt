@@ -24,16 +24,19 @@ class CityWeatherDataStore @Inject constructor(val restApi: RestApi) : WeatherRe
 
     override fun loadCityWeatherData(searchTerm: String): Observable<Result<CityWeather>> {
 
-        return Observable.concat(loadFromCache(searchTerm), loadFromDb(searchTerm), loadFromNetwork(searchTerm))
-                .firstElement()
-                .toObservable()
+        return Observable.concat(inflight(), loadFromCache(searchTerm), loadFromDb(searchTerm), loadFromNetwork(searchTerm))
+                .take(2) // accounting for the inflight loading observable therefore take 2 instead of 1
                 .doOnNext {
-                    if (it.data != null) {
-                        saveToCache(searchTerm, it.data)
+                    if (it.success) {
+                        saveToCache(searchTerm, it.data!!)
                     }
                 }
                 .compose(mapToCityWeather())
                 .onErrorReturn { Result.error(it) }
+    }
+
+    private fun inflight(): Observable<Result<CityWeatherEntity>> {
+        return Observable.just<Result<CityWeatherEntity>>(Result.inflight())
     }
 
     private fun loadFromNetwork(searchTerm: String): Observable<Result<CityWeatherEntity>> {
