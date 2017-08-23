@@ -3,12 +3,12 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 
 android {
-    compileSdkVersion 25
+    compileSdkVersion 26
     buildToolsVersion "25.0.2"
     defaultConfig {
         applicationId "com.akoufatzis.weatherappclean"
         minSdkVersion 21
-        targetSdkVersion 25
+        targetSdkVersion 26
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -34,7 +34,7 @@ android {
 }
 
 ext {
-    supportLibVersion = '25.3.1'
+    supportLibVersion = '26.0.1'
     retrofitVersion = '2.2.0'
     okhttpVersion = '3.7.0'
     daggerVersion = '2.10'
@@ -74,7 +74,7 @@ dependencies {
     compile 'com.jakewharton.rxbinding2:rxbinding:2.0.0'
     compile 'com.jakewharton.rxbinding2:rxbinding-appcompat-v7:2.0.0'
     testCompile 'junit:junit:4.12'
-    kapt 'com.android.databinding:compiler:2.3.1'
+    kapt 'com.android.databinding:compiler:2.3.3'
 }
 repositories {
     mavenCentral()
