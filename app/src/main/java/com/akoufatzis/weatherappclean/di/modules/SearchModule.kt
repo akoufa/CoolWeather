@@ -22,13 +22,4 @@ class SearchModule {
     fun providesPresenter(githubReposUseCase: GetCityWeatherUseCase, executionThread: PostExecutionThread): SearchContract.Presenter {
         return SearchPresenter(githubReposUseCase, executionThread)
     }
-
-    /**
-     * For MVVM
-     */
-    @PerActivity
-    @Provides
-    fun providesViewModel(githubReposUseCase: GetCityWeatherUseCase, executionThread: PostExecutionThread): SearchViewModel {
-        return SearchViewModel(githubReposUseCase, executionThread)
-    }
 }

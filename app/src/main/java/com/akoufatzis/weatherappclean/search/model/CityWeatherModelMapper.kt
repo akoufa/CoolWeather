@@ -14,7 +14,7 @@ fun mapToCityWeatherModel() = ObservableTransformer<Result<CityWeather>, Result<
                 val model = CityWeatherModel(data.weathers.first(), data.main.temp, data.city)
                 Success(model)
             }
-            is InFlight -> InFlight<CityWeatherModel>()
+            is InFlight -> InFlight()
             is Failure -> Failure<CityWeatherModel>(result.error!!)
         }
     }

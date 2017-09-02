@@ -31,7 +31,7 @@ class CityWeatherDataStore @Inject constructor(val restApi: RestApi) : WeatherRe
                     }
                 }
                 .compose(mapToCityWeather())
-                .onErrorReturn { Failure<CityWeather>(it) }
+                .onErrorReturn { Failure(it) }
     }
 
     private fun inflight(): Observable<Result<CityWeatherEntity>> {

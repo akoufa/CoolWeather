@@ -1,5 +1,7 @@
 package com.akoufatzis.weatherappclean.search.mvvm.viewmodel
 
+import android.arch.lifecycle.ViewModel
+import android.arch.lifecycle.ViewModelProvider
 import com.akoufatzis.weatherappclean.di.scopes.PerActivity
 import com.akoufatzis.weatherappclean.domain.usecases.GetCityWeatherUseCase
 import com.akoufatzis.weatherappclean.domain.usecases.GetCityWeatherUseCase.Params
@@ -14,12 +16,11 @@ import javax.inject.Inject
 /**
  * Created by alexk on 07.05.17.
  */
-@PerActivity
-class SearchViewModel @Inject constructor(val useCase: GetCityWeatherUseCase, val mainThread: PostExecutionThread) {
+class SearchViewModel @Inject constructor(private val useCase: GetCityWeatherUseCase, private val mainThread: PostExecutionThread) : ViewModel() {
 
     private val loadingRelay = PublishRelay.create<Boolean>()
 
-    val compositeDisposable = CompositeDisposable()
+    private val compositeDisposable = CompositeDisposable()
 
     fun search(textChanges: Observable<CharSequence>): Observable<CityWeatherModel> {
         return textChanges

@@ -16,11 +16,13 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
-        binding.bMvp.setOnClickListener(this)
-        binding.bMvvm.setOnClickListener(this)
-        binding.bMvvmDatabinding.setOnClickListener(this)
+        with(binding){
+            bMvp.setOnClickListener(this@MainActivity)
+            bMvvm.setOnClickListener(this@MainActivity)
+            bMvvmDatabinding.setOnClickListener(this@MainActivity)
+        }
     }
 
     override fun onClick(v: View) {

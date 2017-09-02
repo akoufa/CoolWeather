@@ -34,10 +34,10 @@ android {
 }
 
 ext {
-    supportLibVersion = '26.0.1'
+    supportLibVersion = '26.0.2'
     retrofitVersion = '2.2.0'
     okhttpVersion = '3.7.0'
-    daggerVersion = '2.10'
+    daggerVersion = '2.11'
 }
 
 dependencies {
@@ -59,9 +59,15 @@ dependencies {
     compile "com.squareup.okhttp3:logging-interceptor:$okhttpVersion"
 
     compile "com.google.dagger:dagger:$daggerVersion"
+    compile "com.google.dagger:dagger-android:$daggerVersion"
+    compile "com.google.dagger:dagger-android-support:$daggerVersion"
+
+    kapt "com.google.dagger:dagger-android-processor:$daggerVersion"
     kapt "com.google.dagger:dagger-compiler:$daggerVersion"
 
-
+    compile "android.arch.lifecycle:runtime:1.0.0-alpha9"
+    compile "android.arch.lifecycle:extensions:1.0.0-alpha9"
+    kapt "android.arch.lifecycle:compiler:1.0.0-alpha9"
 
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
@@ -69,7 +75,7 @@ dependencies {
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
     compile 'io.reactivex.rxjava2:rxjava:2.1.0'
-    compile 'io.reactivex.rxjava2:rxkotlin:2.0.2'
+    compile 'io.reactivex.rxjava2:rxkotlin:2.1.0'
     compile 'com.jakewharton.rxrelay2:rxrelay:2.0.0'
     compile 'com.jakewharton.rxbinding2:rxbinding:2.0.0'
     compile 'com.jakewharton.rxbinding2:rxbinding-appcompat-v7:2.0.0'
