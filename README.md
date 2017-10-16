@@ -6,11 +6,9 @@ An Android Clean Architecture app with RxJava (end to end observables) written i
 
 The presentation layer was implemented using:
 
-1) MVP with interface contract between Presenter and View.
+1) [MVVM with ViewModel exposing Observables that the View consumes. The ViewModel does not know about it's consumers](https://github.com/akoufatzis/WeatherAppClean/tree/master)
 
-2) MVVM with ViewModel exposing Observables that the View consumes. The ViewModel does not know about it's consumers.
-
-3) MVVM with Databinding ( Work in progress ).
+2) [MVP with interface contract between Presenter and View](https://github.com/akoufatzis/WeatherAppClean/tree/feature/mvp)
 
 ### Domain Layer
 
