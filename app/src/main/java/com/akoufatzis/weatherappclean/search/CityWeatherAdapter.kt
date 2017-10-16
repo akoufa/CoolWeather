@@ -1,4 +1,4 @@
-package com.akoufatzis.weatherappclean.search.mvp.view
+package com.akoufatzis.weatherappclean.search
 
 import android.content.Context
 import android.graphics.drawable.Drawable

@@ -3,8 +3,8 @@ package com.akoufatzis.weatherappclean.di.modules
 import android.arch.lifecycle.ViewModel
 import android.arch.lifecycle.ViewModelProvider
 import com.akoufatzis.weatherappclean.di.utils.ViewModelKey
-import com.akoufatzis.weatherappclean.search.mvvm.viewmodel.SearchViewModel
-import com.akoufatzis.weatherappclean.search.mvvm.viewmodel.WeatherViewModelFactory
+import com.akoufatzis.weatherappclean.search.viewmodel.SearchViewModel
+import com.akoufatzis.weatherappclean.factories.WeatherViewModelFactory
 import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap

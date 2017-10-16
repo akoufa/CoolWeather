@@ -1,4 +1,4 @@
-package com.akoufatzis.weatherappclean.search.mvvm.view
+package com.akoufatzis.weatherappclean.search.view
 
 import android.arch.lifecycle.ViewModelProvider
 import android.arch.lifecycle.ViewModelProviders
@@ -10,8 +10,8 @@ import android.util.Log
 import com.akoufatzis.weatherappclean.R
 import com.akoufatzis.weatherappclean.config.LOG_TAG
 import com.akoufatzis.weatherappclean.databinding.ActivitySearchBinding
-import com.akoufatzis.weatherappclean.search.mvp.view.CityWeatherAdapter
-import com.akoufatzis.weatherappclean.search.mvvm.viewmodel.SearchViewModel
+import com.akoufatzis.weatherappclean.search.CityWeatherAdapter
+import com.akoufatzis.weatherappclean.search.viewmodel.SearchViewModel
 import com.jakewharton.rxbinding2.widget.RxTextView
 import dagger.android.AndroidInjection
 import io.reactivex.android.schedulers.AndroidSchedulers

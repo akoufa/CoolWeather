@@ -1,8 +1,6 @@
 package com.akoufatzis.weatherappclean.di.modules
 
-import com.akoufatzis.weatherappclean.di.scopes.PerActivity
-import com.akoufatzis.weatherappclean.search.mvp.view.MvpSearchActivity
-import com.akoufatzis.weatherappclean.search.mvvm.view.MvvmSearchActivity
+import com.akoufatzis.weatherappclean.search.view.MvvmSearchActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
@@ -12,9 +10,6 @@ import dagger.android.ContributesAndroidInjector
 @Module
 abstract class ActivityModule {
 
-    @PerActivity
-    @ContributesAndroidInjector(modules = arrayOf(SearchModule::class))
-    abstract fun contributeMvpSearchActivity(): MvpSearchActivity
     @ContributesAndroidInjector
     abstract fun contributeMvvmSearchActivity(): MvvmSearchActivity
 }

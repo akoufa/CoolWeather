@@ -1,4 +1,4 @@
-package com.akoufatzis.weatherappclean.search.mvvm.viewmodel
+package com.akoufatzis.weatherappclean.search.viewmodel
 
 import android.arch.lifecycle.ViewModel
 import android.arch.lifecycle.ViewModelProvider
