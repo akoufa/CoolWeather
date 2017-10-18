@@ -11,7 +11,7 @@ import javax.inject.Inject
 /**
  * Created by alexk on 05.05.17.
  */
-class GetCityWeatherUseCase @Inject constructor(val repository: WeatherRepository)
+class GetCityWeatherUseCase @Inject constructor(private val repository: WeatherRepository)
     : TransformerUseCase<Params, Result<CityWeather>> {
 
     class Params(val searchTerm: String)

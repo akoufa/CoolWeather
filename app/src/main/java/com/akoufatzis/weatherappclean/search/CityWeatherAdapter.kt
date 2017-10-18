@@ -13,7 +13,7 @@ import com.akoufatzis.weatherappclean.utils.celsiusDegrees
 /**
  * Created by alexk on 07.05.17.
  */
-class CityWeatherAdapter(val context: Context) : BindingRecyclerViewAdapter() {
+class CityWeatherAdapter(private val context: Context) : BindingRecyclerViewAdapter() {
 
     private val cityWeatherModels: MutableList<CityWeather> = arrayListOf()
 
