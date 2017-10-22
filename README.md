@@ -6,15 +6,16 @@ An Android Clean Architecture app with RxJava (end to end observables) written i
 
 The presentation layer was implemented using:
 
-1) [MVVM with ViewModel exposing Observables that the View consumes. The ViewModel does not know about it's consumers](https://github.com/akoufatzis/WeatherAppClean/tree/master)
-
-2) [MVP with interface contract between Presenter and View](https://github.com/akoufatzis/WeatherAppClean/tree/feature/mvp)
+MVVM with ViewModels exposing Observables that the View consumes. The ViewModel does not know anything about it's consumers.
+It exposes a single source of truth as an Observable for the consumers to subscribe and observe the events emitted. 
+This events consist of entities, that are wrapped in a `Result` class that leverages the powerful Kotlin feature of sealed classes. 
+This enables us to express the different states of the application's individual screens in an concise an expressive manner. 
 
 ### Domain Layer
 
 The domain layer defines two interfaces for the specific UseCases to implement. Both expose RxJava types in their interface.
-The `TransformerUseCase<Upstream, Downstream>` was specifically build to not break the stream and should be used with the rx `compose` operator.
-It allows to be incorporated in an observable stream staying subscribed to the stream as long as the presentation layer entities decide to keep the subscription alive.
+The `ObservableUseCase<in Params, Result>` should be used for business cases like the search example where a stream of events is needed and the `SingleUseCase<in Params, Result>` 
+for business cases where a single object is sufficient.
 
 ### Data Layer
 
