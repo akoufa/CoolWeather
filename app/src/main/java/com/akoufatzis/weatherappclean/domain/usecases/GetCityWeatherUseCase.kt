@@ -4,7 +4,7 @@ import com.akoufatzis.weatherappclean.domain.models.CityWeather
 import com.akoufatzis.weatherappclean.domain.models.Result
 import com.akoufatzis.weatherappclean.domain.repositories.WeatherRepository
 import com.akoufatzis.weatherappclean.domain.usecases.GetCityWeatherUseCase.Params
-import io.reactivex.ObservableTransformer
+import io.reactivex.Observable
 import java.util.concurrent.TimeUnit
 import javax.inject.Inject
 
@@ -12,18 +12,21 @@ import javax.inject.Inject
  * Created by alexk on 05.05.17.
  */
 class GetCityWeatherUseCase @Inject constructor(private val repository: WeatherRepository)
-    : TransformerUseCase<Params, Result<CityWeather>> {
+    : ObservableUseCase<Params, Result<CityWeather>> {
 
-    class Params(val searchTerm: String)
+    class Params(val cityNames: Observable<CharSequence>)
 
-    override fun execute(): ObservableTransformer<Params, Result<CityWeather>> {
-        return ObservableTransformer {
-            it.debounce(300, TimeUnit.MILLISECONDS)
-                    .map { it.searchTerm.trim() }
-                    .switchMap {
-                        repository.loadCityWeatherData(it)
-                    }
-        }
+    override fun execute(params: Params): Observable<Result<CityWeather>> {
 
+        // apply business logic
+        val cityNamesObservable = params
+                .cityNames
+                .map{it.toString()}
+                .debounce(400L, TimeUnit.MILLISECONDS)
+                .map { it.trim() }
+                .filter { it.length > 2 }
+
+        return repository.
+                loadCityWeatherData(cityNames = cityNamesObservable)
     }
 }

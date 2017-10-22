@@ -1,12 +1,13 @@
 package com.akoufatzis.weatherappclean.search.model
 
 import com.akoufatzis.weatherappclean.domain.models.*
+import io.reactivex.Observable
 import io.reactivex.ObservableTransformer
 
 /**
  * Created by alexk on 05.05.17.
  */
-fun mapToCityWeatherModel() = ObservableTransformer<Result<CityWeather>, Result<CityWeatherModel>> {
+fun toCityWeatherModel() = ObservableTransformer<Result<CityWeather>, Result<CityWeatherModel>> {
     it.map { result ->
         when (result) {
             is Success -> {
@@ -19,3 +20,5 @@ fun mapToCityWeatherModel() = ObservableTransformer<Result<CityWeather>, Result<
         }
     }
 }
+
+fun Observable<Result<CityWeather>>.mapToCityWeatherModel() = this.compose(toCityWeatherModel())

@@ -1,6 +1,6 @@
 package com.akoufatzis.weatherappclean.data.cache
 
-import io.reactivex.Observable
+import io.reactivex.Maybe
 
 
 /**
@@ -17,11 +17,11 @@ class MemoryCache<T> {
         memoryCache.put(key, MemoryItem(value, validationPeriod))
     }
 
-    operator fun get(key: String): Observable<T> {
+    operator fun get(key: String): Maybe<T> {
 
         val memoryItem = memoryCache[key]
 
-        return if (memoryItem != null && memoryItem.isValid) Observable.just(memoryItem.item) else Observable.empty<T>()
+        return if (memoryItem != null && memoryItem.isValid) Maybe.just(memoryItem.item) else Maybe.empty<T>()
     }
 
     fun getAsValue(key: String) = memoryCache[key]?.item

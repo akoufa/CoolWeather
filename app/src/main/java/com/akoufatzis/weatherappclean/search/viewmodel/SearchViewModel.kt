@@ -16,13 +16,9 @@ import javax.inject.Inject
 class SearchViewModel @Inject constructor(private val useCase: GetCityWeatherUseCase, private val mainThread: PostExecutionThread) : ViewModel() {
 
     fun search(textChanges: Observable<CharSequence>): Observable<Result<CityWeatherModel>> {
-        return textChanges
-                .filter { it.length > 2 }
-                .map {
-                    Params(it.toString())
-                }
-                .compose(useCase.execute())
-                .compose(mapToCityWeatherModel())
+        return useCase
+                .execute(Params(textChanges))
+                .mapToCityWeatherModel()
                 .observeOn(mainThread.scheduler)
     }
 }

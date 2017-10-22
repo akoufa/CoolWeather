@@ -7,7 +7,9 @@ import com.akoufatzis.weatherappclean.data.entities.CityWeatherEntity
 import com.akoufatzis.weatherappclean.data.mappers.mapToCityWeather
 import com.akoufatzis.weatherappclean.domain.models.*
 import com.akoufatzis.weatherappclean.domain.repositories.WeatherRepository
+import io.reactivex.Maybe
 import io.reactivex.Observable
+import io.reactivex.Single
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -21,39 +23,50 @@ class CityWeatherDataStore @Inject constructor(val restApi: RestApi) : WeatherRe
     private val memoryCache = MemoryCache<CityWeatherEntity>()
     private val apiKey = BuildConfig.OPENWEATHERMAP_API_KEY
 
-    override fun loadCityWeatherData(searchTerm: String): Observable<Result<CityWeather>> {
-
-        return Observable.concat(inflight(), loadFromCache(searchTerm), loadFromDb(searchTerm), loadFromNetwork(searchTerm))
-                .take(2) // accounting for the inflight loading observable therefore take 2 instead of 1
-                .doOnNext {
-                    if (it.success) {
-                        saveToCache(searchTerm, it.data!!)
-                    }
+    override fun loadCityWeatherData(cityNames: Observable<String>): Observable<Result<CityWeather>> {
+        return cityNames
+                .switchMap {
+                    load(it)
                 }
-                .compose(mapToCityWeather())
+                .mapToCityWeather()
+    }
+
+    override fun fetchCityWeatherData(cityName: String): Single<Result<CityWeather>> {
+        return Maybe
+                .concat(loadFromCache(cityName), loadFromDb(cityName), loadFromNetwork(cityName))
+                .firstOrError()
+                .mapToCityWeather()
                 .onErrorReturn { Failure(it) }
     }
 
-    private fun inflight(): Observable<Result<CityWeatherEntity>> {
-        return Observable.just(InFlight())
+    /**
+     * Hides the data source from where the data origins. Catches possible errors and maps them to
+     * @see InFlight so the downstream observes don't terminate ( onError is a terminal event)
+     */
+    private fun load(cityName: String): Observable<Result<CityWeatherEntity>>{
+        return Maybe.concat(loadFromCache(cityName), loadFromDb(cityName), loadFromNetwork(cityName))
+                .toObservable()
+                .startWith(InFlight())
+                .onErrorReturn { Failure(it) }
     }
 
-    private fun loadFromNetwork(searchTerm: String): Observable<Result<CityWeatherEntity>> {
+    private fun loadFromNetwork(searchTerm: String): Maybe<Result<CityWeatherEntity>> {
         return restApi.getWeatherByCityName(searchTerm, apiKey)
                 .flatMap {
                     if (!it.isSuccessful) {
-                        Observable.just(Failure<CityWeatherEntity>(Throwable(it.errorBody().string())))
+                        Single.just(Failure<CityWeatherEntity>(Throwable(it.errorBody().string())))
                     } else {
-                        Observable.just(Success(it.body()))
+                        Single.just(Success(it.body()))
                     }
                 }
+                .toMaybe()
     }
 
-    private fun loadFromCache(searchTerm: String): Observable<Result<CityWeatherEntity>> {
+    private fun loadFromCache(searchTerm: String): Maybe<Result<CityWeatherEntity>> {
         return memoryCache[searchTerm].map { Success(it) }
     }
 
-    private fun loadFromDb(searchTerm: String) = Observable.empty<Result<CityWeatherEntity>>()
+    private fun loadFromDb(searchTerm: String) = Maybe.empty<Result<CityWeatherEntity>>()
 
     private fun saveToCache(key: String, entity: CityWeatherEntity) {
         memoryCache.put(key, entity, MemoryCache.VALIDATION_PERIOD)

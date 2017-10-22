@@ -1,7 +1,6 @@
 package com.akoufatzis.weatherappclean.domain.usecases
 
 import io.reactivex.Observable
-import io.reactivex.ObservableTransformer
 import io.reactivex.Single
 
 
@@ -15,8 +14,4 @@ interface SingleUseCase<in Params, Result> {
 
 interface ObservableUseCase<in Params, Result> {
     fun execute(params: Params): Observable<Result>
-}
-
-interface TransformerUseCase<Upstream, Downstream> {
-    fun execute(): ObservableTransformer<Upstream, Downstream>
 }
