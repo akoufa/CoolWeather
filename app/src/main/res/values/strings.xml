@@ -1,8 +1,0 @@
-<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="app_name">WeatherApp</string>
-    <string name="error_occurred">An error has occurred.</string>
-    <string name="mvp">Mvp</string>
-    <string name="mvvm">mvvm</string>
-    <string name="mvvm_databinding">mvvm with databinding</string>
-    <string name="format_temperature"><xliff:g id="temp">%1.0f</xliff:g>\u00B0</string>
-</resources>
