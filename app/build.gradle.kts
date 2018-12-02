@@ -23,13 +23,46 @@ android {
 }
 
 dependencies {
-    val kotlin_version by extra("1.3.0")
     // implementation fileTree(dir: "libs", include: ["*.jar"])
-    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version")
-    implementation("androidx.appcompat:appcompat:1.0.2")
-    implementation("androidx.core:core-ktx:1.0.1")
-    implementation("androidx.constraintlayout:constraintlayout:1.1.3")
-    testImplementation("junit:junit:4.12")
-    androidTestImplementation("androidx.test:runner:1.1.0")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.1.0")
+    implementation(Libs.kotlinStdLib)
+    implementation(Libs.appCompat)
+    implementation(Libs.constraintLayout)
+
+    implementation(Libs.viewModelKtx)
+    implementation(Libs.lifecycleExt)
+    implementation(Libs.lifecycleRx)
+    kapt(Libs.lifecycleCompiler)
+
+    implementation(Libs.navigationFragmentKtx)
+    implementation(Libs.navigationUiKtx)
+
+    implementation(Libs.material)
+
+    implementation(Libs.roomRuntime)
+    implementation(Libs.roomRx)
+    kapt(Libs.roomCompiler)
+
+    implementation(Libs.coroutinesCore)
+    implementation(Libs.coroutinesAndroid)
+    implementation(Libs.coroutinesRx2)
+
+    implementation(Libs.dagger)
+    implementation(Libs.daggerAndroid)
+    implementation(Libs.daggerAndroidSupport)
+    kapt(Libs.daggerAndroidProcessor)
+    kapt(Libs.daggerCompiler)
+
+    implementation(Libs.retrofit)
+    implementation(Libs.retrofitMoshi)
+    implementation(Libs.retrofitCouroutines)
+
+    implementation(Libs.moshi)
+    kapt(Libs.moshiCodeGen)
+
+    implementation(Libs.glide)
+    kapt(Libs.glideCompiler)
+
+    testImplementation(Libs.junit)
+    androidTestImplementation(Libs.testRunner)
+    androidTestImplementation(Libs.espresso)
 }
