@@ -4,6 +4,10 @@ plugins {
     id("kotlin-android-extensions")
 }
 
+apply{
+    from("$rootDir/ktlint.gradle.kts")
+}
+
 android {
     compileSdkVersion(28)
     defaultConfig {
