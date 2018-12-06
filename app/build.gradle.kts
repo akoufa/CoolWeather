@@ -2,6 +2,7 @@ plugins {
     id("com.android.application")
     id("kotlin-android")
     id("kotlin-android-extensions")
+    id("io.gitlab.arturbosch.detekt").version("1.0.0-RC11")
 }
 
 apply{
@@ -24,6 +25,12 @@ android {
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
     }
+}
+
+detekt {
+    toolVersion = "1.0.0-RC11"
+    input = files("src/main/kotlin", "src/main/java")
+    filters = ".*/resources/.*,.*/build/.*"
 }
 
 dependencies {

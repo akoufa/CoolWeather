@@ -1,5 +1,5 @@
 object Versions {
-    val androidGradle = "3.3.0-rc01"
+    val androidGradle = "3.4.0-alpha06"
     val kotlin = "1.3.10"
     val constraintLayout = "2.0.0-alpha2"
     val coroutines = "1.0.0"
@@ -17,19 +17,6 @@ object Versions {
     val espresso = "3.1.0"
     val material = "1.0.0"
 }
-/*
-
-
-
-
-    implementation "com.github.bumptech.glide:glide:$glide_version"
-    kapt "com.github.bumptech.glide:compiler:$glide_version"
-
-    testImplementation("junit:junit:4.12")
-    androidTestImplementation("androidx.test:runner:1.1.0")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.1.0")
- */
-
 
 object Libs {
     val kotlinGradlePlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlin}"
