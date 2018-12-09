@@ -13,7 +13,7 @@ object Versions {
     val glide = "4.8.0"
     val retrofitCoroutinesAdapter = "0.9.2"
     val junit = "4.12"
-    val testRunner = "1.1.0"
+    val testRunner = "1.0.0"
     val espresso = "3.1.0"
     val material = "1.0.0"
 }
@@ -52,7 +52,7 @@ object Libs {
     val glide = "com.github.bumptech.glide:glide:${Versions.glide}"
     val glideCompiler =  "com.github.bumptech.glide:compiler:${Versions.glide}"
     val junit = "junit:junit:${Versions.junit}"
-    val testRunner = "androidx.test:runner:${Versions.testRunner}"
+    val testRunner = "androidx.test.ext:junit:${Versions.testRunner}"
     val espresso = "androidx.test.espresso:espresso-core:${Versions.espresso}"
 }
 
