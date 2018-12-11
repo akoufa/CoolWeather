@@ -1,7 +1,9 @@
 plugins {
     id("com.android.application")
     id("kotlin-android")
+    id("kotlin-kapt")
     id("kotlin-android-extensions")
+    id( "androidx.navigation.safeargs")
     id("io.gitlab.arturbosch.detekt").version("1.0.0-RC11")
 }
 
@@ -25,6 +27,7 @@ android {
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
     }
+    dataBinding.isEnabled = true
 }
 
 detekt {
