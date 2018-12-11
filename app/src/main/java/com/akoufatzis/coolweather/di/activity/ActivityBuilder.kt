@@ -1,4 +1,4 @@
-package com.akoufatzis.coolweather.di.activityModule
+package com.akoufatzis.coolweather.di.activity
 
 import com.akoufatzis.coolweather.MainActivity
 import com.akoufatzis.coolweather.di.scopes.ActivityScope

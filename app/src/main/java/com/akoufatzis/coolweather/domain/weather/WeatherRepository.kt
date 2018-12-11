@@ -6,5 +6,4 @@ interface WeatherRepository {
 
     // Fetches single weather data about a city
     suspend fun fetchCityWeatherData(cityName: String): Result<CityWeather>
-
 }

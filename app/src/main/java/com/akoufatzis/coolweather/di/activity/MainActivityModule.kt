@@ -1,4 +1,4 @@
-package com.akoufatzis.coolweather.di.activityModule
+package com.akoufatzis.coolweather.di.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import com.akoufatzis.coolweather.MainActivity

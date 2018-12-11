@@ -5,7 +5,7 @@ import com.akoufatzis.coolweather.di.NetworkModule
 import dagger.android.AndroidInjector
 import dagger.android.support.DaggerApplication
 
-class App: DaggerApplication() {
+class App : DaggerApplication() {
 
     override fun applicationInjector(): AndroidInjector<out DaggerApplication> {
 
@@ -13,7 +13,5 @@ class App: DaggerApplication() {
             .application(this)
             .networkModule(NetworkModule.instance)
             .build()
-
     }
-
 }

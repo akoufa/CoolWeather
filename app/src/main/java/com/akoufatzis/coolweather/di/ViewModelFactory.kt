@@ -27,7 +27,8 @@ class ViewModelFactory @Inject constructor(
         try {
             @Suppress("UNCHECKED_CAST")
             return creator.get() as T
-        } catch (e: Exception) {
+        } catch (@Suppress("TooGenericExceptionCaught") e: Exception) {
+            @Suppress("TooGenericExceptionThrown")
             throw RuntimeException(e)
         }
     }

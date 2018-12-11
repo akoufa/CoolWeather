@@ -2,7 +2,7 @@ package com.akoufatzis.coolweather.di
 
 import android.app.Application
 import com.akoufatzis.coolweather.App
-import com.akoufatzis.coolweather.di.activityModule.ActivityBuilder
+import com.akoufatzis.coolweather.di.activity.ActivityBuilder
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjector

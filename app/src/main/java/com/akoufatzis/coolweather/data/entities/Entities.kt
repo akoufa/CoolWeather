@@ -16,8 +16,8 @@ class MainEntity(
     val temp: Double,
     val pressure: Double,
     val humidity: Double,
-    val temp_min: Double,
-    val temp_max: Double
+    @Suppress("ConstructorParameterNaming") val temp_min: Double,
+    @Suppress("ConstructorParameterNaming") val temp_max: Double
 ) {
 
     fun toMainModel(): Main {

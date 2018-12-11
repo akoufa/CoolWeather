@@ -20,7 +20,7 @@ class WeatherViewModel @Inject constructor(
 ) : ViewModel(), CoroutineScope {
 
     private val job = Job()
-    // TODO: Inject the coroutineContext
+    @Suppress("ForbiddenComment") // TODO: Inject the coroutineContext
     override val coroutineContext: CoroutineContext
         get() = job + Dispatchers.Main
 

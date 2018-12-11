@@ -16,7 +16,7 @@ class WeatherDataStore @Inject constructor(val api: OpenWeatherMapApi) : Weather
             val weatherEntity = api.getWeather().await()
             val weather = weatherEntity.toCityWeather()
             Success(weather)
-        } catch (error: Exception) {
+        } catch (@Suppress("TooGenericExceptionCaught") error: Exception) {
             Failure(error)
         }
     }

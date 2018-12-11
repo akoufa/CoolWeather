@@ -1,10 +1,10 @@
 package com.akoufatzis.coolweather
 
 import android.os.Bundle
+import androidx.databinding.DataBindingUtil
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.navigation.ui.NavigationUI
-import androidx.databinding.DataBindingUtil
 import com.akoufatzis.coolweather.databinding.ActivityMainBindingImpl
 import dagger.android.support.DaggerAppCompatActivity
 
@@ -27,7 +27,8 @@ class MainActivity : DaggerAppCompatActivity() {
     }
 
     private val binding: ActivityMainBindingImpl by lazy {
-        DataBindingUtil.setContentView<ActivityMainBindingImpl>(this,
+        DataBindingUtil.setContentView<ActivityMainBindingImpl>(
+            this,
             R.layout.activity_main
         )
     }
