@@ -2,6 +2,7 @@ package com.akoufatzis.coolweather.data.entities
 
 import com.akoufatzis.coolweather.domain.weather.Main
 import com.akoufatzis.coolweather.domain.weather.Weather
+import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
@@ -16,12 +17,12 @@ class MainEntity(
     val temp: Double,
     val pressure: Double,
     val humidity: Double,
-    @Suppress("ConstructorParameterNaming") val temp_min: Double,
-    @Suppress("ConstructorParameterNaming") val temp_max: Double
+    @Json(name= "temp_min")val tempMin: Double,
+    @Json(name="temp_max") val tempMax: Double
 ) {
 
     fun toMainModel(): Main {
-        return Main(temp, pressure, humidity, temp_min, temp_max)
+        return Main(temp, pressure, humidity, tempMin, tempMax)
     }
 }
 
