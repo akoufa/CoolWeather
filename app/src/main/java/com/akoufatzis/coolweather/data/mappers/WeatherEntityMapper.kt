@@ -5,7 +5,7 @@ import com.akoufatzis.coolweather.domain.weather.City
 import com.akoufatzis.coolweather.domain.weather.CityWeather
 import com.akoufatzis.coolweather.domain.weather.Temperature
 import com.akoufatzis.coolweather.domain.weather.Weather
-
+@Suppress("ForbiddenComment") // TODO: Don't depended on external service ids and icon code.
 fun CityWeatherEntity.toCityWeather(): CityWeather {
     val weatherModels = weather.map { Weather( it.id, it.main, it.description, it.icon) }
     val temperature = Temperature(main.temp, main.pressure, main.humidity, main.tempMin, main.tempMax)
