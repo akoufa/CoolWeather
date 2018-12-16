@@ -1,5 +1,6 @@
 package com.akoufatzis.coolweather.di
 
+import com.akoufatzis.coolweather.BuildConfig
 import com.akoufatzis.coolweather.data.OpenWeatherMapApi
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import dagger.Module
@@ -8,7 +9,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import javax.inject.Singleton
 
-const val OPENWEATHERMAP_URL = "https://api.openweathermap.org/data/2.5/"
+const val OPENWEATHERMAP_URL = BuildConfig.OPENWEATHERMAP_URL
 
 @Module
 class NetworkModule {

@@ -11,6 +11,9 @@ apply{
     from("$rootDir/ktlint.gradle.kts")
 }
 
+val apiBaseUrl: String by project
+val apiKey: String by project
+
 android {
     compileSdkVersion(28)
     defaultConfig {
@@ -21,6 +24,11 @@ android {
         versionName = "1.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
+
+        buildConfigField("String", "OPENWEATHERMAP_URL",
+            "\"$apiBaseUrl\"")
+        buildConfigField("String", "OPENWEATHERMAP_API_KEY",
+            "\"$apiKey\"")
     }
     buildTypes {
         getByName("release") {

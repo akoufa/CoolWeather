@@ -1,5 +1,6 @@
 package com.akoufatzis.coolweather.data
 
+import com.akoufatzis.coolweather.BuildConfig
 import com.akoufatzis.coolweather.data.mappers.toCityWeather
 import com.akoufatzis.coolweather.domain.Failure
 import com.akoufatzis.coolweather.domain.Result
@@ -9,11 +10,13 @@ import com.akoufatzis.coolweather.domain.weather.WeatherRepository
 import javax.inject.Inject
 import javax.inject.Singleton
 
+const val apiKey = BuildConfig.OPENWEATHERMAP_API_KEY
+
 @Singleton
-class WeatherDataStore @Inject constructor(val api: OpenWeatherMapApi) : WeatherRepository {
+class WeatherDataStore @Inject constructor(private val api: OpenWeatherMapApi) : WeatherRepository {
     override suspend fun fetchCityWeatherData(cityName: String): Result<CityWeather> {
         return try {
-            val weatherEntity = api.getWeather().await()
+            val weatherEntity = api.getWeatherByCityName(cityName, apiKey).await()
             val weather = weatherEntity.toCityWeather()
             Success(weather)
         } catch (@Suppress("TooGenericExceptionCaught") error: Exception) {

@@ -6,7 +6,6 @@ import androidx.lifecycle.ViewModel
 import com.akoufatzis.coolweather.core.Event
 import com.akoufatzis.coolweather.domain.Failure
 import com.akoufatzis.coolweather.domain.Success
-import com.akoufatzis.coolweather.domain.weather.CityWeather
 import com.akoufatzis.coolweather.domain.weather.WeatherUseCase
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -32,7 +31,10 @@ class WeatherViewModel @Inject constructor(
         showLoading()
         val weatherResult = weatherUseCase(city)
         when (weatherResult) {
-            is Success -> emitUiState(showSuccess = weatherResult.data)
+            is Success -> {
+                val cityWeather = createCityWeather(weatherResult.data)
+                emitUiState(showSuccess = cityWeather)
+            }
             is Failure -> emitUiState(showError = weatherResult.exception)
         }
     }
