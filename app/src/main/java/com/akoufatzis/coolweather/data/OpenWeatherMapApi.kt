@@ -7,6 +7,6 @@ import retrofit2.http.Query
 
 interface OpenWeatherMapApi {
 
-    @GET("public/getcurrencies")
+    @GET("weather")
     fun getWeatherByCityName(@Query("q") cityName: String, @Query("appid") apiKey: String): Deferred<CityWeatherEntity>
 }

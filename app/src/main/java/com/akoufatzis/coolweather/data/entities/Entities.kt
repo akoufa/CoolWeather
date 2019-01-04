@@ -15,8 +15,8 @@ class MainEntity(
     val temp: Double,
     val pressure: Double,
     val humidity: Double,
-    @Json(name= "temp_min")val tempMin: Double,
-    @Json(name="temp_max") val tempMax: Double
+    @Json(name = "temp_min") val tempMin: Double,
+    @Json(name = "temp_max") val tempMax: Double
 )
 
 class WeatherEntity(

@@ -1,10 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
-    <data>
-        <variable name="item" type="com.akoufatzis.coolweather.domain.weather.CityWeather"/>
-    </data>
-<androidx.constraintlayout.widget.ConstraintLayout
-    android:layout_width="match_parent" android:layout_height="72dp">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <data>
+
+        <variable
+            name="item"
+            type="com.akoufatzis.coolweather.presentation.weather.WeatherItem" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="72dp">
+
+
+        <TextView
+            android:id="@+id/tvCityName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:ellipsize="end"
+            android:textSize="20sp"
+            android:text="@{item.name}"
+            app:layout_constraintBaseline_toBaselineOf="@+id/tvDegrees"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="@+id/tvDegrees"
+            tools:text="Thessaloniki" />
+
+        <TextView
+            android:id="@+id/tvDegrees"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:textSize="20sp"
+            android:text="@{item.degrees}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/ivWeather"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="20" />
+
+        <ImageView
+            android:id="@+id/ivWeather"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:src="@{item.iconRes}"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:src="@drawable/art_clear" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

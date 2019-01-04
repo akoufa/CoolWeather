@@ -12,4 +12,16 @@ data class Temperature(
     val max: Double
 )
 
-data class Weather(val id: Long, val header: String?, val description: String?, val icon: String?)
+data class Weather(val id: Long, val header: String?, val description: String?, val type: WeatherType)
+
+enum class WeatherType {
+    STORM,
+    LIGHT_RAIN,
+    RAIN,
+    SNOW,
+    FOG,
+    CLEAR,
+    LIGHT_CLOUDS,
+    CLOUDS,
+    UNDEFINED
+}
