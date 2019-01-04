@@ -10,13 +10,13 @@ import com.akoufatzis.coolweather.domain.weather.WeatherRepository
 import javax.inject.Inject
 import javax.inject.Singleton
 
-const val apiKey = BuildConfig.OPENWEATHERMAP_API_KEY
+const val API_KEY = BuildConfig.OPENWEATHERMAP_API_KEY
 
 @Singleton
 class WeatherDataStore @Inject constructor(private val api: OpenWeatherMapApi) : WeatherRepository {
     override suspend fun fetchCityWeatherData(cityName: String): Result<CityWeather> {
         return try {
-            val weatherEntity = api.getWeatherByCityName(cityName, apiKey).await()
+            val weatherEntity = api.getWeatherByCityName(cityName, API_KEY).await()
             val weather = weatherEntity.toCityWeather()
             Success(weather)
         } catch (@Suppress("TooGenericExceptionCaught") error: Exception) {

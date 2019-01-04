@@ -4,7 +4,7 @@ import androidx.recyclerview.widget.DiffUtil
 import com.akoufatzis.coolweather.R
 import com.akoufatzis.coolweather.presentation.core.DataBindingAdapter
 
-class WeatherAdapter: DataBindingAdapter<WeatherItem>(DiffCallback()) {
+class WeatherAdapter : DataBindingAdapter<WeatherItem>(DiffCallback()) {
 
     class DiffCallback : DiffUtil.ItemCallback<WeatherItem>() {
         // your DiffCallback implementation

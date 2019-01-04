@@ -1,9 +1,9 @@
 package com.akoufatzis.coolweather.presentation.core
 
-import androidx.databinding.BindingAdapter
 import android.graphics.drawable.Drawable
 import android.net.Uri
 import android.widget.ImageView
+import androidx.databinding.BindingAdapter
 
 
 object BindingAdapters {

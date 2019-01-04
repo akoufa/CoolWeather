@@ -31,13 +31,18 @@ class WeatherFragment : DaggerFragment() {
         savedInstanceState: Bundle?
     ): View? {
         weatherViewModel.viewState.observe(viewLifecycleOwner, Observer {
-            if(it.data != null){
-                val item = WeatherItem(it.data.city.name, it.data.weather.celsiusDegrees(context!!), it.data.weather.iconResource())
+            if (it.data != null) {
+                val item = WeatherItem(
+                    it.data.city.name,
+                    it.data.weather.celsiusDegrees(context!!),
+                    it.data.weather.iconResource()
+                )
                 weatherAdapter.submitList(listOf(item))
             }
         })
         // Inflate the layout for this fragment
-        val binding = DataBindingUtil.inflate<FragmentWeatherBinding>(inflater, R.layout.fragment_weather, container, false)
+        val binding =
+            DataBindingUtil.inflate<FragmentWeatherBinding>(inflater, R.layout.fragment_weather, container, false)
         binding.rvWeather.adapter = weatherAdapter
         binding.rvWeather.layoutManager = LinearLayoutManager(context)
         binding.rvWeather.setHasFixedSize(true)

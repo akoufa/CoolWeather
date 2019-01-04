@@ -1,9 +1,10 @@
+@file:Suppress("ForbiddenComment", "MagicNumber", "ComplexMethod", "WildcardImport")
 package com.akoufatzis.coolweather.data.mappers
 
 import com.akoufatzis.coolweather.data.entities.CityWeatherEntity
 import com.akoufatzis.coolweather.domain.weather.*
 
-@Suppress("ForbiddenComment") // TODO: Don't depended on external service ids
+ // TODO: Don't depended on external service ids
 fun CityWeatherEntity.toCityWeather(): CityWeather {
     val weatherModels = weather.map {
         val type = mapToWeatherType(it.id)

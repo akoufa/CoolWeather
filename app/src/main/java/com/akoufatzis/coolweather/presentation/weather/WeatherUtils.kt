@@ -13,7 +13,7 @@ import com.akoufatzis.coolweather.domain.weather.WeatherType
 fun Weather.iconResource(): Int {
     // Based on weather code data found at:
     // http://bugs.openweathermap.org/projects/api/wiki/Weather_Condition_Codes
-    return when(type){
+    return when (type) {
         WeatherType.CLOUDS -> R.drawable.ic_cloudy
         WeatherType.STORM -> R.drawable.ic_storm
         WeatherType.LIGHT_RAIN -> R.drawable.ic_light_rain
@@ -37,7 +37,7 @@ fun Weather.artResource(): Int {
     // Based on weather code data found at:
     // http://bugs.openweathermap.org/projects/api/wiki/Weather_Condition_Codes
 
-    return when(type){
+    return when (type) {
         WeatherType.CLOUDS -> R.drawable.art_clouds
         WeatherType.STORM -> R.drawable.art_storm
         WeatherType.LIGHT_RAIN -> R.drawable.art_light_rain
@@ -55,6 +55,7 @@ fun Weather.celsiusDegrees(context: Context): String {
 }
 
 fun convertToCelsius(kelvin: Double): Double {
+    @Suppress("MagicNumber")
     return kelvin - 273
 }
 
