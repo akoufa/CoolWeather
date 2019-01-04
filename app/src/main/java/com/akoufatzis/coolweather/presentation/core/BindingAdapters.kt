@@ -5,7 +5,6 @@ import android.net.Uri
 import android.widget.ImageView
 import androidx.databinding.BindingAdapter
 
-
 object BindingAdapters {
 
     @JvmStatic
