@@ -16,6 +16,8 @@ object Versions {
     const val testRunner = "1.0.0"
     const val espresso = "3.1.1"
     const val material = "1.0.0"
+    const val mockito = "2.+"
+    const val mockitoKotlin = "2.1.0"
 }
 
 object Libs {
@@ -54,5 +56,8 @@ object Libs {
     val junit = "junit:junit:${Versions.junit}"
     val testRunner = "androidx.test.ext:junit:${Versions.testRunner}"
     val espresso = "androidx.test.espresso:espresso-core:${Versions.espresso}"
+    val coreTesting = "androidx.arch.core:core-testing:${Versions.lifecycle}"
+    val mockito = "org.mockito:mockito-core:${Versions.mockito}"
+    val mockitoKotlin = "com.nhaarman.mockitokotlin2:mockito-kotlin:${Versions.mockitoKotlin}"
 }
 
