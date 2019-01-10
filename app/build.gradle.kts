@@ -85,6 +85,9 @@ dependencies {
     implementation(Libs.glide)
     kapt(Libs.glideCompiler)
 
+    testImplementation(Libs.mockito)
+    testImplementation(Libs.mockitoKotlin)
+    testImplementation(Libs.coreTesting)
     testImplementation(Libs.junit)
     androidTestImplementation(Libs.testRunner)
     androidTestImplementation(Libs.espresso)

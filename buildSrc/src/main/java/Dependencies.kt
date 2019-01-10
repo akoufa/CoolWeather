@@ -13,7 +13,7 @@ object Versions {
     const val glide = "4.8.0"
     const val retrofitCoroutinesAdapter = "0.9.2"
     const val junit = "4.12"
-    const val testRunner = "1.0.0"
+    const val testRunner = "1.1.0"
     const val espresso = "3.1.1"
     const val material = "1.0.0"
     const val mockito = "2.+"
