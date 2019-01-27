@@ -6,13 +6,13 @@ import com.akoufatzis.coolweather.domain.weather.* // ktlint-disable no-wildcard
 
 // TODO: Don't depended on external service ids
 fun CityWeatherEntity.toCityWeather(): CityWeather {
-    val weatherModels = weather.map {
-        val type = mapToWeatherType(it.id)
-        Weather(it.id, it.main, it.description, type)
-    }
+    val weather = weathers.first()
+
+    val type = mapToWeatherType(weather.id)
+    val weatherDomainModel = Weather(weather.id, weather.main, weather.description, type)
     val temperature = Temperature(main.temp, main.pressure, main.humidity, main.tempMin, main.tempMax)
     val city = City(id, name)
-    return CityWeather(weatherModels, temperature, city)
+    return CityWeather(weatherDomainModel, temperature, city)
 }
 
 fun mapToWeatherType(weatherId: Long): WeatherType {

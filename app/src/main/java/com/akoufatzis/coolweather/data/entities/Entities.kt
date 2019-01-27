@@ -7,7 +7,7 @@ import com.squareup.moshi.JsonClass
 class CityWeatherEntity(
     val id: Long,
     val name: String,
-    val weather: List<WeatherEntity>,
+    @Json(name = "weather") val weathers: List<WeatherEntity>,
     val main: MainEntity
 )
 

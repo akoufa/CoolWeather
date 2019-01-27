@@ -1,6 +1,6 @@
 package com.akoufatzis.coolweather.domain.weather
 
-data class CityWeather(val weathers: List<Weather>, val temperature: Temperature, val city: City)
+data class CityWeather(val weather: Weather, val temperature: Temperature, val city: City)
 
 data class City(val id: Long, val name: String)
 

@@ -9,7 +9,7 @@ data class Weather(val id: Long, val temp: Double, val type: WeatherType)
 inline class City(val name: String)
 
 fun createCityWeather(domainModel: com.akoufatzis.coolweather.domain.weather.CityWeather): CityWeather {
-    val weather = domainModel.weathers.first()
+    val weather = domainModel.weather
     val value = domainModel.temperature.value
     val cityName = domainModel.city.name
 
