@@ -7,10 +7,7 @@ import com.akoufatzis.coolweather.core.Event
 import com.akoufatzis.coolweather.domain.Failure
 import com.akoufatzis.coolweather.domain.Success
 import com.akoufatzis.coolweather.domain.weather.WeatherUseCase
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.Job
-import kotlinx.coroutines.launch
+import kotlinx.coroutines.*
 import javax.inject.Inject
 import kotlin.coroutines.CoroutineContext
 
