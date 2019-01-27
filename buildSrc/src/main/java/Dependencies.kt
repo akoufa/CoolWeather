@@ -1,12 +1,12 @@
 object Versions {
     const val androidGradle = "3.4.0-beta02"
-    const val kotlin = "1.3.11"
+    const val kotlin = "1.3.20"
     const val constraintLayout = "2.0.0-alpha3"
-    const val coroutines = "1.1.0"
+    const val coroutines = "1.1.1"
     const val support = "1.0.2"
-    const val navigation = "1.0.0-alpha09"
+    const val navigation = "1.0.0-alpha11"
     const val lifecycle = "2.0.0"
-    const val dagger = "2.20"
+    const val dagger = "2.21"
     const val room = "2.0.0"
     const val retrofit = "2.5.0"
     const val moshi = "1.8.0"
@@ -18,6 +18,7 @@ object Versions {
     const val material = "1.0.0"
     const val mockito = "2.+"
     const val mockitoKotlin = "2.1.0"
+    const val hamcrest = "1.3"
 }
 
 object Libs {
@@ -59,5 +60,6 @@ object Libs {
     val coreTesting = "androidx.arch.core:core-testing:${Versions.lifecycle}"
     val mockito = "org.mockito:mockito-core:${Versions.mockito}"
     val mockitoKotlin = "com.nhaarman.mockitokotlin2:mockito-kotlin:${Versions.mockitoKotlin}"
+    val hamcrest = "org.hamcrest:hamcrest-library:${Versions.hamcrest}"
 }
 

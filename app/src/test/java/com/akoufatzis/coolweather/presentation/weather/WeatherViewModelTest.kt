@@ -1,11 +1,11 @@
 package com.akoufatzis.coolweather.presentation.weather
 
-import org.junit.Rule
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.akoufatzis.coolweather.domain.weather.WeatherUseCase
-import com.nhaarman.mockitokotlin2.isNotNull
 import com.nhaarman.mockitokotlin2.mock
+import org.hamcrest.CoreMatchers.notNullValue
 import org.hamcrest.MatcherAssert.assertThat
+import org.junit.Rule
 import org.junit.Test
 
 class WeatherViewModelTest {
@@ -16,11 +16,8 @@ class WeatherViewModelTest {
 
     private val weatherUseCase: WeatherUseCase = mock()
 
-    private fun withViewModel(
-    ): WeatherViewModel {
-        return WeatherViewModel(
-            weatherUseCase
-        )
+    private fun withViewModel(): WeatherViewModel {
+        return WeatherViewModel(weatherUseCase)
     }
 
     @Test
@@ -28,6 +25,6 @@ class WeatherViewModelTest {
 
         // TODO: Finish this test
         val viewModel = withViewModel()
-        assertThat(viewModel, isNotNull())
+        assertThat(viewModel, notNullValue())
     }
 }

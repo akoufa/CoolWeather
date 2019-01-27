@@ -29,6 +29,10 @@ android {
             "\"$apiBaseUrl\"")
         buildConfigField("String", "OPENWEATHERMAP_API_KEY",
             "\"$apiKey\"")
+
+        useLibrary("android.test.runner")
+        useLibrary("android.test.base")
+        useLibrary("android.test.mock")
     }
     buildTypes {
         getByName("release") {
@@ -89,6 +93,7 @@ dependencies {
     testImplementation(Libs.mockitoKotlin)
     testImplementation(Libs.coreTesting)
     testImplementation(Libs.junit)
+    testImplementation(Libs.hamcrest)
     androidTestImplementation(Libs.testRunner)
     androidTestImplementation(Libs.espresso)
 }
