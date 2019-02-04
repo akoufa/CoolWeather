@@ -1,5 +1,5 @@
 object Versions {
-    const val androidGradle = "3.4.0-beta02"
+    const val androidGradle = "3.4.0-beta03"
     const val kotlin = "1.3.20"
     const val constraintLayout = "2.0.0-alpha3"
     const val coroutines = "1.1.1"
