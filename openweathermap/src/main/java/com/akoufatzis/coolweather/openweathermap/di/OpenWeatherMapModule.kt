@@ -1,34 +1,25 @@
-package com.akoufatzis.coolweather.di
+package com.akoufatzis.coolweather.openweathermap.di
 
-import com.akoufatzis.coolweather.BuildConfig
-import com.akoufatzis.coolweather.data.OpenWeatherMapApi
+import com.akoufatzis.coolweather.domain.weather.WeatherRepository
+import com.akoufatzis.coolweather.openweathermap.BuildConfig
+import com.akoufatzis.coolweather.openweathermap.OpenWeatherMapApi
+import com.akoufatzis.coolweather.openweathermap.WeatherDataStore
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import dagger.Module
 import dagger.Provides
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
+import javax.inject.Named
 import javax.inject.Singleton
 
 const val OPENWEATHERMAP_URL = BuildConfig.OPENWEATHERMAP_URL
 
 @Module
-class NetworkModule {
+class OpenWeatherMapModule {
 
     companion object {
-        val instance = NetworkModule()
+        val instance = OpenWeatherMapModule()
     }
-
-    /*
-    @Singleton @Provides
-    fun provideOkHttpClient(@NetworkLogger loggingInterceptors: Set<@JvmSuppressWildcards
-    Interceptor>):
-            OkHttpClient =
-        OkHttpClient.Builder().apply {
-            loggingInterceptors.forEach {
-                addNetworkInterceptor(it)
-            }
-        }.build()
-        */
 
     @Singleton
     @Provides
@@ -44,7 +35,13 @@ class NetworkModule {
 
     @Singleton
     @Provides
-    fun provideBittrexApi(retrofit: Retrofit): OpenWeatherMapApi {
+    fun provideOpenWeatherMapApi(retrofit: Retrofit): OpenWeatherMapApi {
         return retrofit.create(OpenWeatherMapApi::class.java)
+    }
+
+    @Provides
+    @Named("OpenWeatherMap")
+    fun provideOpenWeatherMapDataStore(openWeatherMapApi: OpenWeatherMapApi): WeatherRepository{
+        return WeatherDataStore(openWeatherMapApi)
     }
 }

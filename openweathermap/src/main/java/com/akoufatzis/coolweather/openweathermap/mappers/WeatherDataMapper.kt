@@ -1,18 +1,30 @@
 @file:Suppress("ForbiddenComment", "MagicNumber", "ComplexMethod", "WildcardImport")
-package com.akoufatzis.coolweather.data.mappers
+package com.akoufatzis.coolweather.openweathermap.mappers
 
-import com.akoufatzis.coolweather.data.entities.CityWeatherEntity
-import com.akoufatzis.coolweather.domain.weather.* // ktlint-disable no-wildcard-imports
+import com.akoufatzis.coolweather.domain.weather.*
+import com.akoufatzis.coolweather.openweathermap.data.CityWeatherDto
+
 
 // TODO: Don't depended on external service ids
-fun CityWeatherEntity.toCityWeather(): CityWeather {
+fun CityWeatherDto.toCityWeather(): CityWeather {
     val weather = weathers.first()
 
     val type = mapToWeatherType(weather.id)
-    val weatherDomainModel = Weather(weather.id, weather.main, weather.description, type)
-    val temperature = Temperature(main.temp, main.pressure, main.humidity, main.tempMin, main.tempMax)
-    val city = City(id, name)
-    return CityWeather(weatherDomainModel, temperature, city)
+    val temperature = Temperature(main.temp, main.tempMin, main.tempMax)
+    val humidity = Humidity(main.humidity)
+    val pressure = Pressure(main.pressure)
+    val city = City(name)
+    val windDomainModel = Wind(wind.speed, wind.deg)
+
+    val weatherDomainModel = Weather(
+        description = weather.description,
+        humidity = humidity,
+        pressure = pressure,
+        temperature = temperature,
+        wind = windDomainModel,
+        type = type
+    )
+    return CityWeather(weatherDomainModel, city)
 }
 
 fun mapToWeatherType(weatherId: Long): WeatherType {

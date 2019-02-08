@@ -5,7 +5,7 @@ repositories {
 val ktlint by configurations.creating
 
 dependencies {
-    ktlint("com.github.shyiko:ktlint:0.29.0")
+    ktlint("com.github.shyiko:ktlint:0.30.0")
 }
 
 task<JavaExec>("ktlint"){
