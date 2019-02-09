@@ -1,14 +1,8 @@
 @file:Suppress("ForbiddenComment", "MagicNumber", "ComplexMethod", "WildcardImport")
+
 package com.akoufatzis.coolweather.openweathermap.mappers
 
-import com.akoufatzis.coolweather.domain.weather.Weather
-import com.akoufatzis.coolweather.domain.weather.WeatherType
-import com.akoufatzis.coolweather.domain.weather.Wind
-import com.akoufatzis.coolweather.domain.weather.City
-import com.akoufatzis.coolweather.domain.weather.CityWeather
-import com.akoufatzis.coolweather.domain.weather.Humidity
-import com.akoufatzis.coolweather.domain.weather.Pressure
-import com.akoufatzis.coolweather.domain.weather.Temperature
+import com.akoufatzis.coolweather.domain.weather.* // ktlint-disable no-wildcard-imports
 import com.akoufatzis.coolweather.openweathermap.data.CityWeatherDto
 
 // TODO: Don't depended on external service ids
