@@ -2,6 +2,7 @@ package com.akoufatzis.coolweather.di.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import com.akoufatzis.coolweather.MainActivity
+import com.akoufatzis.coolweather.presentation.settings.SettingsFragment
 import com.akoufatzis.coolweather.presentation.weather.WeatherFragment
 import dagger.Binds
 import dagger.Module
@@ -14,4 +15,7 @@ interface MainActivityModule {
 
     @ContributesAndroidInjector
     fun contributeWeatherFragment(): WeatherFragment
+
+    @ContributesAndroidInjector
+    fun contributeSettingsFragment(): SettingsFragment
 }

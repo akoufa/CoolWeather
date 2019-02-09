@@ -2,6 +2,7 @@ package com.akoufatzis.coolweather.di
 
 import android.app.Application
 import com.akoufatzis.coolweather.App
+import com.akoufatzis.coolweather.data.settings.di.SettingsModule
 import com.akoufatzis.coolweather.di.activity.ActivityBuilder
 import com.akoufatzis.coolweather.openweathermap.di.OpenWeatherMapModule
 import dagger.BindsInstance
@@ -17,7 +18,8 @@ import javax.inject.Singleton
         AppModule::class,
         ActivityBuilder::class,
         ViewModelModule::class,
-        OpenWeatherMapModule::class
+        OpenWeatherMapModule::class,
+        SettingsModule::class
     ]
 )
 interface AppComponent : AndroidInjector<App> {
@@ -26,6 +28,7 @@ interface AppComponent : AndroidInjector<App> {
         @BindsInstance
         fun application(application: Application): Builder
 
+        fun settingsModule(module: SettingsModule): Builder
         fun openWeatherMapModule(module: OpenWeatherMapModule): Builder
         fun build(): AppComponent
     }

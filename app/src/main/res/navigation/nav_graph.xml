@@ -3,17 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/marketsFragment">
+    app:startDestination="@id/weatherFragment">
 
     <fragment
-        android:id="@+id/marketsFragment"
+        android:id="@+id/weatherFragment"
         android:name="com.akoufatzis.coolweather.presentation.weather.WeatherFragment"
         android:label="@string/weather"
         tools:layout="@layout/fragment_weather" />
 
     <fragment
-        android:id="@+id/accountFragment"
-        android:name="com.akoufatzis.coolweather.presentation.weather.WeatherFragment"
+        android:id="@+id/settingsFragment"
+        android:name="com.akoufatzis.coolweather.presentation.settings.SettingsFragment"
         android:label="@string/settings"
-        tools:layout="@layout/fragment_weather" />
+        tools:layout="@layout/fragment_settings" />
 </navigation>

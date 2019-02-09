@@ -14,12 +14,4 @@ internal object AppModule {
     @Provides
     @JvmStatic
     fun provideContext(application: Application): Context = application.applicationContext
-
-    @Singleton
-    @Provides
-    @JvmStatic
-    fun provideWeatherRepository(
-        weatherRepository: WeatherDataStore
-    ): WeatherRepository =
-        weatherRepository
 }
