@@ -41,7 +41,7 @@ class OpenWeatherMapModule {
 
     @Provides
     @Named("OpenWeatherMap")
-    fun provideOpenWeatherMapDataStore(openWeatherMapApi: OpenWeatherMapApi): WeatherRepository{
+    fun provideOpenWeatherMapDataStore(openWeatherMapApi: OpenWeatherMapApi): WeatherRepository {
         return WeatherDataStore(openWeatherMapApi)
     }
 }
