@@ -4,6 +4,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.akoufatzis.coolweather.core.Event
+import com.akoufatzis.coolweather.domain.Failure
+import com.akoufatzis.coolweather.domain.Success
 import com.akoufatzis.coolweather.domain.weather.WeatherUseCase
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -28,11 +30,11 @@ class WeatherViewModel @Inject constructor(val weatherUseCase: WeatherUseCase) :
         showLoading()
         val weatherResult = weatherUseCase(city)
         when (weatherResult) {
-            is com.akoufatzis.coolweather.domain.Success -> {
+            is Success -> {
                 val cityWeather = createCityWeather(weatherResult.data)
                 emitUiState(showSuccess = cityWeather)
             }
-            is com.akoufatzis.coolweather.domain.Failure -> emitUiState(showError = weatherResult.exception)
+            is Failure -> emitUiState(showError = weatherResult.exception)
         }
     }
 

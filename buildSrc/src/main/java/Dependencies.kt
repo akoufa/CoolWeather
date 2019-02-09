@@ -18,7 +18,7 @@ object Versions {
     const val material = "1.0.0"
     const val mockito = "2.+"
     const val mockitoKotlin = "2.1.0"
-    const val hamcrest = "1.3"
+    const val truth = "0.42"
 }
 
 object Libs {
@@ -41,6 +41,7 @@ object Libs {
     val coroutinesCore = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.coroutines}"
     val coroutinesAndroid = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutines}"
     val coroutinesRx2 = "org.jetbrains.kotlinx:kotlinx-coroutines-rx2:${Versions.coroutines}"
+    val coroutinesTest = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.coroutines}"
     val dagger = "com.google.dagger:dagger:${Versions.dagger}"
     val daggerAndroid = "com.google.dagger:dagger-android:${Versions.dagger}"
     val daggerAndroidSupport = "com.google.dagger:dagger-android-support:${Versions.dagger}"
@@ -59,6 +60,6 @@ object Libs {
     val coreTesting = "androidx.arch.core:core-testing:${Versions.lifecycle}"
     val mockito = "org.mockito:mockito-core:${Versions.mockito}"
     val mockitoKotlin = "com.nhaarman.mockitokotlin2:mockito-kotlin:${Versions.mockitoKotlin}"
-    val hamcrest = "org.hamcrest:hamcrest-library:${Versions.hamcrest}"
+    val truth = "com.google.truth:truth:${Versions.truth}"
 }
 

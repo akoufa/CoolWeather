@@ -5,6 +5,10 @@ plugins {
     id("io.gitlab.arturbosch.detekt").version("1.0.0-RC11")
 }
 
+apply{
+    from("$rootDir/ktlint.gradle.kts")
+}
+
 detekt {
     toolVersion = "1.0.0-RC11"
     input = files("src/main/kotlin", "src/main/java")
