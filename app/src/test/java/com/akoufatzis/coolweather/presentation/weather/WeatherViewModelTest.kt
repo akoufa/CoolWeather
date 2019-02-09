@@ -1,6 +1,7 @@
 package com.akoufatzis.coolweather.presentation.weather
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
+import com.akoufatzis.coolweather.domain.Success
 import com.akoufatzis.coolweather.domain.weather.Humidity
 import com.akoufatzis.coolweather.domain.weather.Temperature
 import com.akoufatzis.coolweather.domain.weather.Wind
@@ -76,7 +77,7 @@ class WeatherViewModelTest {
         // given
         val viewModel = withViewModel()
         val cityWeather = createCityWeather()
-        val result = com.akoufatzis.coolweather.domain.Success(cityWeather)
+        val result = Success(cityWeather)
 
         weatherUseCase.stub {
             onBlocking {
