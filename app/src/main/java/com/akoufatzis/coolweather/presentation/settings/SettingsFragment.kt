@@ -51,7 +51,6 @@ class SettingsFragment : DaggerFragment() {
                 settingsViewModel.setTemperatureUnit(TemperatureUnit.FAHRENHEIT)
             }
         }
-        
         return binding.root
     }
 }

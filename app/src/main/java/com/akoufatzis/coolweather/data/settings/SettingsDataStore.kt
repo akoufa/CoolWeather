@@ -17,5 +17,4 @@ class SettingsDataStore @Inject constructor() : SettingsRepository {
     override fun settings(): Result<Settings> {
         return Success(Settings(Celsius))
     }
-
 }
