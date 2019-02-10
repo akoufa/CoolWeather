@@ -3,11 +3,11 @@ plugins {
     id("kotlin-android")
     id("kotlin-kapt")
     id("kotlin-android-extensions")
-    id( "androidx.navigation.safeargs")
+    id("androidx.navigation.safeargs")
     id("io.gitlab.arturbosch.detekt").version("1.0.0-RC11")
 }
 
-apply{
+apply {
     from("$rootDir/ktlint.gradle.kts")
 }
 
@@ -25,10 +25,14 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
 
-        buildConfigField("String", "OPENWEATHERMAP_URL",
-            "\"$apiBaseUrl\"")
-        buildConfigField("String", "OPENWEATHERMAP_API_KEY",
-            "\"$apiKey\"")
+        buildConfigField(
+            "String", "OPENWEATHERMAP_URL",
+            "\"$apiBaseUrl\""
+        )
+        buildConfigField(
+            "String", "OPENWEATHERMAP_API_KEY",
+            "\"$apiKey\""
+        )
 
         useLibrary("android.test.runner")
         useLibrary("android.test.base")
@@ -55,6 +59,8 @@ dependencies {
     implementation(Libs.kotlinStdLib)
     implementation(Libs.appCompat)
     implementation(Libs.constraintLayout)
+
+    implementation(Libs.coreCtx)
 
     implementation(Libs.viewModelKtx)
     implementation(Libs.lifecycleExt)

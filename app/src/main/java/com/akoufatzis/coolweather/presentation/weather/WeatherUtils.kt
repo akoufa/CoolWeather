@@ -3,6 +3,7 @@ package com.akoufatzis.coolweather.presentation.weather
 import android.content.Context
 import com.akoufatzis.coolweather.R
 import com.akoufatzis.coolweather.domain.weather.WeatherType
+import com.akoufatzis.coolweather.presentation.settings.TemperatureUnit
 
 /**
  * Helper method to provide the icon resource id according to the weather condition id returned
@@ -10,10 +11,10 @@ import com.akoufatzis.coolweather.domain.weather.WeatherType
  * *
  * @return resource id for the corresponding icon. -1 if no relation is found.
  */
-fun Weather.iconResource(): Int {
+fun WeatherType.iconResource(): Int {
     // Based on weather code data found at:
     // http://bugs.openweathermap.org/projects/api/wiki/Weather_Condition_Codes
-    return when (type) {
+    return when (this) {
         WeatherType.CLOUDS -> R.drawable.ic_cloudy
         WeatherType.STORM -> R.drawable.ic_storm
         WeatherType.LIGHT_RAIN -> R.drawable.ic_light_rain
@@ -33,11 +34,11 @@ fun Weather.iconResource(): Int {
  * @return resource id for the corresponding icon. -1 if no relation is found.
  */
 
-fun Weather.artResource(): Int {
+fun WeatherType.artResource(): Int {
     // Based on weather code data found at:
     // http://bugs.openweathermap.org/projects/api/wiki/Weather_Condition_Codes
 
-    return when (type) {
+    return when (this) {
         WeatherType.CLOUDS -> R.drawable.art_clouds
         WeatherType.STORM -> R.drawable.art_storm
         WeatherType.LIGHT_RAIN -> R.drawable.art_light_rain
@@ -50,16 +51,25 @@ fun Weather.artResource(): Int {
     }
 }
 
-fun Weather.celsiusDegrees(context: Context): String {
-    return getDegreesRepresentation(context, convertToCelsius(this.temp))
-}
-
 fun convertToCelsius(kelvin: Double): Double {
     @Suppress("MagicNumber")
     return kelvin - 273
 }
 
-fun getDegreesRepresentation(context: Context, temperature: Double): String {
-    // For presentation, assume the user doesn't care about tenths of a degree.
-    return String.format(context.getString(R.string.format_temperature), temperature)
+fun convertToFahrenheit(kelvin: Double): Double {
+    @Suppress("MagicNumber")
+    return 1.8 * (kelvin - 273) + 32
 }
+
+// For presentation, assume the user doesn't care about tenths of a degree.
+fun getDegreesRepresentation(context: Context, temperature: TemperatureData) = when (temperature.tempUnit) {
+    TemperatureUnit.CELSIUS -> String.format(
+        context.getString(R.string.format_temperature_celsius),
+        temperature.degrees
+    )
+    TemperatureUnit.FAHRENHEIT -> String.format(
+        context.getString(R.string.format_temperature_fahrenheit),
+        temperature.degrees
+    )
+}
+

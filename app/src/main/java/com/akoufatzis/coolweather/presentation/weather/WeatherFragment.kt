@@ -33,9 +33,9 @@ class WeatherFragment : DaggerFragment() {
         weatherViewModel.viewState.observe(viewLifecycleOwner, Observer {
             if (it.data != null) {
                 val item = WeatherItem(
-                    it.data.city.name,
-                    it.data.weather.celsiusDegrees(context!!),
-                    it.data.weather.iconResource()
+                    it.data.city,
+                    getDegreesRepresentation(context!!, it.data.tempData),
+                    it.data.iconRes
                 )
                 weatherAdapter.submitList(listOf(item))
             }

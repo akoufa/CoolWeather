@@ -4,6 +4,7 @@
     <string name="weather">Weather</string>
     <string name="celsius">\u00B0 C</string>
     <string name="fahrenheit">\u00B0 F</string>
-    <string name="format_temperature"><xliff:g id="temp">%1.0f</xliff:g>\u00B0</string>
+    <string name="format_temperature_celsius"><xliff:g id="temp">%1.0f</xliff:g>\u00B0 C</string>
+    <string name="format_temperature_fahrenheit"><xliff:g id="temp">%1.0f</xliff:g>\u00B0 F</string>
     <string name="toggle_temperature_units">Toggle temperature units</string>
 </resources>

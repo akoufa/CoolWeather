@@ -7,4 +7,6 @@ interface SettingsRepository {
     fun changeTemperatureUnit(unit: TemperatureUnit): Result<Unit>
 
     fun settings(): Result<Settings>
+
+    fun temperatureUnit(): Result<TemperatureUnit>
 }

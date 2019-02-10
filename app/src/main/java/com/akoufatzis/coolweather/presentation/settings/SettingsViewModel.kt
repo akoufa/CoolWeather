@@ -8,7 +8,7 @@ import com.akoufatzis.coolweather.domain.Success
 import com.akoufatzis.coolweather.domain.settings.Celsius
 import com.akoufatzis.coolweather.domain.settings.ChangeTemperatureUnitUseCase
 import com.akoufatzis.coolweather.domain.settings.Fahrenheit
-import com.akoufatzis.coolweather.domain.settings.SettingsRepository
+import com.akoufatzis.coolweather.domain.settings.GetSettingsUseCase
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -17,7 +17,7 @@ import kotlin.coroutines.CoroutineContext
 
 class SettingsViewModel @Inject constructor(
     val changeTemperatureUnitUseCase: ChangeTemperatureUnitUseCase,
-    settingsRepository: SettingsRepository
+    getSettingsUseCase: GetSettingsUseCase
 ) :
     ViewModel(), CoroutineScope {
 
@@ -32,7 +32,7 @@ class SettingsViewModel @Inject constructor(
         get() = _viewState
 
     init {
-        val result = settingsRepository.settings()
+        val result = getSettingsUseCase()
         if (result is Success) {
             val unit = result.data.unit
             when (unit) {
