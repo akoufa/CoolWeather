@@ -4,7 +4,7 @@ import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.akoufatzis.coolweather.domain.Success
 import com.akoufatzis.coolweather.domain.settings.Celsius
 import com.akoufatzis.coolweather.domain.settings.GetTemperatureUnitUseCase
-import com.akoufatzis.coolweather.domain.weather.*
+import com.akoufatzis.coolweather.domain.weather.* // ktlint-disable no-wildcard-imports
 import com.akoufatzis.coolweather.presentation.settings.TemperatureUnit
 import com.akoufatzis.coolweather.shared.getLiveDataValue
 import com.google.common.truth.Truth.assertThat

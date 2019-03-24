@@ -4,7 +4,7 @@ import android.content.SharedPreferences
 import androidx.core.content.edit
 import com.akoufatzis.coolweather.domain.Result
 import com.akoufatzis.coolweather.domain.Success
-import com.akoufatzis.coolweather.domain.settings.*
+import com.akoufatzis.coolweather.domain.settings.* // ktlint-disable no-wildcard-imports
 import javax.inject.Inject
 
 class SettingsDataStore @Inject constructor(private val sharedPreferences: SharedPreferences) : SettingsRepository {
