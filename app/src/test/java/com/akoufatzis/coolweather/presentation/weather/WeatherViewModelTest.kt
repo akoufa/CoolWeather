@@ -99,6 +99,6 @@ class WeatherViewModelTest {
         assertThat(loadingViewState.progress.peek()).isTrue()
 
         val successViewState = getLiveDataValue(viewModel.viewState)!!
-        assertThat(successViewState.data!!).isEqualTo(weatherData)
+        assertThat(successViewState.data!!).isEqualTo(listOf(weatherData))
     }
 }
