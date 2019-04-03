@@ -20,7 +20,7 @@ import kotlin.coroutines.CoroutineContext
 class WeatherViewModel @Inject constructor(
     val weatherUseCase: WeatherUseCase,
     val getTemperatureUnitUseCase: GetTemperatureUnitUseCase,
-    val weatherMapper: WeatherMapper
+    private val weatherMapper: WeatherMapper
 ) : ViewModel(), CoroutineScope {
 
     private val job = Job()
@@ -33,6 +33,8 @@ class WeatherViewModel @Inject constructor(
     val viewState: LiveData<WeatherViewState>
         get() = _viewState
 
+    private val weatherList = arrayListOf<WeatherData>()
+
     fun showWeather(city: String) = launch {
         showLoading()
         val weatherResult = weatherUseCase(city)
@@ -41,7 +43,8 @@ class WeatherViewModel @Inject constructor(
         when (weatherResult) {
             is Success -> {
                 val weatherData = weatherMapper.map(weatherResult.data, tempUnit)
-                emitUiState(showSuccess = weatherData)
+                weatherList.add(0, weatherData)
+                emitUiState(showSuccess = weatherList)
             }
             is Failure -> emitUiState(showError = weatherResult.exception)
         }
@@ -62,7 +65,7 @@ class WeatherViewModel @Inject constructor(
     private fun emitUiState(
         showProgress: Event<Boolean> = Event(false),
         showError: Exception? = null,
-        showSuccess: WeatherData? = null
+        showSuccess: List<WeatherData> = emptyList()
     ) {
         val viewState = WeatherViewState(
             showProgress,

@@ -2,7 +2,7 @@ plugins {
     id("com.android.library")
     id("kotlin-android")
     id("kotlin-kapt")
-    id("io.gitlab.arturbosch.detekt").version("1.0.0-RC11")
+    id("io.gitlab.arturbosch.detekt").version("1.0.0-RC14")
 }
 
 apply{
@@ -37,7 +37,7 @@ android {
 
 
 detekt {
-    toolVersion = "1.0.0-RC11"
+    toolVersion = "1.0.0-RC14"
     input = files("src/main/kotlin", "src/main/java")
     filters = ".*/resources/.*,.*/build/.*"
 }

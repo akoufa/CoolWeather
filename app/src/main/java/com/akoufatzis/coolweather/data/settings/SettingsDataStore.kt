@@ -1,3 +1,4 @@
+@file:Suppress("WildcardImport")
 package com.akoufatzis.coolweather.data.settings
 
 import android.content.SharedPreferences

@@ -7,4 +7,7 @@
     <string name="format_temperature_celsius"><xliff:g id="temp">%1.0f</xliff:g>\u00B0 C</string>
     <string name="format_temperature_fahrenheit"><xliff:g id="temp">%1.0f</xliff:g>\u00B0 F</string>
     <string name="toggle_temperature_units">Toggle temperature units</string>
+    <string name="city_hint_text">Add your city</string>
+    <string name="not_implement_yet">Not implemented yet</string>
+    <string name="something_went_wrong">Oops something went wrong please try again!</string>
 </resources>
