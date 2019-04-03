@@ -67,6 +67,7 @@ class WeatherFragment : DaggerFragment() {
                     )
                 }
 
+                hideKeyboard()
                 weatherAdapter.submitList(weatherList)
                 binding.etCity.text?.clear()
             }
