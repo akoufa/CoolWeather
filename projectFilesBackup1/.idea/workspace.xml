@@ -1,0 +1,1185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AndroidLayouts">
+    <shared>
+      <config />
+    </shared>
+  </component>
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="33dd2dad-6870-4918-8b02-3a21d0b27b00" name="Default Changelist" comment="Upgrade android gradle plugin to 3.4.0-beta03">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/akoufatzis/coolweather/presentation/onboarding/OnBoardingFragment.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/akoufatzis/coolweather/presentation/onboarding/OnboardingActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/akoufatzis/coolweather/presentation/place/PlaceFragment.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_place_black_24dp.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_onboarding.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_on_boarding.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_place.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/navigation/onboarding_graph.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/assetWizardSettings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/assetWizardSettings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/navEditor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/navEditor.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/buildSrc/src/main/java/Dependencies.kt" beforeDir="false" afterPath="$PROJECT_DIR$/buildSrc/src/main/java/Dependencies.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/.gradle/" />
+    <ignored path="$PROJECT_DIR$/build/" />
+    <ignored path="$PROJECT_DIR$/out/" />
+    <ignored path="$PROJECT_DIR$/openweathermap/out/" />
+    <ignored path="$PROJECT_DIR$/buildSrc/out/" />
+    <ignored path="$PROJECT_DIR$/domain/out/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$/app">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$/openweathermap">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="CoolWeather" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="CoolWeather" type="f1a62948:ProjectNode" />
+                <item name="CoolWeather" type="2d1252cf:ModuleNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="CoolWeather" type="f1a62948:ProjectNode" />
+                <item name="CoolWeather" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="CoolWeather" type="f1a62948:ProjectNode" />
+                <item name="CoolWeather" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="help" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_on_boarding.xml">
+          <provider editor-type-id="android-designer2" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="24" column="9" selection-end-line="24" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/akoufatzis/coolweather/presentation/onboarding/OnBoardingFragment.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="527">
+              <caret line="43" column="43" lean-forward="true" selection-start-line="43" selection-start-column="43" selection-end-line="43" selection-end-column="43" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_place.xml">
+          <provider editor-type-id="android-designer2" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="19" column="14" selection-start-line="19" selection-start-column="14" selection-end-line="19" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_weather.xml">
+          <provider editor-type-id="android-designer2" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" column="66" lean-forward="true" selection-start-line="1" selection-start-column="66" selection-end-line="1" selection-end-column="66" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/akoufatzis/coolweather/presentation/place/PlaceFragment.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/navigation/onboarding_graph.xml">
+          <provider editor-type-id="nav-designer" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="18" column="11" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+          <provider editor-type-id="android-manifest" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="25" column="18" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/akoufatzis/coolweather/presentation/core/DataBindingAdapter.kt">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/navigation/nav_graph.xml">
+          <provider editor-type-id="nav-designer" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" column="45" selection-start-line="5" selection-start-column="45" selection-end-line="5" selection-end-column="45" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+          <provider editor-type-id="android-designer2" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="16" selection-start-line="16" selection-end-line="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="resourceFile" />
+        <option value="valueResourceFile" />
+        <option value="navigationResourceFile" />
+        <option value="Kotlin File" />
+        <option value="layoutResourceFile_vertical" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>material</find>
+      <find>ktlin</find>
+      <find>1.3.20</find>
+      <find>implementation(Libs.roomRx)</find>
+      <find>com.akoufatzis.coolweather</find>
+      <find>ktlint</find>
+      <find>Suppr</find>
+      <find>detekt</find>
+      <find>dete</find>
+      <find>1.0.0-RC11</find>
+      <find>wildc</find>
+      <find>Supre</find>
+      <find>Suppress</find>
+      <find>8dp</find>
+      <find>TODO</find>
+      <find>@Suppress</find>
+      <find>@Suppress(&quot;ForbiddenComment&quot;)</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>1.0.0-RC14</replace>
+      <replace>@dimen/small_margin</replace>
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/app/src/test/java/com/akoufatzis/coolweather/shared/LiveDataTestUtil.kt" />
+        <option value="$PROJECT_DIR$/domain/build.gradle.kts" />
+        <option value="$PROJECT_DIR$/app/src/test/java/com/akoufatzis/coolweather/shared/LiveDataUtil.kt" />
+        <option value="$PROJECT_DIR$/.circleci/config.yml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/menu/bottom_navigation.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/akoufatzis/coolweather/di/activity/MainActivityModule.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/akoufatzis/coolweather/di/ViewModelModule.kt" />
+        <option value="$PROJECT_DIR$/domain/src/main/java/com/akoufatzis/coolweather/domain/settings/Settings.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/akoufatzis/coolweather/presentation/settings/Unit.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/akoufatzis/coolweather/di/AppComponent.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_settings.xml" />
+        <option value="$PROJECT_DIR$/domain/src/main/java/com/akoufatzis/coolweather/domain/settings/Unit.kt" />
+        <option value="$PROJECT_DIR$/domain/src/main/java/com/akoufatzis/coolweather/domain/settings/ChangeTemperatureUnitUseCase.kt" />
+        <option value="$PROJECT_DIR$/domain/src/main/java/com/akoufatzis/coolweather/domain/settings/TemperatureUnit.kt" />
+        <option value="$PROJECT_DIR$/openweathermap/src/main/java/com/akoufatzis/coolweather/openweathermap/di/OpenWeatherMapModule.kt" />
+        <option value="$PROJECT_DIR$/domain/src/main/java/com/akoufatzis/coolweather/domain/settings/SettingsRepository.kt" />
+        <option value="$PROJECT_DIR$/domain/src/main/java/com/akoufatzis/coolweather/domain/settings/GetTemperatureUnitUseCase.kt" />
+        <option value="$PROJECT_DIR$/domain/src/main/java/com/akoufatzis/coolweather/domain/settings/GetSettingsUseCase.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/akoufatzis/coolweather/presentation/weather/WeatherModel.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/akoufatzis/coolweather/di/AppModule.kt" />
+        <option value="$PROJECT_DIR$/openweathermap/src/main/java/com/akoufatzis/coolweather/openweathermap/mappers/WeatherDataMapper.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/akoufatzis/coolweather/presentation/weather/WeatherViewState.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/akoufatzis/coolweather/presentation/weather/WeatherViewModel.kt" />
+        <option value="$PROJECT_DIR$/domain/src/main/java/com/akoufatzis/coolweather/domain/Result.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/akoufatzis/coolweather/data/settings/di/SettingsModule.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/akoufatzis/coolweather/data/settings/SettingsDataStore.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/akoufatzis/coolweather/presentation/settings/SettingsFragment.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/akoufatzis/coolweather/presentation/settings/SettingsViewModel.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/akoufatzis/coolweather/presentation/settings/TemperatureUnit.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/akoufatzis/coolweather/presentation/settings/SettingsViewState.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/akoufatzis/coolweather/presentation/core/ViewUtils.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/akoufatzis/coolweather/presentation/weather/WeatherMapper.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/akoufatzis/coolweather/presentation/weather/Weather.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/akoufatzis/coolweather/presentation/weather/WeatherUtils.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/akoufatzis/coolweather/presentation/weather/WeatherFragment.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_weather.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/item_weather.xml" />
+        <option value="$PROJECT_DIR$/app/src/test/java/com/akoufatzis/coolweather/presentation/weather/WeatherViewModelTest.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_on_boarding.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
+        <option value="$PROJECT_DIR$/buildSrc/src/main/java/Dependencies.kt" />
+        <option value="$PROJECT_DIR$/app/build.gradle.kts" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/akoufatzis/coolweather/presentation/onboarding/OnboardingActivity.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_onboarding.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/navigation/nav_graph.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_place.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/akoufatzis/coolweather/presentation/onboarding/OnBoardingFragment.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/navigation/onboarding_graph.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/akoufatzis/coolweather/presentation/place/PlaceFragment.kt" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="11" />
+    <option name="y" value="23" />
+    <option name="width" value="1680" />
+    <option name="height" value="1027" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane" />
+      <pane id="Scope" />
+      <pane id="AndroidView">
+        <subPane>
+          <expand>
+            <path>
+              <item name="CoolWeather" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+            </path>
+            <path>
+              <item name="CoolWeather" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+            </path>
+            <path>
+              <item name="CoolWeather" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+              <item name="navigation" type="ddeffd01:AndroidResFolderTypeNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DEBUGGABLE_DEVICE" value="Nexus_5X_API_27 [emulator-5554]" />
+    <property name="DEBUGGABLE_PROCESS" value="com.akoufatzis.coolweather" />
+    <property name="DEBUGGER_ID" value="Auto" />
+    <property name="SHOW_ALL_PROCESSES" value="false" />
+    <property name="android.project.structure.last.selected" value="SDK Location" />
+    <property name="android.project.structure.proportion" value="0.15" />
+    <property name="device.picker.selection" value="Nexus_5X_API_27" />
+    <property name="full.screen.before.presentation.mode" value="false" />
+    <property name="not.eligible.for.single.variant.sync" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.17" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.language.Kotlin" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="com.akoufatzis.coolweather.openweathermap" />
+    </key>
+    <key name="android.template.packageName">
+      <recent name="com.akoufatzis.coolweather.presentation.onboarding" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/src/main/java/com/akoufatzis/coolweather/data/settings" />
+      <recent name="$PROJECT_DIR$/app/src/test/java/com/akoufatzis/coolweather/shared" />
+      <recent name="$PROJECT_DIR$/openweathermap/src/main/java/com/akoufatzis/coolweather/openweathermap" />
+      <recent name="$PROJECT_DIR$/openweathermap/src/main/java/com/akoufatzis/coolweather/openweathermap/data" />
+      <recent name="$PROJECT_DIR$/domain/src/main/java/com/akoufatzis/coolweather/domain" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Android App.app">
+    <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false" singleton="true">
+      <module name="app" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CoolWeather [check]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="check" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="CoolWeather [dependencyUpdates]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="dependencyUpdates" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="CoolWeather:app [ktlint]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/app" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="ktlint" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="CoolWeather:app [lint]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/app" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="lint" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="WeatherViewModelTest.showWeatherForCityShouldReturnWeatherViewState" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.akoufatzis.coolweather.presentation.weather.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.akoufatzis.coolweather.presentation.weather" />
+      <option name="MAIN_CLASS_NAME" value="com.akoufatzis.coolweather.presentation.weather.WeatherViewModelTest" />
+      <option name="METHOD_NAME" value="showWeatherForCityShouldReturnWeatherViewState" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Android App.app" />
+      <item itemvalue="Gradle.CoolWeather:app [ktlint]" />
+      <item itemvalue="Gradle.CoolWeather:app [lint]" />
+      <item itemvalue="Gradle.CoolWeather [check]" />
+      <item itemvalue="Gradle.CoolWeather [dependencyUpdates]" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.CoolWeather [dependencyUpdates]" />
+        <item itemvalue="Gradle.CoolWeather [check]" />
+        <item itemvalue="Gradle.CoolWeather:app [lint]" />
+        <item itemvalue="Gradle.CoolWeather:app [ktlint]" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="33dd2dad-6870-4918-8b02-3a21d0b27b00" name="Default Changelist" comment="" />
+      <created>1544087043051</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1544087043051</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Add mockito-core, mockito kotlin and arch components core test dependencies">
+      <created>1547152429030</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1547152429030</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Update to android gradle plugin 3.4 beta 02">
+      <created>1548612500781</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1548612500781</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Add hamcrest matchers. Fix basic unit test setup">
+      <created>1548621474644</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1548621474645</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Improve domain model">
+      <created>1548622262173</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1548622262173</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Upgrade android gradle plugin to 3.4.0-beta03">
+      <created>1549291396490</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1549291396490</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Modularize project splitting it to app, domain and opentweathermapmodule. This allows us to add one module per weather api we will include.">
+      <created>1549662838054</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1549662838054</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Add showWeatherForCityShouldReturnWeatherViewState test">
+      <created>1549725890930</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1549725890930</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Fix import">
+      <created>1549726211641</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1549726211641</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Update circle ci image to android 28">
+      <created>1549734806831</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1549734806831</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Fix ktlint issues">
+      <created>1549735168950</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1549735168950</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Improve imports. Disable inline ktlint wildcard import rule">
+      <created>1549735290970</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1549735290970</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Add Settings Feature to allow changing the temperature unit">
+      <created>1549749885742</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1549749885742</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Fix ktlint issues">
+      <created>1549750038262</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1549750038262</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Complete Settings Feature. Use temperature unit setting in weather feature to display the temp in celsius or fahrenheit">
+      <created>1549805021095</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1549805021095</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Upgrade android gradle plugin to 3.4.0-rc02">
+      <created>1553446460423</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1553446460424</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Add search bar to search for a city&#10;Add snackbar on error when fetching weather data for a city&#10;Fix detekt issues">
+      <created>1554315261254</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1554315261254</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Extract margin to dimen folder. Add margin to search bar">
+      <created>1554315679566</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1554315679566</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Fix WeatherViewModel unit test expected value">
+      <created>1554321695493</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1554321695494</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="WeatherViewModelTest - 2019.02.09 at 10h 10m 59s.xml">
+      <configuration name="WeatherViewModelTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="WeatherViewModelTest - 2019.02.09 at 10h 12m 21s.xml">
+      <configuration name="WeatherViewModelTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="WeatherViewModelTest_showWeatherForCityShouldReturnWeatherViewState - 2019.02.09 at 10h 14m 04s.xml">
+      <configuration name="WeatherViewModelTest.showWeatherForCityShouldReturnWeatherViewState" configurationId="AndroidJUnit" />
+    </history-entry>
+    <history-entry file="WeatherViewModelTest_showWeatherForCityShouldReturnWeatherViewState - 2019.02.09 at 16h 14m 10s.xml">
+      <configuration name="WeatherViewModelTest.showWeatherForCityShouldReturnWeatherViewState" configurationId="AndroidJUnit" />
+    </history-entry>
+    <history-entry file="WeatherViewModelTest_showWeatherForCityShouldReturnWeatherViewState - 2019.02.09 at 16h 15m 59s.xml">
+      <configuration name="WeatherViewModelTest.showWeatherForCityShouldReturnWeatherViewState" configurationId="AndroidJUnit" />
+    </history-entry>
+    <history-entry file="WeatherViewModelTest_showWeatherForCityShouldReturnWeatherViewState - 2019.02.10 at 14h 18m 22s.xml">
+      <configuration name="WeatherViewModelTest.showWeatherForCityShouldReturnWeatherViewState" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CoolWeather_[check] - 2019.04.03 at 20h 11m 30s.xml">
+      <configuration name="CoolWeather [check]" configurationId="GradleRunConfiguration" />
+    </history-entry>
+    <history-entry file="CoolWeather_[check] - 2019.04.03 at 20h 15m 58s.xml">
+      <configuration name="CoolWeather [check]" configurationId="GradleRunConfiguration" />
+    </history-entry>
+    <history-entry file="WeatherViewModelTest_showWeatherForCityShouldReturnWeatherViewState - 2019.04.03 at 20h 30m 09s.xml">
+      <configuration name="WeatherViewModelTest.showWeatherForCityShouldReturnWeatherViewState" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="WeatherViewModelTest_showWeatherForCityShouldReturnWeatherViewState - 2019.04.03 at 20h 31m 03s.xml">
+      <configuration name="WeatherViewModelTest.showWeatherForCityShouldReturnWeatherViewState" configurationId="JUnit" />
+    </history-entry>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="23" width="1680" height="1027" extended-state="6" />
+    <layout>
+      <window_info id="Captures" order="0" sideWeight="0.5037433" side_tool="true" weight="0.21733822" />
+      <window_info id="Capture Tool" order="1" />
+      <window_info active="true" content_ui="combo" id="Project" order="2" sideWeight="0.49625668" visible="true" weight="0.24420024" />
+      <window_info id="Structure" order="3" sideWeight="0.50160426" side_tool="true" weight="0.21733822" />
+      <window_info id="Favorites" order="4" side_tool="true" />
+      <window_info id="Build Variants" order="5" side_tool="true" />
+      <window_info id="Image Layers" order="6" />
+      <window_info id="Designer" order="7" />
+      <window_info content_ui="combo" id="Resources Explorer" order="8" weight="0.32958984" />
+      <window_info anchor="bottom" id="Logcat" order="0" weight="0.49625668" />
+      <window_info anchor="bottom" id="TODO" order="1" />
+      <window_info anchor="bottom" id="Find" order="2" weight="0.3272727" />
+      <window_info anchor="bottom" id="Terminal" order="3" weight="0.32941177" />
+      <window_info anchor="bottom" id="Event Log" order="4" sideWeight="0.501221" side_tool="true" weight="0.68342245" />
+      <window_info anchor="bottom" id="Version Control" order="5" weight="0.32941177" />
+      <window_info anchor="bottom" id="Build" order="6" sideWeight="0.498779" weight="0.6802139" />
+      <window_info anchor="bottom" id="Android Profiler" order="7" show_stripe_button="false" weight="0.32941177" />
+      <window_info anchor="bottom" id="Run" order="8" weight="0.6395722" />
+      <window_info anchor="bottom" id="Debug" order="9" weight="0.32941177" />
+      <window_info anchor="bottom" id="Messages" order="10" />
+      <window_info anchor="right" id="Device File Explorer" order="0" side_tool="true" />
+      <window_info anchor="right" id="Capture Analysis" order="1" />
+      <window_info anchor="right" id="Gradle" order="2" weight="0.32783884" />
+      <window_info anchor="right" id="Theme Preview" order="3" />
+      <window_info anchor="right" id="Palette&#9;" order="4" />
+      <window_info anchor="right" id="Assistant" order="5" weight="0.14102565" />
+      <window_info anchor="right" id="Preview" order="6" weight="0.32967034" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="Captures" order="0" sideWeight="0.50239235" side_tool="true" weight="0.21733822" />
+      <window_info id="Capture Tool" order="1" />
+      <window_info active="true" content_ui="combo" id="Project" order="2" sideWeight="0.49760765" visible="true" weight="0.21733822" />
+      <window_info id="Structure" order="3" sideWeight="0.50160426" side_tool="true" weight="0.21733822" />
+      <window_info id="Favorites" order="4" side_tool="true" />
+      <window_info id="Build Variants" order="5" side_tool="true" />
+      <window_info id="Image Layers" order="6" />
+      <window_info id="Designer" order="7" />
+      <window_info content_ui="combo" id="Resources Explorer" order="8" weight="0.32958984" />
+      <window_info anchor="bottom" id="Logcat" order="0" weight="0.49625668" />
+      <window_info anchor="bottom" id="TODO" order="1" />
+      <window_info anchor="bottom" id="Find" order="2" weight="0.3272727" />
+      <window_info anchor="bottom" id="Terminal" order="3" weight="0.32941177" />
+      <window_info anchor="bottom" id="Event Log" order="4" sideWeight="0.501221" side_tool="true" weight="0.68342245" />
+      <window_info anchor="bottom" id="Version Control" order="5" weight="0.32941177" />
+      <window_info anchor="bottom" id="Build" order="6" sideWeight="0.498779" weight="0.68342245" />
+      <window_info anchor="bottom" id="Android Profiler" order="7" show_stripe_button="false" weight="0.32941177" />
+      <window_info anchor="bottom" id="Run" order="8" weight="0.6395722" />
+      <window_info anchor="bottom" id="Debug" order="9" weight="0.32941177" />
+      <window_info anchor="bottom" id="Messages" order="10" />
+      <window_info anchor="right" id="Device File Explorer" order="0" side_tool="true" />
+      <window_info anchor="right" id="Capture Analysis" order="1" />
+      <window_info anchor="right" id="Gradle" order="2" weight="0.32783884" />
+      <window_info anchor="right" id="Theme Preview" order="3" />
+      <window_info anchor="right" id="Palette&#9;" order="4" />
+      <window_info anchor="right" id="Assistant" order="5" weight="0.14138205" />
+      <window_info anchor="right" id="Preview" order="6" weight="0.32967034" />
+    </layout-to-restore>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Fix detekt issues" />
+    <MESSAGE value="Update Android Studio Plugin back to 3.4.0 . Use json annotation to map responses from snake to camel case" />
+    <MESSAGE value="Add drawable resources for weather data. Improve models. Add base url and api key to build config. Update gradle and android gradle plugin versions" />
+    <MESSAGE value="Add comment to remember to remove the dependency on external service ids and the icon codes" />
+    <MESSAGE value="Update gradle to 5.1 and various dependencies&#10;Add gradle plugin to check for dependency updates" />
+    <MESSAGE value="Add list to show weather data for cities&#10;Improve entities&#10;Decouple weather id and icon using weather type in domain layer" />
+    <MESSAGE value="Add apiKey and apiBaseUrl to gradle.properties" />
+    <MESSAGE value="Add mockito-core, mockito kotlin and arch components core test dependencies" />
+    <MESSAGE value="Update to android gradle plugin 3.4 beta 02" />
+    <MESSAGE value="Add hamcrest matchers. Fix basic unit test setup" />
+    <MESSAGE value="Improve domain model" />
+    <MESSAGE value="Upgrade android gradle plugin to 3.4.0-beta03" />
+    <MESSAGE value="Modularize project splitting it to app, domain and opentweathermapmodule. This allows us to add more modules for every" />
+    <MESSAGE value="Modularize project splitting it to app, domain and opentweathermapmodule. This allows us to add one module per weather api we will include." />
+    <MESSAGE value="Add showWeatherForCityShouldReturnWeatherViewState test" />
+    <MESSAGE value="Fix import" />
+    <MESSAGE value="Update circle ci image to android 28" />
+    <MESSAGE value="Improve imports. Disable inline ktlint wildcard import rule" />
+    <MESSAGE value="Add Settings Feature to allow changing the temperature unit" />
+    <MESSAGE value="Fix ktlint issues" />
+    <MESSAGE value="Complete Settings Feature. Use temperature unit setting in weather feature to display the temp in celsius or fahrenheit" />
+    <MESSAGE value="Upgrade android gradle plugin to 3.4.0-rc02" />
+    <MESSAGE value="Add search bar to search for a city&#10;Add snackbar on error when fetching weather data for a city&#10;Fix detekt issues" />
+    <MESSAGE value="Extract margin to dimen folder. Add margin to search bar" />
+    <MESSAGE value="Fix WeatherViewModel unit test expected value" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix WeatherViewModel unit test expected value" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit2/retrofit/2.5.0/5c17035548a41ec60f00291163d36596a23ddd1a/retrofit-2.5.0-sources.jar!/retrofit2/Retrofit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="13833">
+          <caret line="530" column="58" selection-start-line="530" selection-start-column="58" selection-end-line="530" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit2/retrofit/2.5.0/5c17035548a41ec60f00291163d36596a23ddd1a/retrofit-2.5.0-sources.jar!/retrofit2/Callback.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="696">
+          <caret line="38" selection-start-line="38" selection-end-line="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit2/retrofit/2.5.0/5c17035548a41ec60f00291163d36596a23ddd1a/retrofit-2.5.0-sources.jar!/retrofit2/CallAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="174">
+          <caret line="23" column="20" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-coroutines-core-common/1.1.0/286cc6523cc957ab6c96c118cd36073974859aa7/kotlinx-coroutines-core-common-1.1.0-sources.jar!/CoroutineScope.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1566">
+          <caret line="59" selection-start-line="59" selection-end-line="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/akoufatzis/coolweather/MainActivity.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="35" selection-start-line="35" selection-end-line="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/akoufatzis/coolweather/core/Event.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="11" selection-start-line="9" selection-start-column="11" selection-end-line="9" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/akoufatzis/coolweather/App.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
+          <folding>
+            <element signature="e#36#250#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Library/Android/sdk/sources/android-28/android/widget/TextView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="517">
+          <caret line="856" column="41" selection-start-line="856" selection-start-column="41" selection-end-line="856" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.lifecycle/lifecycle-livedata-core/2.0.0/c158207594782b42f3a2e08a5a029eb3319e4404/lifecycle-livedata-core-2.0.0-sources.jar!/androidx/lifecycle/LiveData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3309">
+          <caret line="299" column="13" selection-start-line="299" selection-start-column="13" selection-end-line="299" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-common/1.3.21/224a3bcfa1c088dd5d7c4a3958a68427b44c65dc/kotlin-stdlib-common-1.3.21-sources.jar!/generated/_Collections.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="268">
+          <caret line="2023" column="17" lean-forward="true" selection-start-line="2023" selection-start-column="17" selection-end-line="2023" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openweathermap/src/main/java/com/akoufatzis/coolweather/openweathermap/mappers/WeatherDataMapper.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-column="84" />
+          <folding>
+            <element signature="e#145#302#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/akoufatzis/coolweather/presentation/weather/WeatherViewState.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/domain/src/main/java/com/akoufatzis/coolweather/domain/Result.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/akoufatzis/coolweather/data/settings/di/SettingsModule.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+          <folding>
+            <element signature="e#53#261#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/akoufatzis/coolweather/data/settings/SettingsDataStore.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="26" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
+          <folding>
+            <element signature="e#50#338#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/akoufatzis/coolweather/presentation/settings/SettingsFragment.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="56" selection-start-line="56" selection-end-line="56" />
+          <folding>
+            <element signature="e#58#518#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/akoufatzis/coolweather/presentation/settings/TemperatureUnit.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/akoufatzis/coolweather/presentation/weather/WeatherMapper.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="32" selection-start-line="32" selection-end-line="32" />
+          <folding>
+            <element signature="e#57#329#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/domain/src/main/java/com/akoufatzis/coolweather/domain/weather/Weather.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="41" selection-start-line="41" selection-end-line="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/akoufatzis/coolweather/presentation/weather/Weather.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/akoufatzis/coolweather/presentation/weather/WeatherUtils.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="75" selection-start-line="75" selection-end-line="75" />
+          <folding>
+            <element signature="e#89#288#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_weather.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="35" selection-start-line="23" selection-start-column="35" selection-end-line="23" selection-end-column="35" />
+          <folding>
+            <element signature="e#687#708#0" expanded="true" />
+            <element signature="e#748#769#0" expanded="true" />
+            <element signature="e#1310#1331#0" expanded="true" />
+            <element signature="e#1371#1392#0" expanded="true" />
+            <element signature="e#1892#1913#0" expanded="true" />
+            <element signature="e#1953#1974#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-coroutines-core/1.1.0/b6075fa835ecd2fa92742c5049d3aac4e14bd01e/kotlinx-coroutines-core-1.1.0-sources.jar!/ThreadPoolDispatcher.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="28" selection-start-line="28" selection-end-line="29" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-coroutines-test/1.1.0/77a3bc97fe72aadc2a1298bb69e3c63fe8284984/kotlinx-coroutines-test-1.1.0-sources.jar!/TestDispatchers.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="18" column="23" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/test/java/com/akoufatzis/coolweather/presentation/weather/WeatherViewModelTest.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="62" column="25" selection-start-line="62" selection-start-column="25" selection-end-line="62" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/buildSrc/build.gradle.kts">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build.gradle.kts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="67" column="32" selection-start-line="67" selection-start-column="32" selection-end-line="67" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ktlint.gradle.kts">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle.kts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="8" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/bottom_navigation.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/akoufatzis/coolweather/presentation/weather/WeatherFragment.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="41" column="114" selection-start-line="40" selection-start-column="8" selection-end-line="41" selection-end-column="114" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/domain/src/main/java/com/akoufatzis/coolweather/domain/weather/WeatherRepository.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="10" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/akoufatzis/coolweather/presentation/settings/SettingsViewState.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/buildSrc/src/main/java/Dependencies.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="36" selection-start-line="1" selection-start-column="36" selection-end-line="1" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/akoufatzis/coolweather/presentation/weather/WeatherViewModel.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="23" column="33" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openweathermap/src/main/java/com/akoufatzis/coolweather/openweathermap/OpenWeatherMapDataStore.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="11" column="22" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/domain/src/main/java/com/akoufatzis/coolweather/domain/weather/WeatherUseCase.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="20" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="20" />
+          <folding>
+            <element signature="e#51#125#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/akoufatzis/coolweather/presentation/settings/SettingsViewModel.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="24" column="4" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/akoufatzis/coolweather/presentation/core/ViewUtils.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="32" column="27" selection-start-line="32" selection-start-column="27" selection-end-line="32" selection-end-column="27" />
+          <folding>
+            <element signature="e#54#260#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/akoufatzis/coolweather/presentation/onboarding/OnboardingActivity.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="56" lean-forward="true" selection-start-line="8" selection-start-column="56" selection-end-line="8" selection-end-column="56" />
+          <folding>
+            <element signature="e#60#168#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_onboarding.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="66" lean-forward="true" selection-start-line="10" selection-start-column="66" selection-end-line="10" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider editor-type-id="android-manifest" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="18" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/akoufatzis/coolweather/presentation/core/DataBindingAdapter.kt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_place.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="14" selection-start-line="19" selection-start-column="14" selection-end-line="19" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_weather.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="66" lean-forward="true" selection-start-line="1" selection-start-column="66" selection-end-line="1" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/akoufatzis/coolweather/presentation/place/PlaceFragment.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/akoufatzis/coolweather/presentation/onboarding/OnBoardingFragment.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="43" column="43" lean-forward="true" selection-start-line="43" selection-start-column="43" selection-end-line="43" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_on_boarding.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="9" selection-end-line="24" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/navigation/nav_graph.xml">
+      <provider editor-type-id="nav-designer" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="45" selection-start-line="5" selection-start-column="45" selection-end-line="5" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/navigation/onboarding_graph.xml">
+      <provider editor-type-id="nav-designer" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="11" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

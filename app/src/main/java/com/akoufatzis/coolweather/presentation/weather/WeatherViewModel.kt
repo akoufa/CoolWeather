@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import com.akoufatzis.coolweather.core.Event
 import com.akoufatzis.coolweather.domain.Failure
 import com.akoufatzis.coolweather.domain.Success
+import com.akoufatzis.coolweather.domain.place.PlaceUseCase
 import com.akoufatzis.coolweather.domain.settings.Celsius
 import com.akoufatzis.coolweather.domain.settings.GetTemperatureUnitUseCase
 import com.akoufatzis.coolweather.domain.settings.TemperatureUnit
@@ -24,8 +25,6 @@ class WeatherViewModel @Inject constructor(
 ) : ViewModel(), CoroutineScope {
 
     private val job = Job()
-    @Suppress("ForbiddenComment")
-    // TODO: Inject the coroutineContext
     override val coroutineContext: CoroutineContext
         get() = job + Dispatchers.Main
 
@@ -35,11 +34,11 @@ class WeatherViewModel @Inject constructor(
 
     private val weatherList = arrayListOf<WeatherData>()
 
-    fun showWeather(city: String) = launch {
+    fun showWeather() = launch {
         showLoading()
-        val weatherResult = weatherUseCase(city)
-        val tempUnit = getTemperatureUnit()
 
+        val weatherResult = weatherUseCase()
+        val tempUnit = getTemperatureUnit()
         when (weatherResult) {
             is Success -> {
                 val weatherData = weatherMapper.map(weatherResult.data, tempUnit)
@@ -51,10 +50,9 @@ class WeatherViewModel @Inject constructor(
     }
 
     private fun getTemperatureUnit(): TemperatureUnit {
-        val result = getTemperatureUnitUseCase()
-        return when (result) {
+        return when (val result = getTemperatureUnitUseCase()) {
             is Success -> result.data
-            is Failure -> Celsius // Fallback to celsisu
+            is Failure -> Celsius // Fallback to celsius
         }
     }
 

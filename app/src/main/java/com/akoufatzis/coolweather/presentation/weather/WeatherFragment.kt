@@ -1,12 +1,9 @@
 package com.akoufatzis.coolweather.presentation.weather
 
-import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.inputmethod.InputMethodManager
-import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -14,8 +11,6 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.akoufatzis.coolweather.R
 import com.akoufatzis.coolweather.databinding.FragmentWeatherBinding
-import com.akoufatzis.coolweather.presentation.core.onEnterAction
-import com.akoufatzis.coolweather.presentation.core.onRightDrawableClicked
 import com.google.android.material.snackbar.Snackbar
 import dagger.android.support.DaggerFragment
 import javax.inject.Inject
@@ -43,19 +38,10 @@ class WeatherFragment : DaggerFragment() {
         binding.rvWeather.adapter = weatherAdapter
         binding.rvWeather.layoutManager = LinearLayoutManager(context)
         binding.rvWeather.setHasFixedSize(true)
-
-        binding.etCity.onRightDrawableClicked {
-            Toast.makeText(context, R.string.not_implement_yet, Toast.LENGTH_SHORT).show()
-        }
-
-        binding.etCity.onEnterAction {
-            weatherViewModel.showWeather(it.text.toString())
-        }
-
         weatherViewModel.viewState.observe(viewLifecycleOwner, Observer { state ->
 
             if (state.error != null) {
-                hideKeyboard()
+                // TODO: Enable reload here
                 Snackbar.make(binding.root, R.string.something_went_wrong, Snackbar.LENGTH_SHORT)
                     .show()
             } else {
@@ -67,20 +53,15 @@ class WeatherFragment : DaggerFragment() {
                     )
                 }
 
-                hideKeyboard()
                 weatherAdapter.submitList(weatherList)
-                binding.etCity.text?.clear()
             }
         })
 
         return binding.root
     }
 
-    private fun hideKeyboard() {
-        val view = activity?.window?.currentFocus
-        view?.let { v ->
-            val imm = context!!.getSystemService(Context.INPUT_METHOD_SERVICE) as? InputMethodManager
-            imm?.hideSoftInputFromWindow(v.windowToken, 0)
-        }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        weatherViewModel.showWeather()
     }
 }

@@ -85,13 +85,13 @@ class WeatherViewModelTest {
 
         weatherUseCase.stub {
             onBlocking {
-                invoke(cityWeather.city.name)
+                invoke()
             }.doReturn(result)
         }
 
         whenever(weatherMapper.map(cityWeather, Celsius)).thenReturn(weatherData)
         whenever(getTemperatureUnitUseCase.invoke()).thenReturn(Success(Celsius))
-        viewModel.showWeather(cityWeather.city.name)
+        viewModel.showWeather()
 
         // then
 
@@ -99,6 +99,6 @@ class WeatherViewModelTest {
         assertThat(loadingViewState.progress.peek()).isTrue()
 
         val successViewState = getLiveDataValue(viewModel.viewState)!!
-        assertThat(successViewState.data!!).isEqualTo(listOf(weatherData))
+        assertThat(successViewState.data).isEqualTo(listOf(weatherData))
     }
 }

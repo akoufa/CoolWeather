@@ -1,4 +1,5 @@
 @file:Suppress("ComplexMethod")
+
 package com.akoufatzis.coolweather.presentation.weather
 
 import android.content.Context
