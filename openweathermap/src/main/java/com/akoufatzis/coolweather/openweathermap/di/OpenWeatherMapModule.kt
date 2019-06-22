@@ -4,7 +4,6 @@ import com.akoufatzis.coolweather.domain.weather.WeatherRepository
 import com.akoufatzis.coolweather.openweathermap.BuildConfig
 import com.akoufatzis.coolweather.openweathermap.OpenWeatherMapApi
 import com.akoufatzis.coolweather.openweathermap.WeatherDataStore
-import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import dagger.Module
 import dagger.Provides
 import retrofit2.Retrofit
@@ -28,7 +27,6 @@ class OpenWeatherMapModule {
             .addConverterFactory(
                 MoshiConverterFactory.create()
             )
-            .addCallAdapterFactory(CoroutineCallAdapterFactory())
             .build()
     }
 
