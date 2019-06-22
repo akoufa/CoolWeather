@@ -9,7 +9,6 @@ import com.akoufatzis.coolweather.domain.settings.Celsius
 import com.akoufatzis.coolweather.domain.settings.ChangeTemperatureUnitUseCase
 import com.akoufatzis.coolweather.domain.settings.Fahrenheit
 import com.akoufatzis.coolweather.domain.settings.GetSettingsUseCase
-import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import javax.inject.Inject
@@ -18,12 +17,7 @@ import kotlin.coroutines.CoroutineContext
 class SettingsViewModel @Inject constructor(
     val changeTemperatureUnitUseCase: ChangeTemperatureUnitUseCase,
     getSettingsUseCase: GetSettingsUseCase
-) :
-    ViewModel(), CoroutineScope {
-
-    private val job = Job()
-    override val coroutineContext: CoroutineContext
-        get() = job + Dispatchers.Main
+) : ViewModel() {
 
     private val _viewState = MutableLiveData<SettingsViewState>()
     val viewState: LiveData<SettingsViewState>
@@ -53,7 +47,6 @@ class SettingsViewModel @Inject constructor(
     }
 
     override fun onCleared() {
-        job.cancel()
         super.onCleared()
     }
 }

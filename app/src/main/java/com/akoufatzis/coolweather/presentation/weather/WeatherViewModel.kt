@@ -3,6 +3,7 @@ package com.akoufatzis.coolweather.presentation.weather
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.akoufatzis.coolweather.core.Event
 import com.akoufatzis.coolweather.domain.Failure
 import com.akoufatzis.coolweather.domain.Success
@@ -22,11 +23,7 @@ class WeatherViewModel @Inject constructor(
     val weatherUseCase: WeatherUseCase,
     val getTemperatureUnitUseCase: GetTemperatureUnitUseCase,
     private val weatherMapper: WeatherMapper
-) : ViewModel(), CoroutineScope {
-
-    private val job = Job()
-    override val coroutineContext: CoroutineContext
-        get() = job + Dispatchers.Main
+) : ViewModel() {
 
     private val _viewState = MutableLiveData<WeatherViewState>()
     val viewState: LiveData<WeatherViewState>
@@ -34,9 +31,8 @@ class WeatherViewModel @Inject constructor(
 
     private val weatherList = arrayListOf<WeatherData>()
 
-    fun showWeather() = launch {
+    fun showWeather() = viewModelScope.launch {
         showLoading()
-
         val weatherResult = weatherUseCase()
         val tempUnit = getTemperatureUnit()
         when (weatherResult) {
@@ -71,10 +67,5 @@ class WeatherViewModel @Inject constructor(
             showSuccess
         )
         _viewState.value = viewState
-    }
-
-    override fun onCleared() {
-        job.cancel()
-        super.onCleared()
     }
 }
