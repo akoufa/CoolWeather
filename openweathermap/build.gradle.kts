@@ -37,7 +37,7 @@ android {
 
 
 detekt {
-    toolVersion = "1.0.0-RC14"
+    toolVersion = "1.0.0-RC15"
     input = files("src/main/kotlin", "src/main/java")
     filters = ".*/resources/.*,.*/build/.*"
 }
@@ -54,7 +54,6 @@ dependencies {
 
     implementation(Libs.retrofit)
     implementation(Libs.retrofitMoshi)
-    implementation(Libs.retrofitCouroutines)
 
     implementation(Libs.moshi)
     kapt(Libs.moshiCodeGen)

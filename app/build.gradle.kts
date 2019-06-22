@@ -4,7 +4,7 @@ plugins {
     id("kotlin-kapt")
     id("kotlin-android-extensions")
     id("androidx.navigation.safeargs")
-    id("io.gitlab.arturbosch.detekt").version("1.0.0-RC14")
+    id("io.gitlab.arturbosch.detekt").version("1.0.0-RC15")
 }
 
 apply {
@@ -26,12 +26,12 @@ android {
         vectorDrawables.useSupportLibrary = true
 
         buildConfigField(
-            "String", "OPENWEATHERMAP_URL",
-            "\"$apiBaseUrl\""
+                "String", "OPENWEATHERMAP_URL",
+                "\"$apiBaseUrl\""
         )
         buildConfigField(
-            "String", "OPENWEATHERMAP_API_KEY",
-            "\"$apiKey\""
+                "String", "OPENWEATHERMAP_API_KEY",
+                "\"$apiKey\""
         )
 
         useLibrary("android.test.runner")
@@ -48,7 +48,7 @@ android {
 }
 
 detekt {
-    toolVersion = "1.0.0-RC14"
+    toolVersion = "1.0.0-RC15"
     input = files("src/main/kotlin", "src/main/java")
     filters = ".*/resources/.*,.*/build/.*"
 }
@@ -72,7 +72,10 @@ dependencies {
 
     implementation(Libs.material)
 
+    implementation(Libs.playServicesLocation)
+
     implementation(Libs.roomRuntime)
+    implementation(Libs.roomKtx)
     kapt(Libs.roomCompiler)
 
     implementation(Libs.coroutinesCore)
@@ -87,7 +90,6 @@ dependencies {
 
     implementation(Libs.retrofit)
     implementation(Libs.retrofitMoshi)
-    implementation(Libs.retrofitCouroutines)
 
     implementation(Libs.moshi)
     kapt(Libs.moshiCodeGen)

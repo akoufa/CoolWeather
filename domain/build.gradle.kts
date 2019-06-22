@@ -10,7 +10,7 @@ apply{
 }
 
 detekt {
-    toolVersion = "1.0.0-RC14"
+    toolVersion = "1.0.0-RC15"
     input = files("src/main/kotlin", "src/main/java")
     filters = ".*/resources/.*,.*/build/.*"
 }
