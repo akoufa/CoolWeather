@@ -2,7 +2,7 @@ plugins {
     id("java-library")
     id("kotlin")
     id("kotlin-kapt")
-    id("io.gitlab.arturbosch.detekt").version("1.0.0-RC14")
+    id("io.gitlab.arturbosch.detekt").version("1.0.0-RC15")
 }
 
 apply{

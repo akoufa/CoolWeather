@@ -26,8 +26,7 @@ class SettingsViewModel @Inject constructor(
     init {
         val result = getSettingsUseCase()
         if (result is Success) {
-            val unit = result.data.unit
-            when (unit) {
+            when (result.data.unit) {
                 Celsius -> _viewState.value = SettingsViewState(null, TemperatureUnit.CELSIUS)
                 Fahrenheit -> _viewState.value = SettingsViewState(null, TemperatureUnit.FAHRENHEIT)
             }
@@ -44,9 +43,5 @@ class SettingsViewModel @Inject constructor(
             is Success -> _viewState.value = SettingsViewState(null, unit)
             is Failure -> _viewState.value = SettingsViewState(result.exception, null)
         }
-    }
-
-    override fun onCleared() {
-        super.onCleared()
     }
 }

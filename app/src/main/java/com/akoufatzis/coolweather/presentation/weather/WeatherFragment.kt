@@ -1,3 +1,4 @@
+@file:Suppress("ForbiddenComment")
 package com.akoufatzis.coolweather.presentation.weather
 
 import android.os.Bundle

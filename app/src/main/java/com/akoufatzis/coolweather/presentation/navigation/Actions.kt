@@ -4,7 +4,8 @@ import android.content.Context
 import android.content.Intent
 
 /*
- This enables us to split the app in multiple modules, every of them contains a activity that can be started via this object according
+ This enables us to split the app in multiple modules, every of them contains
+ a activity that can be started via this object according
  to https://jeroenmols.com/blog/2019/04/02/modularizationexample/
  */
 
