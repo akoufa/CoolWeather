@@ -12,7 +12,7 @@ class WeatherUseCase @Inject constructor(
 ) {
 
     suspend operator fun invoke(): Result<CityWeather> {
-        return when(val placeResult = placeRepository.fetchPlace()){
+        return when (val placeResult = placeRepository.fetchPlace()) {
             is Success -> weatherRepository.fetchCityWeatherData(placeResult.data.name)
             is Failure -> Failure(Exception("Weather could not be determined"))
         }

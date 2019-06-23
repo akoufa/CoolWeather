@@ -5,7 +5,7 @@ plugins {
     id("io.gitlab.arturbosch.detekt").version("1.0.0-RC15")
 }
 
-apply{
+apply {
     from("$rootDir/ktlint.gradle.kts")
 }
 

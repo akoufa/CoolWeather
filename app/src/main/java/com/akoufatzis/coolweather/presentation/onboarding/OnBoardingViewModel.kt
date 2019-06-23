@@ -8,12 +8,8 @@ import com.akoufatzis.coolweather.domain.Failure
 import com.akoufatzis.coolweather.domain.Success
 import com.akoufatzis.coolweather.domain.place.Place
 import com.akoufatzis.coolweather.domain.place.PlaceUseCase
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 import javax.inject.Inject
-import kotlin.coroutines.CoroutineContext
 
 class OnBoardingViewModel @Inject constructor(
     val placeUseCase: PlaceUseCase

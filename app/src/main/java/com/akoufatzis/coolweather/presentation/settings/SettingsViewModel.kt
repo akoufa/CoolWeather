@@ -9,10 +9,7 @@ import com.akoufatzis.coolweather.domain.settings.Celsius
 import com.akoufatzis.coolweather.domain.settings.ChangeTemperatureUnitUseCase
 import com.akoufatzis.coolweather.domain.settings.Fahrenheit
 import com.akoufatzis.coolweather.domain.settings.GetSettingsUseCase
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.Job
 import javax.inject.Inject
-import kotlin.coroutines.CoroutineContext
 
 class SettingsViewModel @Inject constructor(
     val changeTemperatureUnitUseCase: ChangeTemperatureUnitUseCase,

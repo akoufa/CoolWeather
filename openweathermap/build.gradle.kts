@@ -5,7 +5,7 @@ plugins {
     id("io.gitlab.arturbosch.detekt").version("1.0.0-RC15")
 }
 
-apply{
+apply {
     from("$rootDir/ktlint.gradle.kts")
 }
 
@@ -21,10 +21,14 @@ android {
         versionName = "1.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
-        buildConfigField("String", "OPENWEATHERMAP_URL",
-            "\"$apiBaseUrl\"")
-        buildConfigField("String", "OPENWEATHERMAP_API_KEY",
-            "\"$apiKey\"")
+        buildConfigField(
+            "String", "OPENWEATHERMAP_URL",
+            "\"$apiBaseUrl\""
+        )
+        buildConfigField(
+            "String", "OPENWEATHERMAP_API_KEY",
+            "\"$apiKey\""
+        )
 
     }
     buildTypes {

@@ -26,12 +26,12 @@ android {
         vectorDrawables.useSupportLibrary = true
 
         buildConfigField(
-                "String", "OPENWEATHERMAP_URL",
-                "\"$apiBaseUrl\""
+            "String", "OPENWEATHERMAP_URL",
+            "\"$apiBaseUrl\""
         )
         buildConfigField(
-                "String", "OPENWEATHERMAP_API_KEY",
-                "\"$apiKey\""
+            "String", "OPENWEATHERMAP_API_KEY",
+            "\"$apiKey\""
         )
 
         useLibrary("android.test.runner")

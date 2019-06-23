@@ -7,17 +7,12 @@ import androidx.lifecycle.viewModelScope
 import com.akoufatzis.coolweather.core.Event
 import com.akoufatzis.coolweather.domain.Failure
 import com.akoufatzis.coolweather.domain.Success
-import com.akoufatzis.coolweather.domain.place.PlaceUseCase
 import com.akoufatzis.coolweather.domain.settings.Celsius
 import com.akoufatzis.coolweather.domain.settings.GetTemperatureUnitUseCase
 import com.akoufatzis.coolweather.domain.settings.TemperatureUnit
 import com.akoufatzis.coolweather.domain.weather.WeatherUseCase
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 import javax.inject.Inject
-import kotlin.coroutines.CoroutineContext
 
 class WeatherViewModel @Inject constructor(
     val weatherUseCase: WeatherUseCase,

@@ -9,9 +9,10 @@
         android:id="@+id/onBoardingFragment"
         android:name="com.akoufatzis.coolweather.presentation.onboarding.OnBoardingFragment"
         android:label="@string/weather"
-        tools:layout="@layout/fragment_on_boarding" >
+        tools:layout="@layout/fragment_on_boarding">
 
-        <action android:id="@+id/action_oboarding_to_place"
+        <action
+            android:id="@+id/action_oboarding_to_place"
             app:destination="@id/placeFragment" />
     </fragment>
 
