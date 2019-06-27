@@ -6,20 +6,15 @@ import com.akoufatzis.coolweather.domain.settings.Celsius
 import com.akoufatzis.coolweather.domain.settings.GetTemperatureUnitUseCase
 import com.akoufatzis.coolweather.domain.weather.* // ktlint-disable no-wildcard-imports
 import com.akoufatzis.coolweather.presentation.settings.TemperatureUnit
+import com.akoufatzis.coolweather.shared.CoroutinesTestRule
 import com.akoufatzis.coolweather.shared.getLiveDataValue
 import com.google.common.truth.Truth.assertThat
 import com.nhaarman.mockitokotlin2.doReturn
 import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.stub
 import com.nhaarman.mockitokotlin2.whenever
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.ObsoleteCoroutinesApi
-import kotlinx.coroutines.newSingleThreadContext
-import kotlinx.coroutines.runBlocking
-import kotlinx.coroutines.test.resetMain
-import kotlinx.coroutines.test.setMain
-import org.junit.After
-import org.junit.Before
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.test.runBlockingTest
 import org.junit.Rule
 import org.junit.Test
 
@@ -43,6 +38,12 @@ fun createCityWeather(cityName: String, degrees: Double): CityWeather {
 
 class WeatherViewModelTest {
 
+    // Set the main coroutines dispatcher for unit testing.
+    // We are setting the above-defined testDispatcher as the Main thread dispatcher.
+    @ExperimentalCoroutinesApi
+    @get:Rule
+    var coroutinesTestRule = CoroutinesTestRule()
+
     // Executes tasks in the Architecture Components in the same thread
     @get:Rule
     var instantTaskExecutorRule = InstantTaskExecutorRule()
@@ -55,22 +56,8 @@ class WeatherViewModelTest {
         return WeatherViewModel(weatherUseCase, getTemperatureUnitUseCase, weatherMapper)
     }
 
-    @UseExperimental(ObsoleteCoroutinesApi::class)
-    private val mainThreadSurrogate = newSingleThreadContext("UI thread")
-
-    @Before
-    fun setUp() {
-        Dispatchers.setMain(mainThreadSurrogate)
-    }
-
-    @After
-    fun tearDown() {
-        Dispatchers.resetMain() // reset main dispatcher to the original Main dispatcher
-        mainThreadSurrogate.close()
-    }
-
     @Test
-    fun showWeatherForCityShouldReturnWeatherViewState() = runBlocking {
+    fun showWeatherForCityShouldReturnWeatherViewState() = coroutinesTestRule.testDispatcher.runBlockingTest {
 
         // given
         val cityName = "Thessaloniki"
@@ -95,10 +82,8 @@ class WeatherViewModelTest {
 
         // then
 
-        val loadingViewState = getLiveDataValue(viewModel.viewState)!!
-        assertThat(loadingViewState.progress.peek()).isTrue()
-
-        val successViewState = getLiveDataValue(viewModel.viewState)!!
-        assertThat(successViewState.data).isEqualTo(listOf(weatherData))
+        val viewState = getLiveDataValue(viewModel.viewState)!!
+        assertThat(viewState.progress.peek()).isFalse()
+        assertThat(viewState.data).isEqualTo(listOf(weatherData))
     }
 }
