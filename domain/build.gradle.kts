@@ -2,7 +2,7 @@ plugins {
     id("java-library")
     id("kotlin")
     id("kotlin-kapt")
-    id("io.gitlab.arturbosch.detekt").version("1.0.0-RC15")
+    id("io.gitlab.arturbosch.detekt").version("1.0.0")
 }
 
 apply {
@@ -10,7 +10,7 @@ apply {
 }
 
 detekt {
-    toolVersion = "1.0.0-RC15"
+    toolVersion = "1.0.0"
     input = files("src/main/kotlin", "src/main/java")
     filters = ".*/resources/.*,.*/build/.*"
 }

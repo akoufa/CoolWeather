@@ -2,7 +2,7 @@ plugins {
     id("com.android.library")
     id("kotlin-android")
     id("kotlin-kapt")
-    id("io.gitlab.arturbosch.detekt").version("1.0.0-RC15")
+    id("io.gitlab.arturbosch.detekt").version("1.0.0")
 }
 
 apply {
@@ -11,12 +11,13 @@ apply {
 
 val apiBaseUrl: String by project
 val apiKey: String by project
+val placesApiKey: String by project
 
 android {
-    compileSdkVersion(28)
+    compileSdkVersion(29)
     defaultConfig {
         minSdkVersion(21)
-        targetSdkVersion(28)
+        targetSdkVersion(29)
         versionCode = 1
         versionName = "1.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
@@ -28,6 +29,10 @@ android {
         buildConfigField(
             "String", "OPENWEATHERMAP_API_KEY",
             "\"$apiKey\""
+        )
+        buildConfigField(
+            "String", "PLACES_API_KEY",
+            "\"$placesApiKey\""
         )
 
     }
@@ -41,7 +46,7 @@ android {
 
 
 detekt {
-    toolVersion = "1.0.0-RC15"
+    toolVersion = "1.0.0"
     input = files("src/main/kotlin", "src/main/java")
     filters = ".*/resources/.*,.*/build/.*"
 }

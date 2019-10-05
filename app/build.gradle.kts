@@ -4,7 +4,7 @@ plugins {
     id("kotlin-kapt")
     id("kotlin-android-extensions")
     id("androidx.navigation.safeargs")
-    id("io.gitlab.arturbosch.detekt").version("1.0.0-RC15")
+    id("io.gitlab.arturbosch.detekt").version("1.0.0")
 }
 
 apply {
@@ -15,11 +15,11 @@ val apiBaseUrl: String by project
 val apiKey: String by project
 
 android {
-    compileSdkVersion(28)
+    compileSdkVersion(29)
     defaultConfig {
         applicationId = "com.akoufatzis.coolweather"
         minSdkVersion(21)
-        targetSdkVersion(28)
+        targetSdkVersion(29)
         versionCode = 1
         versionName = "1.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
@@ -48,7 +48,7 @@ android {
 }
 
 detekt {
-    toolVersion = "1.0.0-RC15"
+    toolVersion = "1.0.0"
     input = files("src/main/kotlin", "src/main/java")
     filters = ".*/resources/.*,.*/build/.*"
 }
@@ -90,6 +90,8 @@ dependencies {
 
     implementation(Libs.retrofit)
     implementation(Libs.retrofitMoshi)
+
+    implementation(Libs.places)
 
     implementation(Libs.moshi)
     kapt(Libs.moshiCodeGen)
