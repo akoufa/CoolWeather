@@ -4,11 +4,7 @@ data class CityWeather(val weather: Weather, val city: City)
 
 data class City(val name: String)
 
-data class Temperature(
-    val value: Double,
-    val min: Double,
-    val max: Double
-)
+inline class Temperature(val value: Double)
 
 inline class Pressure(val value: Double)
 
@@ -18,6 +14,8 @@ data class Weather(
     val description: String?,
     val type: WeatherType,
     val temperature: Temperature,
+    val maxTemperature: Temperature,
+    val minTemperature: Temperature,
     val pressure: Pressure,
     val humidity: Humidity,
     val wind: Wind

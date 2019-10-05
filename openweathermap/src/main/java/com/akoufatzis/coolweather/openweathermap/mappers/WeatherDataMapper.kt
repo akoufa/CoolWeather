@@ -10,7 +10,9 @@ fun CityWeatherDto.toCityWeather(): CityWeather {
     val weather = weathers.first()
 
     val type = mapToWeatherType(weather.id)
-    val temperature = Temperature(main.temp, main.tempMin, main.tempMax)
+    val temperature = Temperature(main.temp)
+    val minTemperature = Temperature(main.tempMin)
+    val maxTemperature = Temperature(main.tempMax)
     val humidity = Humidity(main.humidity)
     val pressure = Pressure(main.pressure)
     val city = City(name)
@@ -21,6 +23,8 @@ fun CityWeatherDto.toCityWeather(): CityWeather {
         humidity = humidity,
         pressure = pressure,
         temperature = temperature,
+        minTemperature = minTemperature,
+        maxTemperature = maxTemperature,
         wind = windDomainModel,
         type = type
     )
