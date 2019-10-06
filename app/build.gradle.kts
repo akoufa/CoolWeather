@@ -13,6 +13,7 @@ apply {
 
 val apiBaseUrl: String by project
 val apiKey: String by project
+val placesApiKey: String by project
 
 android {
     compileSdkVersion(29)
@@ -32,6 +33,10 @@ android {
         buildConfigField(
             "String", "OPENWEATHERMAP_API_KEY",
             "\"$apiKey\""
+        )
+        buildConfigField(
+            "String", "PLACES_API_KEY",
+            "\"$placesApiKey\""
         )
 
         useLibrary("android.test.runner")
