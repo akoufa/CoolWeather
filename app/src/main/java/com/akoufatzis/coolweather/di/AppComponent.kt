@@ -6,7 +6,6 @@ import com.akoufatzis.coolweather.data.database.di.DatabaseModule
 import com.akoufatzis.coolweather.data.places.di.PlacesModule
 import com.akoufatzis.coolweather.data.settings.di.SettingsModule
 import com.akoufatzis.coolweather.di.activity.ActivityBuilder
-import com.akoufatzis.coolweather.openweathermap.di.OpenWeatherMapModule
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjector

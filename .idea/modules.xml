@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/CoolWeather.iml" filepath="$PROJECT_DIR$/CoolWeather.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/buildSrc/buildSrc.iml" filepath="$PROJECT_DIR$/buildSrc/buildSrc.iml" />
-      <module fileurl="file://$PROJECT_DIR$/domain/domain.iml" filepath="$PROJECT_DIR$/domain/domain.iml" />
-      <module fileurl="file://$PROJECT_DIR$/openweathermap/openweathermap.iml" filepath="$PROJECT_DIR$/openweathermap/openweathermap.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CoolWeather.iml" filepath="$PROJECT_DIR$/CoolWeather.iml" group="CoolWeather" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/CoolWeather_buildSrc.iml" filepath="$PROJECT_DIR$/.idea/modules/CoolWeather_buildSrc.iml" group="CoolWeather/CoolWeather_buildSrc" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="CoolWeather/app" />
+      <module fileurl="file://$PROJECT_DIR$/domain/domain.iml" filepath="$PROJECT_DIR$/domain/domain.iml" group="CoolWeather/domain" />
     </modules>
   </component>
 </project>

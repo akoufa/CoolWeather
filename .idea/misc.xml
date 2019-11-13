@@ -9,6 +9,7 @@
   <component name="SuppressABINotification">
     <option name="modulesWithSuppressedNotConfigured">
       <set>
+        <option value="app" />
         <option value="domain" />
       </set>
     </option>
