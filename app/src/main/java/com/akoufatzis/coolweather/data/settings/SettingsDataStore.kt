@@ -4,31 +4,28 @@ package com.akoufatzis.coolweather.data.settings
 
 import android.content.SharedPreferences
 import androidx.core.content.edit
-import com.akoufatzis.coolweather.domain.Result
-import com.akoufatzis.coolweather.domain.Success
-import com.akoufatzis.coolweather.domain.settings.* // ktlint-disable no-wildcard-imports
+import com.akoufatzis.coolweather.domain.settings.*
 import javax.inject.Inject
 
-class SettingsDataStore @Inject constructor(private val sharedPreferences: SharedPreferences) : SettingsRepository {
+class SettingsDataStore @Inject constructor(private val sharedPreferences: SharedPreferences) :
+    SettingsRepository {
 
     private val celsiusKey = "CELSIUS_KEY"
 
-    override fun temperatureUnit(): Result<TemperatureUnit> {
-        val tempUnit = createTempUnit()
-        return Success(tempUnit)
+    override fun temperatureUnit(): TemperatureUnit {
+        return createTempUnit()
     }
 
-    override fun changeTemperatureUnit(unit: TemperatureUnit): Result<Unit> {
+    override fun changeTemperatureUnit(unit: TemperatureUnit) {
         val isCelsius = unit == Celsius
         sharedPreferences.edit {
             putBoolean(celsiusKey, isCelsius)
         }
-        return Success(Unit)
     }
 
-    override fun settings(): Result<Settings> {
+    override fun settings(): Settings {
         val tempUnit = createTempUnit()
-        return Success(Settings(tempUnit))
+        return Settings(tempUnit)
     }
 
     private fun createTempUnit(): TemperatureUnit {

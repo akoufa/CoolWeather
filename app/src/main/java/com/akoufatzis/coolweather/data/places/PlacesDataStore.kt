@@ -3,30 +3,24 @@ package com.akoufatzis.coolweather.data.places
 import com.akoufatzis.coolweather.data.database.PlaceDao
 import com.akoufatzis.coolweather.data.database.entities.fromPlace
 import com.akoufatzis.coolweather.data.database.entities.toPlace
-import com.akoufatzis.coolweather.domain.Failure
-import com.akoufatzis.coolweather.domain.Result
-import com.akoufatzis.coolweather.domain.Success
 import com.akoufatzis.coolweather.domain.place.Place
-import com.akoufatzis.coolweather.domain.place.PlaceRepository
+import com.akoufatzis.coolweather.domain.place.PlacesRepository
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.map
 import javax.inject.Inject
 import javax.inject.Singleton
 
-@Suppress("ReturnCount")
 @Singleton
 class PlacesDataStore @Inject constructor(
-    private val locationProvider: LocationProvider,
     private val placeDao: PlaceDao
-) : PlaceRepository {
+) : PlacesRepository {
 
-    override suspend fun fetchPlace(): Result<Place> {
-        val places = placeDao.loadAll()
-        if (places.isNotEmpty()) {
-            val placeEntity = places.first()
-            return Success(placeEntity.toPlace())
-        }
-        val localityName = locationProvider.getLocalityName() ?: return Failure(Exception("No place found"))
-        val place = Place(localityName)
-        placeDao.insert(fromPlace(place))
-        return Success(place)
+    override fun observePlaces(): Flow<List<Place>> {
+        return placeDao.loadAll().map { placeEntities -> placeEntities.map { it.toPlace() } }
+    }
+
+    override suspend fun storePlace(place: Place) {
+        val placeEntity = fromPlace(place)
+        placeDao.insert(placeEntity)
     }
 }
