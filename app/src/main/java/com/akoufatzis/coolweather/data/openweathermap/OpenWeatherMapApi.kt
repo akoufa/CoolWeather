@@ -1,6 +1,5 @@
-package com.akoufatzis.coolweather.openweathermap
+package com.akoufatzis.coolweather.data.openweathermap
 
-import com.akoufatzis.coolweather.openweathermap.data.CityWeatherDto
 import retrofit2.http.GET
 import retrofit2.http.Query
 

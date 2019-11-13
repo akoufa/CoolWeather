@@ -1,10 +1,10 @@
 package com.akoufatzis.coolweather
 
+import com.akoufatzis.coolweather.BuildConfig.PLACES_API_KEY
 import com.akoufatzis.coolweather.data.database.di.DatabaseModule
 import com.akoufatzis.coolweather.data.places.di.PlacesModule
 import com.akoufatzis.coolweather.di.DaggerAppComponent
-import com.akoufatzis.coolweather.openweathermap.BuildConfig.PLACES_API_KEY
-import com.akoufatzis.coolweather.openweathermap.di.OpenWeatherMapModule
+import com.akoufatzis.coolweather.di.OpenWeatherMapModule
 import com.google.android.libraries.places.api.Places
 import dagger.android.AndroidInjector
 import dagger.android.support.DaggerApplication

@@ -50,6 +50,11 @@ android {
         }
     }
     dataBinding.isEnabled = true
+    viewBinding.isEnabled = true
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
 }
 
 detekt {
@@ -60,16 +65,16 @@ detekt {
 
 dependencies {
     implementation(project(":domain"))
-    implementation(project(":openweathermap"))
     implementation(Libs.kotlinStdLib)
     implementation(Libs.appCompat)
     implementation(Libs.constraintLayout)
+    implementation(Libs.viewpager2)
 
     implementation(Libs.coreCtx)
 
     implementation(Libs.viewModelKtx)
     implementation(Libs.lifecycleExt)
-    implementation(Libs.lifecycleRx)
+    implementation(Libs.lifecycleKtx)
     kapt(Libs.lifecycleCompiler)
 
     implementation(Libs.navigationFragmentKtx)
@@ -85,7 +90,6 @@ dependencies {
 
     implementation(Libs.coroutinesCore)
     implementation(Libs.coroutinesAndroid)
-    implementation(Libs.coroutinesRx2)
 
     implementation(Libs.dagger)
     implementation(Libs.daggerAndroid)
@@ -103,6 +107,8 @@ dependencies {
 
     implementation(Libs.glide)
     kapt(Libs.glideCompiler)
+
+    implementation(Libs.circleIndicator)
 
     testImplementation(Libs.coroutinesCore)
     testImplementation(Libs.mockito)

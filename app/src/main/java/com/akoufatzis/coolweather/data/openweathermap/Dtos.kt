@@ -1,4 +1,4 @@
-package com.akoufatzis.coolweather.openweathermap.data
+package com.akoufatzis.coolweather.data.openweathermap
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass

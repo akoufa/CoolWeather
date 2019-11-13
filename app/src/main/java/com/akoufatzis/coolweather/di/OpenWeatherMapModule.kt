@@ -1,9 +1,9 @@
-package com.akoufatzis.coolweather.openweathermap.di
+package com.akoufatzis.coolweather.di
 
+import com.akoufatzis.coolweather.BuildConfig
+import com.akoufatzis.coolweather.data.openweathermap.OpenWeatherMapApi
 import com.akoufatzis.coolweather.domain.weather.WeatherRepository
-import com.akoufatzis.coolweather.openweathermap.BuildConfig
-import com.akoufatzis.coolweather.openweathermap.OpenWeatherMapApi
-import com.akoufatzis.coolweather.openweathermap.WeatherDataStore
+import com.akoufatzis.coolweather.data.weather.WeatherDataStore
 import dagger.Module
 import dagger.Provides
 import retrofit2.Retrofit

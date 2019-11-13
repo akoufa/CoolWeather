@@ -64,13 +64,14 @@ fun convertToFahrenheit(kelvin: Double): Double {
 }
 
 // For presentation, assume the user doesn't care about tenths of a degree.
-fun getDegreesRepresentation(context: Context, temperature: TemperatureData) = when (temperature.tempUnit) {
-    TemperatureUnit.CELSIUS -> String.format(
-        context.getString(R.string.format_temperature_celsius),
-        temperature.degrees
-    )
-    TemperatureUnit.FAHRENHEIT -> String.format(
-        context.getString(R.string.format_temperature_fahrenheit),
-        temperature.degrees
-    )
-}
+fun getDegreesRepresentation(context: Context, temperature: TemperatureData) =
+    when (temperature.tempUnit) {
+        TemperatureUnit.CELSIUS -> String.format(
+            context.getString(R.string.format_temperature_celsius),
+            temperature.degrees
+        )
+        TemperatureUnit.FAHRENHEIT -> String.format(
+            context.getString(R.string.format_temperature_fahrenheit),
+            temperature.degrees
+        )
+    }
