@@ -12,7 +12,7 @@ apply {
 }
 
 val apiBaseUrl: String by project
-val apiKey: String by project
+val openweathermapApiKey: String by project
 val placesApiKey: String by project
 
 android {
@@ -32,7 +32,7 @@ android {
         )
         buildConfigField(
             "String", "OPENWEATHERMAP_API_KEY",
-            "\"$apiKey\""
+            "\"$openweathermapApiKey\""
         )
         buildConfigField(
             "String", "PLACES_API_KEY",
