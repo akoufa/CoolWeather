@@ -1,7 +1,7 @@
 package com.akoufatzis.coolweather.di.activity
 
-import com.akoufatzis.coolweather.presentation.main.MainActivity
 import com.akoufatzis.coolweather.di.scopes.ActivityScope
+import com.akoufatzis.coolweather.presentation.main.MainActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 

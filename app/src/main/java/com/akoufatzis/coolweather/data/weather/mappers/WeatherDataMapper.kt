@@ -2,11 +2,10 @@
 
 package com.akoufatzis.coolweather.data.weather.mappers
 
-import com.akoufatzis.coolweather.domain.weather.* // ktlint-disable no-wildcard-imports
 import com.akoufatzis.coolweather.data.openweathermap.CityWeatherDto
+import com.akoufatzis.coolweather.domain.weather.*
 
-// TODO: Don't depended on external service ids
-fun CityWeatherDto.toCityWeather(): CityWeather {
+fun CityWeatherDto.toWeather(): Weather {
     val weather = weathers.first()
 
     val type = mapToWeatherType(weather.id)
@@ -15,10 +14,9 @@ fun CityWeatherDto.toCityWeather(): CityWeather {
     val maxTemperature = Temperature(main.tempMax)
     val humidity = Humidity(main.humidity)
     val pressure = Pressure(main.pressure)
-    val city = City(name)
     val windDomainModel = Wind(wind.speed, wind.deg)
 
-    val weatherDomainModel = Weather(
+    return Weather(
         description = weather.description,
         humidity = humidity,
         pressure = pressure,
@@ -28,7 +26,6 @@ fun CityWeatherDto.toCityWeather(): CityWeather {
         wind = windDomainModel,
         type = type
     )
-    return CityWeather(weatherDomainModel, city)
 }
 
 fun mapToWeatherType(weatherId: Long): WeatherType {

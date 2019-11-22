@@ -3,10 +3,9 @@ package com.akoufatzis.coolweather.presentation.settings
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.akoufatzis.coolweather.domain.settings.Celsius
-import com.akoufatzis.coolweather.domain.settings.ChangeTemperatureUnitUseCase
-import com.akoufatzis.coolweather.domain.settings.Fahrenheit
-import com.akoufatzis.coolweather.domain.settings.GetSettingsUseCase
+import com.akoufatzis.coolweather.domain.Failure
+import com.akoufatzis.coolweather.domain.Success
+import com.akoufatzis.coolweather.domain.settings.*
 import javax.inject.Inject
 
 class SettingsViewModel @Inject constructor(
@@ -19,11 +18,23 @@ class SettingsViewModel @Inject constructor(
         get() = _viewState
 
     init {
-        val result = getSettingsUseCase()
-        when (result.unit) {
-            Celsius -> _viewState.value = SettingsViewState(null, TemperatureUnit.CELSIUS)
-            Fahrenheit -> _viewState.value = SettingsViewState(null, TemperatureUnit.FAHRENHEIT)
+        when (val result = getSettingsUseCase()) {
+            is Success -> {
+                emitViewState(settings = result.data)
+            }
+            is Failure -> emitErrorState(result.exception)
         }
+    }
+
+    private fun emitViewState(settings: Settings) {
+        when (settings.unit) {
+            is Celsius -> _viewState.value = SettingsViewState(null, TemperatureUnit.CELSIUS)
+            is Fahrenheit -> _viewState.value = SettingsViewState(null, TemperatureUnit.FAHRENHEIT)
+        }
+    }
+
+    private fun emitErrorState(exception: Exception) {
+        _viewState.value = SettingsViewState(exception, null)
     }
 
     fun setTemperatureUnit(unit: TemperatureUnit) {

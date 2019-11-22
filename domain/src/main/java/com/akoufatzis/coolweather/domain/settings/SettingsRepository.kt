@@ -1,10 +1,12 @@
 package com.akoufatzis.coolweather.domain.settings
 
+import com.akoufatzis.coolweather.domain.Result
+
 interface SettingsRepository {
 
     fun changeTemperatureUnit(unit: TemperatureUnit)
 
-    fun settings(): Settings
+    fun settings(): Result<Settings>
 
-    fun temperatureUnit(): TemperatureUnit
+    fun temperatureUnit(): Result<TemperatureUnit>
 }

@@ -1,6 +1,6 @@
 object Versions {
-    const val androidGradle = "4.0.0-alpha02"
-    const val kotlin = "1.3.50"
+    const val androidGradle = "3.6.0-beta04"
+    const val kotlin = "1.3.60"
     const val constraintLayout = "2.0.0-beta2"
     const val coroutines = "1.3.2"
     const val support = "1.1.0"
@@ -22,7 +22,7 @@ object Versions {
     const val truth = "0.45"
     const val playServicesLocation = "17.0.0"
     const val places = "2.0.0"
-    const val viewpager2 = "1.0.0-beta05"
+    const val viewpager2 = "1.0.0"
     const val circleIndicator = "2.1.4"
 }
 

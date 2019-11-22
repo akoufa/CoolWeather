@@ -4,7 +4,7 @@ plugins {
     id("kotlin-kapt")
     id("kotlin-android-extensions")
     id("androidx.navigation.safeargs")
-    id("io.gitlab.arturbosch.detekt").version("1.0.0")
+    id("io.gitlab.arturbosch.detekt").version("1.1.1")
 }
 
 apply {
@@ -54,11 +54,12 @@ android {
 
     kotlinOptions {
         jvmTarget = "1.8"
+        freeCompilerArgs = listOf("-Xallow-result-return-type")
     }
 }
 
 detekt {
-    toolVersion = "1.0.0"
+    toolVersion = "1.1.1"
     input = files("src/main/kotlin", "src/main/java")
     filters = ".*/resources/.*,.*/build/.*"
 }

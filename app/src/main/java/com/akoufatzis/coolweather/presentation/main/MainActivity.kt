@@ -1,8 +1,6 @@
 package com.akoufatzis.coolweather.presentation.main
 
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuItem
 import androidx.appcompat.widget.Toolbar
 import androidx.navigation.NavController
 import androidx.navigation.Navigation

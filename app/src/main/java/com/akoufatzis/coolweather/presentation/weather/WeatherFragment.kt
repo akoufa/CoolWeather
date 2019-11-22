@@ -51,7 +51,7 @@ class WeatherFragment : DaggerFragment() {
                     .show()
             } else if (state.data != null) {
                 binding.ivWeather.setImageResource(state.data.iconRes)
-                binding.tvCityName.text = state.data.city
+                binding.tvCityName.text = state.data.place
                 binding.tvDegrees.text = getDegreesRepresentation(context!!, state.data.tempData)
             }
         })

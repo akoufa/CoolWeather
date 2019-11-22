@@ -5,6 +5,8 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.akoufatzis.coolweather.core.Event
+import com.akoufatzis.coolweather.domain.Failure
+import com.akoufatzis.coolweather.domain.Success
 import com.akoufatzis.coolweather.domain.settings.Celsius
 import com.akoufatzis.coolweather.domain.settings.GetTemperatureUnitUseCase
 import com.akoufatzis.coolweather.domain.settings.TemperatureUnit
@@ -23,23 +25,24 @@ class WeatherViewModel @Inject constructor(
         get() = _viewState
 
 
-    fun showWeather(cityName: String) = viewModelScope.launch {
+    fun showWeather(placeName: String) = viewModelScope.launch {
         showLoading()
-        try {
-            val weatherResult = weatherUseCase(cityName)
-            val tempUnit = getTemperatureUnit()
-            val weatherData = weatherMapper.map(weatherResult, tempUnit)
-            emitUiState(showSuccess = weatherData)
-        } catch (exception: Exception) {
-            emitUiState(showError = exception)
+        when (val weatherResult = weatherUseCase(placeName)) {
+            is Success -> {
+                val tempUnit = getTemperatureUnit()
+                val weatherData = weatherMapper.map(placeName, weatherResult.data, tempUnit)
+                emitUiState(showSuccess = weatherData)
+            }
+            is Failure -> {
+                emitUiState(showError = weatherResult.exception)
+            }
         }
     }
 
     private fun getTemperatureUnit(): TemperatureUnit {
-        return try {
-            getTemperatureUnitUseCase()
-        } catch (exception: Exception) {
-            Celsius
+        return when (val result = getTemperatureUnitUseCase()) {
+            is Success -> result.data
+            is Failure -> Celsius
         }
     }
 

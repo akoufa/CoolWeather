@@ -3,14 +3,13 @@ package com.akoufatzis.coolweather.presentation.weather
 import com.akoufatzis.coolweather.domain.settings.Celsius
 import com.akoufatzis.coolweather.domain.settings.Fahrenheit
 import com.akoufatzis.coolweather.domain.settings.TemperatureUnit
-import com.akoufatzis.coolweather.domain.weather.CityWeather
+import com.akoufatzis.coolweather.domain.weather.Weather
 import javax.inject.Inject
 
 class WeatherMapper @Inject constructor() {
 
-    fun map(cityWeather: CityWeather, unit: TemperatureUnit): WeatherData {
+    fun map(placeName: String, weather: Weather, unit: TemperatureUnit): WeatherData {
 
-        val weather = cityWeather.weather
         val temperature = weather.temperature
 
         val tempData = when (unit) {
@@ -24,9 +23,8 @@ class WeatherMapper @Inject constructor() {
             )
         }
 
-        val cityName = cityWeather.city.name
         val iconRes = weather.type.iconResource()
 
-        return WeatherData(cityName, tempData, iconRes)
+        return WeatherData(placeName, tempData, iconRes)
     }
 }

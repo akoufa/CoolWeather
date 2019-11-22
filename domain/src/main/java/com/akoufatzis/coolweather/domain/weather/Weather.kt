@@ -1,9 +1,5 @@
 package com.akoufatzis.coolweather.domain.weather
 
-data class CityWeather(val weather: Weather, val city: City)
-
-data class City(val name: String)
-
 inline class Temperature(val value: Double)
 
 inline class Pressure(val value: Double)

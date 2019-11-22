@@ -4,6 +4,8 @@ package com.akoufatzis.coolweather.data.settings
 
 import android.content.SharedPreferences
 import androidx.core.content.edit
+import com.akoufatzis.coolweather.domain.Result
+import com.akoufatzis.coolweather.domain.Success
 import com.akoufatzis.coolweather.domain.settings.*
 import javax.inject.Inject
 
@@ -12,8 +14,8 @@ class SettingsDataStore @Inject constructor(private val sharedPreferences: Share
 
     private val celsiusKey = "CELSIUS_KEY"
 
-    override fun temperatureUnit(): TemperatureUnit {
-        return createTempUnit()
+    override fun temperatureUnit(): Result<TemperatureUnit> {
+        return Success(createTempUnit())
     }
 
     override fun changeTemperatureUnit(unit: TemperatureUnit) {
@@ -23,9 +25,9 @@ class SettingsDataStore @Inject constructor(private val sharedPreferences: Share
         }
     }
 
-    override fun settings(): Settings {
+    override fun settings(): Result<Settings> {
         val tempUnit = createTempUnit()
-        return Settings(tempUnit)
+        return Success(Settings(tempUnit))
     }
 
     private fun createTempUnit(): TemperatureUnit {
