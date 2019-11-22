@@ -56,7 +56,7 @@ class MainFragment : DaggerFragment() {
                 adapter.setPlaces(data)
                 binding.places.visibility = View.VISIBLE
                 binding.emptyScreen.visibility = View.GONE
-            }else{
+            } else {
                 binding.places.visibility = View.GONE
                 binding.emptyScreen.visibility = View.VISIBLE
             }
@@ -90,7 +90,12 @@ class MainFragment : DaggerFragment() {
                     val name = place.name
                     val id = place.id
                     if (name != null && id != null) {
-                        mainViewModel.storePlace(com.akoufatzis.coolweather.domain.place.Place(name, id))
+                        mainViewModel.storePlace(
+                            com.akoufatzis.coolweather.domain.place.Place(
+                                name,
+                                id
+                            )
+                        )
                     }
                 }
                 AutocompleteActivity.RESULT_ERROR -> {

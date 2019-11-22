@@ -18,7 +18,7 @@ class PagerAdapter(fragmentManager: FragmentManager, lifecycle: Lifecycle) :
         return WeatherFragment.newInstance(place)
     }
 
-    fun setPlaces(places: List<String>){
+    fun setPlaces(places: List<String>) {
         this.places = places
         notifyDataSetChanged()
     }
