@@ -4,7 +4,7 @@ plugins {
     id("kotlin-kapt")
     id("kotlin-android-extensions")
     id("androidx.navigation.safeargs")
-    id("io.gitlab.arturbosch.detekt").version("1.0.0-RC15")
+    id("io.gitlab.arturbosch.detekt").version("1.1.1")
 }
 
 apply {
@@ -12,14 +12,15 @@ apply {
 }
 
 val apiBaseUrl: String by project
-val apiKey: String by project
+val openweathermapApiKey: String by project
+val placesApiKey: String by project
 
 android {
-    compileSdkVersion(28)
+    compileSdkVersion(29)
     defaultConfig {
         applicationId = "com.akoufatzis.coolweather"
         minSdkVersion(21)
-        targetSdkVersion(28)
+        targetSdkVersion(29)
         versionCode = 1
         versionName = "1.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
@@ -31,7 +32,11 @@ android {
         )
         buildConfigField(
             "String", "OPENWEATHERMAP_API_KEY",
-            "\"$apiKey\""
+            "\"$openweathermapApiKey\""
+        )
+        buildConfigField(
+            "String", "PLACES_API_KEY",
+            "\"$placesApiKey\""
         )
 
         useLibrary("android.test.runner")
@@ -45,26 +50,32 @@ android {
         }
     }
     dataBinding.isEnabled = true
+    viewBinding.isEnabled = true
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+        freeCompilerArgs = listOf("-Xallow-result-return-type")
+    }
 }
 
 detekt {
-    toolVersion = "1.0.0-RC15"
+    toolVersion = "1.1.1"
     input = files("src/main/kotlin", "src/main/java")
     filters = ".*/resources/.*,.*/build/.*"
 }
 
 dependencies {
     implementation(project(":domain"))
-    implementation(project(":openweathermap"))
     implementation(Libs.kotlinStdLib)
     implementation(Libs.appCompat)
     implementation(Libs.constraintLayout)
+    implementation(Libs.viewpager2)
 
     implementation(Libs.coreCtx)
 
     implementation(Libs.viewModelKtx)
     implementation(Libs.lifecycleExt)
-    implementation(Libs.lifecycleRx)
+    implementation(Libs.lifecycleKtx)
     kapt(Libs.lifecycleCompiler)
 
     implementation(Libs.navigationFragmentKtx)
@@ -80,7 +91,6 @@ dependencies {
 
     implementation(Libs.coroutinesCore)
     implementation(Libs.coroutinesAndroid)
-    implementation(Libs.coroutinesRx2)
 
     implementation(Libs.dagger)
     implementation(Libs.daggerAndroid)
@@ -91,11 +101,15 @@ dependencies {
     implementation(Libs.retrofit)
     implementation(Libs.retrofitMoshi)
 
+    implementation(Libs.places)
+
     implementation(Libs.moshi)
     kapt(Libs.moshiCodeGen)
 
     implementation(Libs.glide)
     kapt(Libs.glideCompiler)
+
+    implementation(Libs.circleIndicator)
 
     testImplementation(Libs.coroutinesCore)
     testImplementation(Libs.mockito)

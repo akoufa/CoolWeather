@@ -4,7 +4,7 @@ import com.akoufatzis.coolweather.domain.Result
 
 interface SettingsRepository {
 
-    fun changeTemperatureUnit(unit: TemperatureUnit): Result<Unit>
+    fun changeTemperatureUnit(unit: TemperatureUnit)
 
     fun settings(): Result<Settings>
 

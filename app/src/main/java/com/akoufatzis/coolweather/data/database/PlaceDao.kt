@@ -5,6 +5,7 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.akoufatzis.coolweather.data.database.entities.PlaceEntity
+import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface PlaceDao {
@@ -12,5 +13,5 @@ interface PlaceDao {
     suspend fun insert(place: PlaceEntity)
 
     @Query("SELECT * FROM places")
-    suspend fun loadAll(): List<PlaceEntity>
+    fun loadAll(): Flow<List<PlaceEntity>>
 }

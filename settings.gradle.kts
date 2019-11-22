@@ -1,1 +1,1 @@
-include(":app", ":openweathermap", ":domain")
+include(":app", ":domain")

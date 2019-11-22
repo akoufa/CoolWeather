@@ -2,7 +2,7 @@ package com.akoufatzis.coolweather.di
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.akoufatzis.coolweather.presentation.onboarding.OnBoardingViewModel
+import com.akoufatzis.coolweather.presentation.main.MainViewModel
 import com.akoufatzis.coolweather.presentation.settings.SettingsViewModel
 import com.akoufatzis.coolweather.presentation.weather.WeatherViewModel
 import dagger.Binds
@@ -27,6 +27,6 @@ interface ViewModelModule {
 
     @Binds
     @IntoMap
-    @ViewModelKey(OnBoardingViewModel::class)
-    fun bindOnboardingViewModel(onBoardingViewModel: OnBoardingViewModel): ViewModel
+    @ViewModelKey(MainViewModel::class)
+    fun bindMainViewModel(mainViewModel: MainViewModel): ViewModel
 }

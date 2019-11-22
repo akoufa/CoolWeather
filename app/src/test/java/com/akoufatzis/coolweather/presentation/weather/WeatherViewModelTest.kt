@@ -18,22 +18,23 @@ import kotlinx.coroutines.test.runBlockingTest
 import org.junit.Rule
 import org.junit.Test
 
-fun createCityWeather(cityName: String, degrees: Double): CityWeather {
-    val city = City(cityName)
-    val temp = Temperature(degrees, 25.0, 30.0)
+fun createWeather(degrees: Double): Weather {
+    val temp = Temperature(degrees)
+    val maxTemp = Temperature(degrees)
+    val minTemp = Temperature(degrees)
     val pressure = Pressure(100.0)
     val humidity = Humidity(100.0)
     val wind = Wind(100.0, 123.0)
-    val weather =
-        Weather(
-            type = WeatherType.CLEAR,
-            temperature = temp,
-            description = null,
-            pressure = pressure,
-            humidity = humidity,
-            wind = wind
-        )
-    return CityWeather(weather, city)
+    return Weather(
+        type = WeatherType.CLEAR,
+        temperature = temp,
+        maxTemperature = maxTemp,
+        minTemperature = minTemp,
+        description = null,
+        pressure = pressure,
+        humidity = humidity,
+        wind = wind
+    )
 }
 
 class WeatherViewModelTest {
@@ -57,33 +58,34 @@ class WeatherViewModelTest {
     }
 
     @Test
-    fun showWeatherForCityShouldReturnWeatherViewState() = coroutinesTestRule.testDispatcher.runBlockingTest {
+    fun showWeatherForCityShouldReturnWeatherViewState() =
+        coroutinesTestRule.testDispatcher.runBlockingTest {
 
-        // given
-        val cityName = "Thessaloniki"
-        val degrees = 27.0
-        val viewModel = withViewModel()
-        val tempData = TemperatureData(degrees, TemperatureUnit.CELSIUS)
-        val weatherData = WeatherData(cityName, tempData, 100)
-        val cityWeather = createCityWeather(cityName, degrees)
-        val result = Success(cityWeather)
+            // given
+            val placeName = "Thessaloniki"
+            val degrees = 27.0
+            val viewModel = withViewModel()
+            val tempData = TemperatureData(degrees, TemperatureUnit.CELSIUS)
+            val weatherData = WeatherData(placeName, tempData, 100)
+            val weather = createWeather(degrees)
+            val result = Success(weather)
 
-        // when
+            // when
 
-        weatherUseCase.stub {
-            onBlocking {
-                invoke()
-            }.doReturn(result)
+            weatherUseCase.stub {
+                onBlocking {
+                    invoke(placeName)
+                }.doReturn(result)
+            }
+
+            whenever(weatherMapper.map(placeName, weather, Celsius)).thenReturn(weatherData)
+            whenever(getTemperatureUnitUseCase.invoke()).thenReturn(Success(Celsius))
+            viewModel.showWeather(placeName)
+
+            // then
+
+            val viewState = getLiveDataValue(viewModel.viewState)!!
+            assertThat(viewState.progress.peek()).isFalse()
+            assertThat(viewState.data).isEqualTo(weatherData)
         }
-
-        whenever(weatherMapper.map(cityWeather, Celsius)).thenReturn(weatherData)
-        whenever(getTemperatureUnitUseCase.invoke()).thenReturn(Success(Celsius))
-        viewModel.showWeather()
-
-        // then
-
-        val viewState = getLiveDataValue(viewModel.viewState)!!
-        assertThat(viewState.progress.peek()).isFalse()
-        assertThat(viewState.data).isEqualTo(listOf(weatherData))
-    }
 }

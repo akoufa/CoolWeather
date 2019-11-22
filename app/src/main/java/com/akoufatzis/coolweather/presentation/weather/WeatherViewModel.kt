@@ -24,26 +24,25 @@ class WeatherViewModel @Inject constructor(
     val viewState: LiveData<WeatherViewState>
         get() = _viewState
 
-    private val weatherList = arrayListOf<WeatherData>()
 
-    fun showWeather() = viewModelScope.launch {
+    fun showWeather(placeName: String) = viewModelScope.launch {
         showLoading()
-        val weatherResult = weatherUseCase()
-        val tempUnit = getTemperatureUnit()
-        when (weatherResult) {
+        when (val weatherResult = weatherUseCase(placeName)) {
             is Success -> {
-                val weatherData = weatherMapper.map(weatherResult.data, tempUnit)
-                weatherList.add(0, weatherData)
-                emitUiState(showSuccess = weatherList)
+                val tempUnit = getTemperatureUnit()
+                val weatherData = weatherMapper.map(placeName, weatherResult.data, tempUnit)
+                emitUiState(showSuccess = weatherData)
             }
-            is Failure -> emitUiState(showError = weatherResult.exception)
+            is Failure -> {
+                emitUiState(showError = weatherResult.exception)
+            }
         }
     }
 
     private fun getTemperatureUnit(): TemperatureUnit {
         return when (val result = getTemperatureUnitUseCase()) {
             is Success -> result.data
-            is Failure -> Celsius // Fallback to celsius
+            is Failure -> Celsius
         }
     }
 
@@ -54,7 +53,7 @@ class WeatherViewModel @Inject constructor(
     private fun emitUiState(
         showProgress: Event<Boolean> = Event(false),
         showError: Exception? = null,
-        showSuccess: List<WeatherData> = emptyList()
+        showSuccess: WeatherData? = null
     ) {
         val viewState = WeatherViewState(
             showProgress,

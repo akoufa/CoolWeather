@@ -1,9 +1,8 @@
 package com.akoufatzis.coolweather.data.places.di
 
 import com.akoufatzis.coolweather.data.database.PlaceDao
-import com.akoufatzis.coolweather.data.places.LocationProvider
 import com.akoufatzis.coolweather.data.places.PlacesDataStore
-import com.akoufatzis.coolweather.domain.place.PlaceRepository
+import com.akoufatzis.coolweather.domain.place.PlacesRepository
 import dagger.Module
 import dagger.Provides
 
@@ -14,6 +13,8 @@ class PlacesModule {
     }
 
     @Provides
-    fun providePlacesRemoteDataStore(locationProvider: LocationProvider, placeDao: PlaceDao): PlaceRepository =
-        PlacesDataStore(locationProvider, placeDao)
+    fun providePlacesRemoteDataStore(
+        placeDao: PlaceDao
+    ): PlacesRepository =
+        PlacesDataStore(placeDao)
 }

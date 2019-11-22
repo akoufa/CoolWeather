@@ -10,8 +10,12 @@
     <string name="city_hint_text">Add your city</string>
     <string name="not_implement_yet">Not implemented yet</string>
     <string name="something_went_wrong">Oops something went wrong please try again!</string>
+    <string name="search_menu">Search</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="find_your_place">Find your place</string>
+    <string name="add_place">Add place</string>
+    <string name="empty_weather_screen">No weather data available. Please use the search to find a place</string>
+    <string name="temperature_units">Units</string>
 </resources>
