@@ -10,10 +10,12 @@ import com.akoufatzis.coolweather.domain.Success
 import com.akoufatzis.coolweather.domain.map
 import com.akoufatzis.coolweather.domain.place.SearchPlacesUseCase
 import com.akoufatzis.coolweather.domain.place.StorePlaceUseCase
+import javax.inject.Inject
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
-import javax.inject.Inject
+
+const val debounceMillis = 300L
 
 class PlacesViewModel @Inject constructor(
     val storePlaceUseCase: StorePlaceUseCase,
@@ -27,7 +29,7 @@ class PlacesViewModel @Inject constructor(
     private val places = mutableSetOf<Place>()
 
     fun searchPlaces(placeName: Flow<String>) = viewModelScope.launch {
-        searchPlacesUseCase(placeName.filter { it.length > 2 }.debounce(300))
+        searchPlacesUseCase(placeName.filter { it.length > 2 }.debounce(debounceMillis))
             .flowOn(Dispatchers.IO)
             .map { result ->
                 result.map {

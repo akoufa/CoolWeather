@@ -10,9 +10,9 @@ import com.akoufatzis.coolweather.domain.place.Place
 import com.akoufatzis.coolweather.domain.place.PlacesRepository
 import com.akoufatzis.coolweather.presentation.core.loadJsonFromAsset
 import com.akoufatzis.coolweather.presentation.core.toObject
-import kotlinx.coroutines.flow.*
 import javax.inject.Inject
 import javax.inject.Singleton
+import kotlinx.coroutines.flow.*
 
 // We include here the JSON in the assets only for demo purposes. These should be hosted on a server that exposes
 // an api to search for cities

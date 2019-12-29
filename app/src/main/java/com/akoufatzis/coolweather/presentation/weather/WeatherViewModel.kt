@@ -11,8 +11,8 @@ import com.akoufatzis.coolweather.domain.settings.Celsius
 import com.akoufatzis.coolweather.domain.settings.GetTemperatureUnitUseCase
 import com.akoufatzis.coolweather.domain.settings.TemperatureUnit
 import com.akoufatzis.coolweather.domain.weather.WeatherUseCase
-import kotlinx.coroutines.launch
 import javax.inject.Inject
+import kotlinx.coroutines.launch
 
 class WeatherViewModel @Inject constructor(
     val weatherUseCase: WeatherUseCase,
@@ -23,7 +23,6 @@ class WeatherViewModel @Inject constructor(
     private val _viewState = MutableLiveData<WeatherViewState>()
     val viewState: LiveData<WeatherViewState>
         get() = _viewState
-
 
     fun showWeather(placeName: String) = viewModelScope.launch {
         showLoading()

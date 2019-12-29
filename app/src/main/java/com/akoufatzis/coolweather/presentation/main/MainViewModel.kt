@@ -8,10 +8,10 @@ import com.akoufatzis.coolweather.domain.Success
 import com.akoufatzis.coolweather.domain.place.GetPlacesUseCase
 import com.akoufatzis.coolweather.domain.place.Place
 import com.akoufatzis.coolweather.domain.place.StorePlaceUseCase
+import javax.inject.Inject
 import kotlinx.coroutines.InternalCoroutinesApi
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
-import javax.inject.Inject
 
 class MainViewModel @Inject constructor(
     private val getPlacesUseCase: GetPlacesUseCase,

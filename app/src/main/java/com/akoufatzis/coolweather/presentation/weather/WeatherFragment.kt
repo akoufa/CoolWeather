@@ -17,7 +17,6 @@ import javax.inject.Inject
 
 const val PLACE_NAME_KEY = "PLACE_NAME_KEY"
 
-
 class WeatherFragment : DaggerFragment() {
 
     @Inject
@@ -61,7 +60,6 @@ class WeatherFragment : DaggerFragment() {
                 binding.tvDegrees.text = getDegreesRepresentation(context!!, state.data.tempData)
             }
         })
-
     }
 
     override fun onStart() {

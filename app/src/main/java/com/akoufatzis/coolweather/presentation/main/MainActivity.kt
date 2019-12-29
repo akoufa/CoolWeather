@@ -38,8 +38,8 @@ class MainActivity : DaggerAppCompatActivity() {
     }
 
     override fun onSupportNavigateUp() =
-        NavigationUI.navigateUp(navController, appBarConfiguration)
-                || navController.navigateUp()
+        NavigationUI.navigateUp(navController, appBarConfiguration) ||
+                navController.navigateUp()
 
     private fun setupActionBar(navController: NavController, toolbar: Toolbar) {
         setSupportActionBar(toolbar)

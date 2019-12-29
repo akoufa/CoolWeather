@@ -11,7 +11,6 @@ import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.flow.callbackFlow
 import kotlinx.coroutines.flow.conflate
 
-
 @ExperimentalCoroutinesApi
 fun TextView.onTextChange() = callbackFlow {
     val listener = addTextChangedListener { text ->

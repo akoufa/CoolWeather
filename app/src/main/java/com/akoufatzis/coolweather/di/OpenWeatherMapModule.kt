@@ -6,9 +6,9 @@ import com.akoufatzis.coolweather.data.weather.WeatherDataStore
 import com.akoufatzis.coolweather.domain.weather.WeatherRepository
 import dagger.Module
 import dagger.Provides
+import javax.inject.Singleton
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
-import javax.inject.Singleton
 
 const val OPENWEATHERMAP_URL = BuildConfig.OPENWEATHERMAP_URL
 

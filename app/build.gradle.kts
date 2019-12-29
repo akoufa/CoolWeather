@@ -49,12 +49,12 @@ android {
 
     kotlinOptions {
         jvmTarget = "1.8"
-        freeCompilerArgs = listOf("-Xallow-result-return-type")
     }
 }
 
 detekt {
     toolVersion = "1.1.1"
+    config = files("$rootDir/config/detekt/detekt.yml")
     input = files("src/main/kotlin", "src/main/java")
     filters = ".*/resources/.*,.*/build/.*"
 }

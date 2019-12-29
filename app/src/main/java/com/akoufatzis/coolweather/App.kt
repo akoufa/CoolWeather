@@ -1,9 +1,9 @@
 package com.akoufatzis.coolweather
 
-import com.akoufatzis.coolweather.di.DatabaseModule
-import com.akoufatzis.coolweather.di.PlacesModule
 import com.akoufatzis.coolweather.di.DaggerAppComponent
+import com.akoufatzis.coolweather.di.DatabaseModule
 import com.akoufatzis.coolweather.di.OpenWeatherMapModule
+import com.akoufatzis.coolweather.di.PlacesModule
 import dagger.android.AndroidInjector
 import dagger.android.support.DaggerApplication
 
