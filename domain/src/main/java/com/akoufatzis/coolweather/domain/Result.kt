@@ -15,4 +15,3 @@ inline fun <In : Any, Out : Any> Result<In>.map(mapperFunc: (value: In) -> Out):
         is Failure -> Failure(this.exception)
     }
 }
-
