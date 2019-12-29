@@ -1,38 +1,28 @@
 package com.akoufatzis.coolweather.presentation.core
 
-import android.view.KeyEvent
-import android.view.KeyEvent.ACTION_DOWN
-import android.view.MotionEvent
-import android.view.inputmethod.EditorInfo
-import android.widget.EditText
+import android.app.Activity
+import android.content.Context
+import android.view.View
+import android.view.inputmethod.InputMethodManager
 import android.widget.TextView
+import androidx.core.widget.addTextChangedListener
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.channels.awaitClose
+import kotlinx.coroutines.flow.callbackFlow
+import kotlinx.coroutines.flow.conflate
 
-fun EditText.onRightDrawableClicked(onClicked: (view: EditText) -> Unit) {
-    setOnTouchListener { v, event ->
-        var hasConsumed = false
-        if (v is EditText) {
-            if (event.x >= v.width - v.totalPaddingRight) {
-                if (event.action == MotionEvent.ACTION_UP) {
-                    onClicked(this)
-                }
-                hasConsumed = true
-            }
+
+@ExperimentalCoroutinesApi
+fun TextView.onTextChange() = callbackFlow {
+    val listener = addTextChangedListener { text ->
+        if (text != null) {
+            offer(text.toString())
         }
-        hasConsumed
     }
-}
+    awaitClose { removeTextChangedListener(listener) }
+}.conflate()
 
-fun EditText.onEnterAction(onClicked: (view: TextView) -> Unit) {
-    setOnEditorActionListener { view, actionId, event ->
-        var handled = false
-
-        if (event != null && event.keyCode == KeyEvent.KEYCODE_ENTER && event.action == ACTION_DOWN) {
-            onClicked(view)
-            handled = true
-        } else if (actionId == EditorInfo.IME_ACTION_SEARCH) {
-            onClicked(view)
-            handled = true
-        }
-        handled
-    }
+fun Context.hideKeyboard(view: View) {
+    val imm = getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager
+    imm.hideSoftInputFromWindow(view.windowToken, 0)
 }

@@ -13,7 +13,6 @@ apply {
 
 val apiBaseUrl: String by project
 val openweathermapApiKey: String by project
-val placesApiKey: String by project
 
 android {
     compileSdkVersion(29)
@@ -33,10 +32,6 @@ android {
         buildConfigField(
             "String", "OPENWEATHERMAP_API_KEY",
             "\"$openweathermapApiKey\""
-        )
-        buildConfigField(
-            "String", "PLACES_API_KEY",
-            "\"$placesApiKey\""
         )
 
         useLibrary("android.test.runner")
@@ -82,9 +77,6 @@ dependencies {
     implementation(Libs.navigationUiKtx)
 
     implementation(Libs.material)
-
-    implementation(Libs.playServicesLocation)
-
     implementation(Libs.roomRuntime)
     implementation(Libs.roomKtx)
     kapt(Libs.roomCompiler)
@@ -100,8 +92,6 @@ dependencies {
 
     implementation(Libs.retrofit)
     implementation(Libs.retrofitMoshi)
-
-    implementation(Libs.places)
 
     implementation(Libs.moshi)
     kapt(Libs.moshiCodeGen)

@@ -1,12 +1,12 @@
 object Versions {
-    const val androidGradle = "3.6.0-beta04"
+    const val androidGradle = "3.6.0-rc01"
     const val kotlin = "1.3.60"
-    const val constraintLayout = "2.0.0-beta2"
+    const val constraintLayout = "2.0.0-beta3"
     const val coroutines = "1.3.2"
     const val support = "1.1.0"
     const val coreCtx = "1.1.0"
-    const val navigation = "2.2.0-beta01"
-    const val lifecycle = "2.2.0-beta01"
+    const val navigation = "2.2.0-rc02"
+    const val lifecycle = "2.2.0-rc02"
     const val testing = "2.1.0"
     const val dagger = "2.24"
     const val room = "2.2.0"
@@ -16,12 +16,10 @@ object Versions {
     const val junit = "4.12"
     const val testRunner = "1.1.0"
     const val espresso = "3.1.1"
-    const val material = "1.0.0"
+    const val material = "1.1.0-beta02"
     const val mockito = "3.1.0"
     const val mockitoKotlin = "2.1.0"
     const val truth = "0.45"
-    const val playServicesLocation = "17.0.0"
-    const val places = "2.0.0"
     const val viewpager2 = "1.0.0"
     const val circleIndicator = "2.1.4"
 }
@@ -68,9 +66,6 @@ object Libs {
     val mockito = "org.mockito:mockito-core:${Versions.mockito}"
     val mockitoKotlin = "com.nhaarman.mockitokotlin2:mockito-kotlin:${Versions.mockitoKotlin}"
     val truth = "com.google.truth:truth:${Versions.truth}"
-    val playServicesLocation =
-        "com.google.android.gms:play-services-location:${Versions.playServicesLocation}"
-    val places = "com.google.android.libraries.places:places:${Versions.places}"
     val circleIndicator = "me.relex:circleindicator:${Versions.circleIndicator}"
 }
 

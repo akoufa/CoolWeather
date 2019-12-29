@@ -13,11 +13,12 @@ import com.akoufatzis.coolweather.domain.place.Place
 )
 data class PlaceEntity(
     var name: String,
-    var externalId: String
+    var externalId: String,
+    var country: String
 ) {
     @PrimaryKey(autoGenerate = true)
     var id: Int = 0
 }
 
-fun fromPlace(place: Place) = PlaceEntity(place.name, place.id)
-fun PlaceEntity.toPlace() = Place(this.name, this.externalId)
+fun fromPlace(place: Place) = PlaceEntity(place.name, place.id, place.country)
+fun PlaceEntity.toPlace() = Place(this.name, this.externalId, this.country)

@@ -23,6 +23,8 @@ class WeatherFragment : DaggerFragment() {
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
 
+    lateinit var binding: FragmentWeatherBinding
+
     private lateinit var placeName: String
 
     private val weatherViewModel: WeatherViewModel by lazy(LazyThreadSafetyMode.NONE) {
@@ -42,7 +44,11 @@ class WeatherFragment : DaggerFragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val binding = FragmentWeatherBinding.inflate(inflater, container, false)
+        binding = FragmentWeatherBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         weatherViewModel.viewState.observe(viewLifecycleOwner, Observer { state ->
 
             if (state.error != null) {
@@ -56,7 +62,6 @@ class WeatherFragment : DaggerFragment() {
             }
         })
 
-        return binding.root
     }
 
     override fun onStart() {

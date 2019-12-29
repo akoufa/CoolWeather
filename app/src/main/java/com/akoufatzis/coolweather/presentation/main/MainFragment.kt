@@ -1,9 +1,6 @@
 package com.akoufatzis.coolweather.presentation.main
 
-import android.app.Activity
-import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.*
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
@@ -11,16 +8,8 @@ import androidx.lifecycle.observe
 import androidx.navigation.fragment.findNavController
 import com.akoufatzis.coolweather.R
 import com.akoufatzis.coolweather.databinding.FragmentMainBinding
-import com.google.android.libraries.places.api.model.Place
-import com.google.android.libraries.places.api.model.TypeFilter
-import com.google.android.libraries.places.widget.Autocomplete
-import com.google.android.libraries.places.widget.AutocompleteActivity
-import com.google.android.libraries.places.widget.model.AutocompleteActivityMode
 import dagger.android.support.DaggerFragment
 import javax.inject.Inject
-
-const val AUTOCOMPLETE_REQUEST_CODE = 1
-const val TAG = "MainFragment"
 
 class MainFragment : DaggerFragment() {
 
@@ -71,7 +60,7 @@ class MainFragment : DaggerFragment() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.search_place -> {
-                searchForPlace()
+                findNavController().navigate(R.id.placesFragment)
                 true
             }
             R.id.settings -> {
@@ -80,42 +69,5 @@ class MainFragment : DaggerFragment() {
             }
             else -> super.onOptionsItemSelected(item)
         }
-    }
-
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        if (requestCode == AUTOCOMPLETE_REQUEST_CODE) {
-            when (resultCode) {
-                Activity.RESULT_OK -> {
-                    val place = Autocomplete.getPlaceFromIntent(data!!)
-                    val name = place.name
-                    val id = place.id
-                    if (name != null && id != null) {
-                        mainViewModel.storePlace(
-                            com.akoufatzis.coolweather.domain.place.Place(
-                                name,
-                                id
-                            )
-                        )
-                    }
-                }
-                AutocompleteActivity.RESULT_ERROR -> {
-                    // TODO: Handle the error.
-                    val status = Autocomplete.getStatusFromIntent(data!!)
-                    Log.d(TAG, status.statusMessage!!)
-                }
-                Activity.RESULT_CANCELED -> {
-                    // The user canceled the operation.
-                }
-            }
-        }
-    }
-
-    private fun searchForPlace() {
-        val fields = listOf(Place.Field.NAME, Place.Field.ID)
-        val intent =
-            Autocomplete.IntentBuilder(AutocompleteActivityMode.FULLSCREEN, fields)
-                .setTypeFilter(TypeFilter.CITIES)
-                .build(context!!)
-        startActivityForResult(intent, AUTOCOMPLETE_REQUEST_CODE)
     }
 }

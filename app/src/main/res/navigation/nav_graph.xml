@@ -16,6 +16,13 @@
         android:name="com.akoufatzis.coolweather.presentation.weather.WeatherFragment"
         android:label="@string/app_name"
         tools:layout="@layout/fragment_weather" />
+
+    <fragment
+        android:id="@+id/placesFragment"
+        android:name="com.akoufatzis.coolweather.presentation.places.PlacesFragment"
+        android:label="@string/find_your_place"
+        tools:layout="@layout/fragment_places" />
+    
     <fragment
         android:id="@+id/settingsFragment"
         android:name="com.akoufatzis.coolweather.presentation.settings.SettingsFragment"

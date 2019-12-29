@@ -3,6 +3,7 @@ package com.akoufatzis.coolweather.di
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.akoufatzis.coolweather.presentation.main.MainViewModel
+import com.akoufatzis.coolweather.presentation.places.PlacesViewModel
 import com.akoufatzis.coolweather.presentation.settings.SettingsViewModel
 import com.akoufatzis.coolweather.presentation.weather.WeatherViewModel
 import dagger.Binds
@@ -29,4 +30,9 @@ interface ViewModelModule {
     @IntoMap
     @ViewModelKey(MainViewModel::class)
     fun bindMainViewModel(mainViewModel: MainViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(PlacesViewModel::class)
+    fun bindPlacesViewModel(placesViewModel: PlacesViewModel): ViewModel
 }
