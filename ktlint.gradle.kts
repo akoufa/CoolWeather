@@ -5,7 +5,7 @@ repositories {
 val ktlint by configurations.creating
 
 dependencies {
-    ktlint("com.pinterest:ktlint:0.35.0")
+    ktlint("com.pinterest:ktlint:0.36.0")
 }
 
 task<JavaExec>("ktlint"){

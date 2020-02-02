@@ -53,7 +53,7 @@ android {
 }
 
 detekt {
-    toolVersion = "1.1.1"
+    toolVersion = "1.5.0"
     config = files("$rootDir/config/detekt/detekt.yml")
     input = files("src/main/kotlin", "src/main/java")
     filters = ".*/resources/.*,.*/build/.*"
