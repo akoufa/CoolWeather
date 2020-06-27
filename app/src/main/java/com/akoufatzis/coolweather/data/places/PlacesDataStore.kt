@@ -6,8 +6,8 @@ import com.akoufatzis.coolweather.data.database.entities.fromPlace
 import com.akoufatzis.coolweather.data.database.entities.toPlace
 import com.akoufatzis.coolweather.domain.Result
 import com.akoufatzis.coolweather.domain.Success
-import com.akoufatzis.coolweather.domain.place.Place
 import com.akoufatzis.coolweather.domain.place.PlacesRepository
+import com.akoufatzis.coolweather.domain.place.Place as PlaceModel
 import com.akoufatzis.coolweather.presentation.core.loadJsonFromAsset
 import com.akoufatzis.coolweather.presentation.core.toObject
 import javax.inject.Inject
@@ -24,17 +24,17 @@ class PlacesDataStore @Inject constructor(
     private val placeDao: PlaceDao
 ) : PlacesRepository {
 
-    override fun observePlaces(): Flow<Result<List<Place>>> {
+    override fun observePlaces(): Flow<Result<List<PlaceModel>>> {
         return placeDao.loadAll()
             .map { placeEntities -> Success(placeEntities.map { it.toPlace() }) }
     }
 
-    override suspend fun storePlace(place: Place) {
+    override suspend fun storePlace(place: PlaceModel) {
         val placeEntity = fromPlace(place)
         placeDao.insert(placeEntity)
     }
 
-    override fun searchPlace(placeName: Flow<String>): Flow<Result<Place>> {
+    override fun searchPlace(placeName: Flow<String>): Flow<Result<PlaceModel>> {
         val places = mutableListOf<Place>()
         // TODO: Improve this. Change to map instead of list
         return placeName
@@ -45,9 +45,9 @@ class PlacesDataStore @Inject constructor(
                     places.addAll(parsedPlaces)
                 }
             }
-            .flatMapLatest<String, Result<Place>> {
-                val foundPlace: Place? = places?.find { place -> place.name == it }
-                flowOf(foundPlace).filter { it != null }.map { Success(it!!) }
+            .flatMapLatest<String, Result<PlaceModel>> {
+                val foundPlace: Place? = places.find { place -> place.name == it }
+                flowOf(foundPlace).filter { it != null }.map { Success(PlaceModel(it!!.name, it.id, it.country)) }
             }
     }
 }

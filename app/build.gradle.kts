@@ -4,7 +4,7 @@ plugins {
     id("kotlin-kapt")
     id("kotlin-android-extensions")
     id("androidx.navigation.safeargs")
-    id("io.gitlab.arturbosch.detekt").version("1.1.1")
+    id("io.gitlab.arturbosch.detekt").version("1.6.0")
 }
 
 apply {
@@ -41,22 +41,33 @@ android {
     buildTypes {
         getByName("release") {
             isMinifyEnabled = false
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
         }
     }
-    dataBinding.isEnabled = true
-    viewBinding.isEnabled = true
+
+    buildFeatures.dataBinding = true
+    buildFeatures.viewBinding = true
 
     kotlinOptions {
         jvmTarget = "1.8"
     }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
 }
 
 detekt {
-    toolVersion = "1.5.0"
     config = files("$rootDir/config/detekt/detekt.yml")
     input = files("src/main/kotlin", "src/main/java")
-    filters = ".*/resources/.*,.*/build/.*"
+}
+
+tasks.withType<io.gitlab.arturbosch.detekt.Detekt> {
+    exclude(".*/resources/.*,.*/build/.*")
 }
 
 dependencies {

@@ -19,11 +19,11 @@ class WeatherDataStore @Inject constructor(private val api: OpenWeatherMapApi) :
     override suspend fun fetchWeatherData(placeName: String): Result<Weather> {
 
         return try {
-            val weatherEntity = api.getWeatherByCityName(
+            val weatherDto = api.getWeatherByCityName(
                 placeName,
                 API_KEY
             )
-            Success(weatherEntity.toWeather())
+            Success(weatherDto.toWeather())
         } catch (@Suppress("TooGenericExceptionCaught") exception: Exception) {
             Failure(exception)
         }

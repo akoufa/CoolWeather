@@ -2,7 +2,7 @@ plugins {
     id("java-library")
     id("kotlin")
     id("kotlin-kapt")
-    id("io.gitlab.arturbosch.detekt").version("1.1.1")
+    id("io.gitlab.arturbosch.detekt").version("1.6.0")
 }
 
 apply {
@@ -10,10 +10,12 @@ apply {
 }
 
 detekt {
-    toolVersion = "1.5.0"
     config = files("$rootDir/config/detekt/detekt.yml")
     input = files("src/main/kotlin", "src/main/java")
-    filters = ".*/resources/.*,.*/build/.*"
+}
+
+tasks.withType<io.gitlab.arturbosch.detekt.Detekt> {
+    exclude(".*/resources/.*,.*/build/.*")
 }
 
 dependencies {
