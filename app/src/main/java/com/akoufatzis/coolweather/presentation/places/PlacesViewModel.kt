@@ -15,7 +15,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 
-const val debounceMillis = 300L
+const val DEBOUNCE_IN_MILLIS = 300L
 
 class PlacesViewModel @ViewModelInject constructor(
     val storePlaceUseCase: StorePlaceUseCase,
@@ -29,7 +29,7 @@ class PlacesViewModel @ViewModelInject constructor(
     private val places = mutableSetOf<Place>()
 
     fun searchPlaces(placeName: Flow<String>) = viewModelScope.launch {
-        searchPlacesUseCase(placeName.filter { it.length > 2 }.debounce(debounceMillis))
+        searchPlacesUseCase(placeName.filter { it.length > 2 }.debounce(DEBOUNCE_IN_MILLIS))
             .flowOn(Dispatchers.IO)
             .map { result ->
                 result.map {
