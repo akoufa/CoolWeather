@@ -6,8 +6,8 @@ import com.akoufatzis.coolweather.data.database.entities.fromPlace
 import com.akoufatzis.coolweather.data.database.entities.toPlace
 import com.akoufatzis.coolweather.domain.Result
 import com.akoufatzis.coolweather.domain.Success
-import com.akoufatzis.coolweather.domain.place.PlacesRepository
 import com.akoufatzis.coolweather.domain.place.Place as PlaceModel
+import com.akoufatzis.coolweather.domain.place.PlacesRepository
 import com.akoufatzis.coolweather.presentation.core.loadJsonFromAsset
 import com.akoufatzis.coolweather.presentation.core.toObject
 import dagger.hilt.android.qualifiers.ApplicationContext

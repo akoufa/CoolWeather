@@ -15,7 +15,6 @@ import com.akoufatzis.coolweather.presentation.core.hideKeyboard
 import com.akoufatzis.coolweather.presentation.core.onTextChange
 import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
-import javax.inject.Inject
 
 @AndroidEntryPoint
 class PlacesFragment : Fragment() {
