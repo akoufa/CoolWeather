@@ -6,16 +6,17 @@ import com.akoufatzis.coolweather.data.places.PlacesDataStore
 import com.akoufatzis.coolweather.domain.place.PlacesRepository
 import dagger.Module
 import dagger.Provides
+import dagger.hilt.InstallIn
+import dagger.hilt.android.components.ApplicationComponent
+import dagger.hilt.android.qualifiers.ApplicationContext
 
+@InstallIn(ApplicationComponent::class)
 @Module
-class PlacesModule {
-    companion object {
-        val instance = PlacesModule()
-    }
+object PlacesModule {
 
     @Provides
     fun providePlacesRemoteDataStore(
-        context: Context,
+        @ApplicationContext context: Context,
         placeDao: PlaceDao
     ): PlacesRepository =
         PlacesDataStore(context, placeDao)

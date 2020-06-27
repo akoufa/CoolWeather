@@ -22,6 +22,8 @@ object Versions {
     const val truth = "1.0.1"
     const val viewpager2 = "1.0.0"
     const val circleIndicator = "2.1.4"
+    const val hilt = "2.28-alpha"
+    const val hiltJetpack = "1.0.0-alpha01"
 }
 
 object Libs {
@@ -29,6 +31,7 @@ object Libs {
     val androidGradlePlugin = "com.android.tools.build:gradle:${Versions.androidGradle}"
     val navigationGradlePlugin =
         "androidx.navigation:navigation-safe-args-gradle-plugin:${Versions.navigation}"
+    val hiltGradlePlugin = "com.google.dagger:hilt-android-gradle-plugin:${Versions.hilt}"
     val kotlinStdLib = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${Versions.kotlin}"
     val appCompat = "androidx.appcompat:appcompat:${Versions.support}"
     val coreCtx = "androidx.core:core-ktx:${Versions.coreCtx}"
@@ -49,9 +52,6 @@ object Libs {
         "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutines}"
     val coroutinesTest = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.coroutines}"
     val dagger = "com.google.dagger:dagger:${Versions.dagger}"
-    val daggerAndroid = "com.google.dagger:dagger-android:${Versions.dagger}"
-    val daggerAndroidSupport = "com.google.dagger:dagger-android-support:${Versions.dagger}"
-    val daggerAndroidProcessor = "com.google.dagger:dagger-android-processor:${Versions.dagger}"
     val daggerCompiler = "com.google.dagger:dagger-compiler:${Versions.dagger}"
     val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
     val retrofitMoshi = "com.squareup.retrofit2:converter-moshi:${Versions.retrofit}"
@@ -67,5 +67,9 @@ object Libs {
     val mockitoKotlin = "com.nhaarman.mockitokotlin2:mockito-kotlin:${Versions.mockitoKotlin}"
     val truth = "com.google.truth:truth:${Versions.truth}"
     val circleIndicator = "me.relex:circleindicator:${Versions.circleIndicator}"
+    val hilt = "com.google.dagger:hilt-android:${Versions.hilt}"
+    val hiltJetpack = "androidx.hilt:hilt-lifecycle-viewmodel:${Versions.hiltJetpack}"
+    val hiltJetpackCompiler = "androidx.hilt:hilt-compiler:${Versions.hiltJetpack}"
+    val hiltCompiler = "com.google.dagger:hilt-android-compiler:${Versions.hilt}"
 }
 

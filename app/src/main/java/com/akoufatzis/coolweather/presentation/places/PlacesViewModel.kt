@@ -1,5 +1,6 @@
 package com.akoufatzis.coolweather.presentation.places
 
+import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -10,14 +11,13 @@ import com.akoufatzis.coolweather.domain.Success
 import com.akoufatzis.coolweather.domain.map
 import com.akoufatzis.coolweather.domain.place.SearchPlacesUseCase
 import com.akoufatzis.coolweather.domain.place.StorePlaceUseCase
-import javax.inject.Inject
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 
 const val debounceMillis = 300L
 
-class PlacesViewModel @Inject constructor(
+class PlacesViewModel @ViewModelInject constructor(
     val storePlaceUseCase: StorePlaceUseCase,
     val searchPlacesUseCase: SearchPlacesUseCase
 ) : ViewModel() {

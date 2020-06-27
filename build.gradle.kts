@@ -12,6 +12,7 @@ buildscript {
         classpath(Libs.androidGradlePlugin)
         classpath(Libs.kotlinGradlePlugin)
         classpath(Libs.navigationGradlePlugin)
+        classpath(Libs.hiltGradlePlugin)
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }

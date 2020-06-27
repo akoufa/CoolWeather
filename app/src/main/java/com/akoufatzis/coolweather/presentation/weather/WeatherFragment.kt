@@ -7,28 +7,24 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import com.akoufatzis.coolweather.R
 import com.akoufatzis.coolweather.databinding.FragmentWeatherBinding
 import com.google.android.material.snackbar.Snackbar
-import dagger.android.support.DaggerFragment
-import javax.inject.Inject
+import dagger.hilt.android.AndroidEntryPoint
 
 const val PLACE_NAME_KEY = "PLACE_NAME_KEY"
 
-class WeatherFragment : DaggerFragment() {
+@AndroidEntryPoint
+class WeatherFragment : Fragment() {
 
-    @Inject
-    lateinit var viewModelFactory: ViewModelProvider.Factory
+    private val weatherViewModel: WeatherViewModel by viewModels()
 
     lateinit var binding: FragmentWeatherBinding
 
     private lateinit var placeName: String
-
-    private val weatherViewModel: WeatherViewModel by lazy(LazyThreadSafetyMode.NONE) {
-        ViewModelProvider(this, viewModelFactory).get(WeatherViewModel::class.java)
-    }
 
     override fun onAttach(context: Context) {
         super.onAttach(context)

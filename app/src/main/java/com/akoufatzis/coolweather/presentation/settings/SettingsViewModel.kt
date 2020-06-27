@@ -1,14 +1,14 @@
 package com.akoufatzis.coolweather.presentation.settings
 
+import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.akoufatzis.coolweather.domain.Failure
 import com.akoufatzis.coolweather.domain.Success
 import com.akoufatzis.coolweather.domain.settings.*
-import javax.inject.Inject
 
-class SettingsViewModel @Inject constructor(
+class SettingsViewModel @ViewModelInject constructor(
     val changeTemperatureUnitUseCase: ChangeTemperatureUnitUseCase,
     getSettingsUseCase: GetSettingsUseCase
 ) : ViewModel() {

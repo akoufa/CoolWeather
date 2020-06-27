@@ -2,24 +2,21 @@ package com.akoufatzis.coolweather.presentation.main
 
 import android.os.Bundle
 import android.view.*
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.observe
 import androidx.navigation.fragment.findNavController
 import com.akoufatzis.coolweather.R
 import com.akoufatzis.coolweather.databinding.FragmentMainBinding
-import dagger.android.support.DaggerFragment
-import javax.inject.Inject
+import dagger.hilt.android.AndroidEntryPoint
 
-class MainFragment : DaggerFragment() {
+@AndroidEntryPoint
+class MainFragment : Fragment() {
 
-    @Inject
-    lateinit var viewModelFactory: ViewModelProvider.Factory
+    private val mainViewModel: MainViewModel by viewModels()
 
     private lateinit var binding: FragmentMainBinding
     private lateinit var adapter: PagerAdapter
-
-    private val mainViewModel by viewModels<MainViewModel> { viewModelFactory }
 
     override fun onCreateView(
         inflater: LayoutInflater,

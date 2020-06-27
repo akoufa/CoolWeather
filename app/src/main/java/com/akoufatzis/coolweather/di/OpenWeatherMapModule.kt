@@ -6,18 +6,17 @@ import com.akoufatzis.coolweather.data.weather.WeatherDataStore
 import com.akoufatzis.coolweather.domain.weather.WeatherRepository
 import dagger.Module
 import dagger.Provides
+import dagger.hilt.InstallIn
+import dagger.hilt.android.components.ApplicationComponent
 import javax.inject.Singleton
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 
 const val OPENWEATHERMAP_URL = BuildConfig.OPENWEATHERMAP_URL
 
+@InstallIn(ApplicationComponent::class)
 @Module
-class OpenWeatherMapModule {
-
-    companion object {
-        val instance = OpenWeatherMapModule()
-    }
+object OpenWeatherMapModule {
 
     @Singleton
     @Provides

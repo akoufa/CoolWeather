@@ -10,6 +10,7 @@ import com.akoufatzis.coolweather.domain.place.PlacesRepository
 import com.akoufatzis.coolweather.domain.place.Place as PlaceModel
 import com.akoufatzis.coolweather.presentation.core.loadJsonFromAsset
 import com.akoufatzis.coolweather.presentation.core.toObject
+import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Inject
 import javax.inject.Singleton
 import kotlinx.coroutines.flow.*
@@ -20,7 +21,7 @@ const val CITY_JSON = "city-list.json"
 
 @Singleton
 class PlacesDataStore @Inject constructor(
-    private val context: Context,
+    @ApplicationContext private val context: Context,
     private val placeDao: PlaceDao
 ) : PlacesRepository {
 

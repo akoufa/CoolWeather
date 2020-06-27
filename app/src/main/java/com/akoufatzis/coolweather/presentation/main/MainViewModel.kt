@@ -1,5 +1,6 @@
 package com.akoufatzis.coolweather.presentation.main
 
+import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
@@ -8,18 +9,17 @@ import com.akoufatzis.coolweather.domain.Success
 import com.akoufatzis.coolweather.domain.place.GetPlacesUseCase
 import com.akoufatzis.coolweather.domain.place.Place
 import com.akoufatzis.coolweather.domain.place.StorePlaceUseCase
-import javax.inject.Inject
 import kotlinx.coroutines.InternalCoroutinesApi
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
 
-class MainViewModel @Inject constructor(
+class MainViewModel @ViewModelInject constructor(
     private val getPlacesUseCase: GetPlacesUseCase,
     private val storePlaceUseCase: StorePlaceUseCase
 ) :
     ViewModel() {
 
-    @UseExperimental(InternalCoroutinesApi::class)
+    @OptIn(InternalCoroutinesApi::class)
     val viewState = getPlacesUseCase()
         .map { result ->
             when (result) {

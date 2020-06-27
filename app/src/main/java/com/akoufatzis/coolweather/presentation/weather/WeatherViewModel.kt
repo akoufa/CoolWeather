@@ -1,5 +1,6 @@
 package com.akoufatzis.coolweather.presentation.weather
 
+import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -11,10 +12,9 @@ import com.akoufatzis.coolweather.domain.settings.Celsius
 import com.akoufatzis.coolweather.domain.settings.GetTemperatureUnitUseCase
 import com.akoufatzis.coolweather.domain.settings.TemperatureUnit
 import com.akoufatzis.coolweather.domain.weather.WeatherUseCase
-import javax.inject.Inject
 import kotlinx.coroutines.launch
 
-class WeatherViewModel @Inject constructor(
+class WeatherViewModel @ViewModelInject constructor(
     val weatherUseCase: WeatherUseCase,
     val getTemperatureUnitUseCase: GetTemperatureUnitUseCase,
     private val weatherMapper: WeatherMapper

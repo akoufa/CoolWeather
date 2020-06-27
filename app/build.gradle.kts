@@ -4,6 +4,7 @@ plugins {
     id("kotlin-kapt")
     id("kotlin-android-extensions")
     id("androidx.navigation.safeargs")
+    id("dagger.hilt.android.plugin")
     id("io.gitlab.arturbosch.detekt").version("1.6.0")
 }
 
@@ -95,11 +96,10 @@ dependencies {
     implementation(Libs.coroutinesCore)
     implementation(Libs.coroutinesAndroid)
 
-    implementation(Libs.dagger)
-    implementation(Libs.daggerAndroid)
-    implementation(Libs.daggerAndroidSupport)
-    kapt(Libs.daggerAndroidProcessor)
-    kapt(Libs.daggerCompiler)
+    implementation(Libs.hilt)
+    implementation(Libs.hiltJetpack)
+    kapt(Libs.hiltCompiler)
+    kapt(Libs.hiltJetpackCompiler)
 
     implementation(Libs.retrofit)
     implementation(Libs.retrofitMoshi)

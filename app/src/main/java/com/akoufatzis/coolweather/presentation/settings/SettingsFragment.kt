@@ -4,20 +4,17 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import com.akoufatzis.coolweather.databinding.FragmentSettingsBinding
-import dagger.android.support.DaggerFragment
+import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
-class SettingsFragment : DaggerFragment() {
+@AndroidEntryPoint
+class SettingsFragment : Fragment() {
 
-    @Inject
-    lateinit var viewModelFactory: ViewModelProvider.Factory
-
-    private val settingsViewModel: SettingsViewModel by lazy(LazyThreadSafetyMode.NONE) {
-        ViewModelProvider(this, viewModelFactory).get(SettingsViewModel::class.java)
-    }
+    private val settingsViewModel: SettingsViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,

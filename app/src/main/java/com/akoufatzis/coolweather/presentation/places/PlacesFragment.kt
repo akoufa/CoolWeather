@@ -4,8 +4,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.akoufatzis.coolweather.R
@@ -13,20 +14,16 @@ import com.akoufatzis.coolweather.databinding.FragmentPlacesBinding
 import com.akoufatzis.coolweather.presentation.core.hideKeyboard
 import com.akoufatzis.coolweather.presentation.core.onTextChange
 import com.google.android.material.snackbar.Snackbar
-import dagger.android.support.DaggerFragment
+import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
-class PlacesFragment : DaggerFragment() {
+@AndroidEntryPoint
+class PlacesFragment : Fragment() {
 
-    @Inject
-    lateinit var viewModelFactory: ViewModelProvider.Factory
+    private val placesViewModel: PlacesViewModel by viewModels()
 
     private lateinit var binding: FragmentPlacesBinding
     private lateinit var placesAdapter: PlacesAdapter
-
-    private val placesViewModel: PlacesViewModel by lazy(LazyThreadSafetyMode.NONE) {
-        ViewModelProvider(this, viewModelFactory).get(PlacesViewModel::class.java)
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
