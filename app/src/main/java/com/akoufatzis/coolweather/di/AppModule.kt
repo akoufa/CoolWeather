@@ -15,7 +15,6 @@ object AppModule {
 
     @Singleton
     @Provides
-    @JvmStatic
     fun provideSharedPreferences(@ApplicationContext context: Context): SharedPreferences {
         return context.getSharedPreferences("WeatherPreferences", Context.MODE_PRIVATE)
     }

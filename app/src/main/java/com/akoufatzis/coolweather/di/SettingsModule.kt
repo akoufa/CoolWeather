@@ -14,7 +14,6 @@ object SettingsModule {
 
     @Singleton
     @Provides
-    @JvmStatic
     fun provideSettingsModule(
         settingsRepository: SettingsDataStore
     ): SettingsRepository =

@@ -9,11 +9,13 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ApplicationComponent
 import dagger.hilt.android.qualifiers.ApplicationContext
+import javax.inject.Singleton
 
 @InstallIn(ApplicationComponent::class)
 @Module
 object PlacesModule {
 
+    @Singleton
     @Provides
     fun providePlacesRemoteDataStore(
         @ApplicationContext context: Context,

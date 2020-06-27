@@ -17,14 +17,12 @@ object DatabaseModule {
 
     @Singleton
     @Provides
-    @JvmStatic
     fun provideDatabase(@ApplicationContext context: Context): AppDatabase {
         return Room.databaseBuilder(context, AppDatabase::class.java, "coolweather-db").build()
     }
 
     @Singleton
     @Provides
-    @JvmStatic
     fun providePlaceDao(database: AppDatabase): PlaceDao {
         return database.placeDao()
     }
